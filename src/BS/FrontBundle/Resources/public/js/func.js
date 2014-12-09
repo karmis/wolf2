@@ -242,8 +242,6 @@ function validate_and_submit_forms(t) {
                     }
                 }
             })
-        }), t.find("#form-captcha-refresh").click(function () {
-            t.find("#form-captcha-img").replaceWith('<img id="form-captcha-img" src="assets/php/form_captcha/captcha_img.php">'), t.find("#form-captcha").val("")
         }), t.submit(function (e) {
             e.preventDefault ? e.preventDefault() : e.returnValue = !1, $(this).find(".form-loader").fadeIn("fast");
             var i = $(this).attr("action");
@@ -262,19 +260,17 @@ function validate_and_submit_forms(t) {
                 }
             }), 1 == a ? ($(this).find(".form-loader").fadeOut("fast"), !1) : ($.ajax({type: "POST", url: i, data: $(this).serialize(), dataType: "html", success: function (e) {
                 t.find(".form-loader").fadeOut("fast");
-                var i = "success" == e ? !0 : !1, a = "captcha" == e ? !1 : !0, n = "";
+                var i = "success" == e ? !0 : !1;
                 switch (e) {
                     case"success":
-                        n = "Form submitted successfully.";
-                        break;
-                    case"captcha":
-                        n = "Incorrect text entered. (Case-sensitive)";
+                        n = "Спасибо. Заявка оставлена";
+                        alert('Спасибо. Заявка оставлена');
                         break;
                     case"incomplete":
-                        n = "Please fill in all required fields.";
+                        n = "Првоерьте правильность заполнения полей";
                         break;
                     case"error":
-                        n = "An error occured. Please try again later."
+                        n = "Ошибка. Обновите страницу и попробуйте еще раз."
                 }
                 var o = '<div class="alert ';
                 o += 1 == i ? "success" : "error", o += '">' + n + "</div>", a ? t.find(".form-general-error-container").html(o).fadeIn("fast", function () {
@@ -284,7 +280,7 @@ function validate_and_submit_forms(t) {
                 }) : (t.find("#form-captcha").parent(".form-group").append(o), t.find("#form-captcha").siblings(".alert").fadeIn("fast")), t.find("#form-captcha-img").replaceWith('<img id="form-captcha-img" src="assets/php/form_captcha/captcha_img.php">'), t.find("#form-captcha").val(""), 1 == i && t.find(".form-control").val("")
             }, error: function () {
                 t.find(".form-loader").fadeOut("fast");
-                var e = '<div class="alert">An error occured. Please try again later.</div>';
+                var e = '<div class="alert">Ошибка. Обновите страницу и попробуйте еще раз.</div>';
                 t.find(".form-general-error-container").html(e).fadeIn("fast")
             }}), void 0)
         })

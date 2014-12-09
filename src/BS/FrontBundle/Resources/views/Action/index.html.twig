@@ -1,17 +1,49 @@
 <ul id="lightGallery">
-	{% if entityEvents.photoGallery|length > 0 %}
-        {% for key, photo in entityEvents.photoGallery %}
-            <li data-src="{{ asset('uploads/gallery/'~photo) }}">
-              <img src="{{ asset('uploads/gallery/'~photo|thumb(150, 150)) }}" class="lazy">
-            </li>
+    {% if entityEvents|length > 0 %}
+        {% for key, gallery in entityEvents %}
+            {% for key, photo in gallery.photoGallery %}
+                <li 
+                    data-sub-html="<div class='customHtml'><h4>{{ gallery.caption }}</h4></div>"
+                    data-src="{{ asset('uploads/gallery/'~photo) }}"
+                    class="lazy lightGallery">
+                        <img src="{{ asset('uploads/gallery/'~photo|thumb(150, 150)) }}">
+                </li>
+            {% endfor %}
+            {% for key, video in gallery.videoGallery %}
+                {% if video.smallHref is defined and video.smallHref != "" %}
+                    <li 
+                        data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(250) }}</p></div>"
+                        data-src="{{ video.smallHref }}"
+                        class="lightGallery"
+                        >
+                            <img src="{{ asset(pRes~'/images/icons/video.png') }}" />
+                    </li>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     {% endif %}
 
-    {% if entityBlogs.photoGallery|length > 0 %}
-        {% for key, photo in entityBlogs.photoGallery %}
-            <li data-src="{{ asset('uploads/gallery/'~photo) }}">
-              <img src="{{ asset('uploads/gallery/'~photo|thumb(150, 150)) }}" class="lazy">
-            </li>
+    {% if entityEvents|length > 0 %}
+        {% for key, gallery in entityBlogs %}
+            {% for key, photo in gallery.photoGallery %}
+                <li 
+                    data-sub-html="<div class='customHtml'><h4>{{ gallery.caption }}</h4></div>"
+                    data-src="{{ asset('uploads/gallery/'~photo) }}" 
+                    class="lightGallery">
+                  <img src="{{ asset('uploads/gallery/'~photo|thumb(150, 150)) }}">
+                </li>
+            {% endfor %}
+            {% for key, video in gallery.videoGallery %}
+                {% if video.smallHref is defined and video.smallHref != "" %}
+                    <li 
+                        data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>"
+                        data-src="{{ video.smallHref }}"
+                        class="lightGallery"
+                        >
+                      <img src="{{ asset(pRes~'/images/icons/video.png') }}" />
+                    </li>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     {% endif %}
 </ul>

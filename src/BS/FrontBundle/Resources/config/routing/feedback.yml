@@ -1,0 +1,21 @@
+feedback_show:
+    path:     /{id}/show
+    defaults: { _controller: "BSFrontBundle:FeedBack:show" }
+
+feedback_new:
+    path:     /new
+    defaults: { _controller: "BSFrontBundle:FeedBack:new" }
+
+feedback_create:
+    path:     /create
+    defaults: { _controller: "BSFrontBundle:FeedBack:create" }
+    requirements: { _method: post }
+
+feedback_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BSFrontBundle:FeedBack:edit" }
+
+feedback_update:
+    path:     /{id}/update
+    defaults: { _controller: "BSFrontBundle:FeedBack:update" }
+    requirements: { _method: post|put }

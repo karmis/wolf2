@@ -32,13 +32,15 @@ $(function () {
     });
 
 
-    var slider = $('#slider').leanSlider({
-        directionNav: '#slider-direction-nav',
-        controlNav: '#slider-control-nav'
-    });
 
     $('#lightGallery').lightGallery({
-        showThumbByDefault:true,
-        addClass:'showThumbByDefault'
+        // showThumbByDefault:true,
+        // addClass:'showThumbByDefault',
+        // cssEasing:'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
+        // closable:false,
+        // enableTouch: false,
+        // enableDrag: false,
+        loop:true,
+        speed:1500
     }); 
 });

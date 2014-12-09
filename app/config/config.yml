@@ -4,7 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: knp_menu.yml }
     - { resource: fos_user.yml }
-    - { resource: fos_comment.yml }
+    # - { resource: fos_comment.yml }
     - { resource: sonata/sonata_core.yml }
     - { resource: sonata/sonata_block.yml }
     - { resource: sonata/sonata_doctrine_orm_admin.yml }
@@ -49,7 +49,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "FOSCommentBundle" ]
+    bundles:        []
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

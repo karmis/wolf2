@@ -1,0 +1,30 @@
+comment:
+    path:     /
+    defaults: { _controller: "BSFrontBundle:Comment:index" }
+
+comment_show:
+    path:     /{id}/show
+    defaults: { _controller: "BSFrontBundle:Comment:show" }
+
+comment_new:
+    path:     /new
+    defaults: { _controller: "BSFrontBundle:Comment:new" }
+
+comment_create:
+    path:     /create
+    defaults: { _controller: "BSFrontBundle:Comment:create" }
+    requirements: { _method: post }
+
+comment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BSFrontBundle:Comment:edit" }
+
+comment_update:
+    path:     /{id}/update
+    defaults: { _controller: "BSFrontBundle:Comment:update" }
+    requirements: { _method: post|put }
+
+comment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BSFrontBundle:Comment:delete" }
+    requirements: { _method: post|delete }

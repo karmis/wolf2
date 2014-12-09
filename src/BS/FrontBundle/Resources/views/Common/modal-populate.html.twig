@@ -13,7 +13,8 @@
     </div>
     <!-- /.row -->
 
-    <div id="modal-photos" class="row">
+    <!-- Photos -->
+    <div class="row modal-photos">
         {% for key, photo in entity.photoGallery %}
             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6 center-block" style="padding:15px;">
                 <a href="{{ asset('uploads/gallery/'~photo) }}" data-lightbox="image-{{entity.id}}_{{key}}" data-title="{{entity.caption}}">
@@ -27,16 +28,24 @@
     <hr />
     <br />
     
+
+    <!-- Content -->
     <div class="panel panel-default">
       <div class="panel-body">
         {{entity.content|raw}}
       </div>
     </div>
 
+        <br />
+        <hr />
+        <br />
 
-
-    <div id="modal-videos" class="row">
+    <!-- Videos -->
+    <div class="row modal-videos">
         {% if entity.videoGallery|length > 0 %}
+
+
+
             {% for key, video in entity.videoGallery %}
                 <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6 center-block">
                     <div class="video-container">
@@ -44,20 +53,15 @@
                     </div>
                 </div>
             {% endfor %}
-            
-            <br />
-            <hr />
-            <br />
         {% endif %}
 
     </div>
 
-    <br />
-    <hr />
-    <br />
-
-    <div class="clearfix"></div>
     
-    <!-- <div class="clearfix"></div> -->
+    <div class="clearfix"></div>
+
+
+    <!-- Comments -->
+
 
 </div>

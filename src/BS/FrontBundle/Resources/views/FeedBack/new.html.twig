@@ -1,0 +1,74 @@
+
+{{ form_start(form, {attr:{class: "form-style validate-form clearfix"}}) }}
+    {{ form_errors(form) }}
+
+
+                <!-- form left col -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                    	{{ form_widget(form.name, 
+                    		{
+                    			attr:
+                    				{
+                    					'class': 'text-field form-control validate-field required',
+                    					'data-validation-type': 'string',
+                    					'id': 'form-name',
+                    					'placeholder': 'Имя полностью'
+                    				}
+                    		}) 
+                    	}}
+                    </div>
+                    <div class="form-group">
+                    	{{ form_widget(form.email, 
+                    		{
+                    			attr:
+                    				{
+                    					'class': 'text-field form-control validate-field required email',
+                    					'data-validation-type': 'email',
+                    					'id': 'form-email',
+                    					'placeholder': 'Email адрес'
+                    				}
+                    		}) 
+                    	}}
+                    </div>
+                    <div class="form-group">
+                    	{{ form_widget(form.phone, 
+                    		{
+                    			attr:
+                    				{
+                    					'class': 'text-field form-control validate-field required name',
+                    					'data-validation-type': 'string',
+                    					'id': 'form-contact-numbe',
+                    					'placeholder': 'Контактный номер'
+                    				}
+                    		}) 
+                    	}}
+                    </div>
+                </div>
+                <!-- end: form left col -->
+
+                <!-- form right col -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                    	{{ form_widget(form.content, 
+                    		{
+                    			attr:
+                    				{
+                    					'class': 'text-field form-control validate-field required',
+                    					'id': 'form-contact-numbe',
+                    					'placeholder': 'Сообщение...'
+                    				}
+                    		}) 
+                    	}}
+                    </div>
+                    <div class="form-group">
+                        
+                        <button type="submit" class="btn btn-sm btn-outline-inverse">Заказать</button>
+                    </div>
+                    <div class="form-group form-general-error-container"></div>
+                </div>
+                <!-- end: form right col -->
+
+
+{{ form_end(form) }}
+        <!-- CONTACT DETAILS -->

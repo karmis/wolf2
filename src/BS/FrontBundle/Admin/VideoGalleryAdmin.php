@@ -75,6 +75,10 @@ class VideoGalleryAdmin extends Admin
                 'label' => 'form.hrefVideo',
                 'required' => false
             ))
+            ->add('smallHref', null, array(
+                'label' => 'form.smallHrefVideo',
+                'required' => false
+            ))
             ->add('description', null, array(
                 'label' => 'form.smallContent',
                 'required' => false

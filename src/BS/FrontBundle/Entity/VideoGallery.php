@@ -31,9 +31,16 @@ class VideoGallery
     /**
      * @var string
      *
-     * @ORM\Column(name="href", type="text", length=255)
+     * @ORM\Column(name="href", type="text")
      */
     private $href;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="smallHref", type="string", length=255)
+     */
+    private $smallHref;
 
     /**
      * @var string
@@ -151,5 +158,28 @@ class VideoGallery
     public function getEvent()
     {
         return $this->event;
+    }
+
+    /**
+     * Set smallHref
+     *
+     * @param string $smallHref
+     * @return VideoGallery
+     */
+    public function setSmallHref($smallHref)
+    {
+        $this->smallHref = $smallHref;
+
+        return $this;
+    }
+
+    /**
+     * Get smallHref
+     *
+     * @return string 
+     */
+    public function getSmallHref()
+    {
+        return $this->smallHref;
     }
 }

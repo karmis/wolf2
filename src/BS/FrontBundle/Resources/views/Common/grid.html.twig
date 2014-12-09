@@ -10,19 +10,19 @@
                     {% if entity.photoGallery|length %}
                         <div class="grid-slider bxslider">
                             {% for photo in entity.photoGallery %}
-                                <div>
+                                <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');">
                                     <img src="{{ asset('uploads/gallery/'~photo) }}" alt="{{ entity.caption }}"
                                          class="img-responsive lazy"/>
                                 </div>
                             {% endfor %}
                         </div>
-                    {% else %}
-                        {% include 'BSFrontBundle::Common/randomImage.html.twig' with {} %}
+                    {# {% else %}
+                        {% include 'BSFrontBundle::Common/randomImage.html.twig' with {} %} #}
                     {% endif %}
 
                     <div class="text-content text-center">
                         {% autoescape true %}
-                        <h5>
+                        <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');" style="cursor:pointer">
                             {{ entity.caption|truncate(100) }}
                         </h5>
                         <p>

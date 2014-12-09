@@ -1,3 +1,11 @@
+bs_front_feedback:
+    resource: "@BSFrontBundle/Resources/config/routing/feedback.yml"
+    prefix:   /feedback
+
+bs_front_comment:
+    resource: "@BSFrontBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
 bs_front_event:
     resource: "@BSFrontBundle/Resources/config/routing/event.yml"
     prefix:   /event
