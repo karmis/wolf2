@@ -1,0 +1,10 @@
+event:
+    path:     /
+    defaults: { _controller: "BSFrontBundle:Event:index" }
+
+event_show:
+    path:     /{id}/show
+    defaults: { _controller: "BSFrontBundle:Event:show" }
+
+
+

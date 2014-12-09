@@ -1,0 +1,21 @@
+parameters:
+#    bs_front.example.class: BS\FrontBundle\Example
+
+services:
+    bs_front.admin.blog:
+        class: BS\FrontBundle\Admin\BlogAdmin
+        arguments: [~, BS\FrontBundle\Entity\Blog, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Содержимое, label: Блог}
+
+    bs_front.admin.event:
+        class: BS\FrontBundle\Admin\EventAdmin
+        arguments: [~, BS\FrontBundle\Entity\Event, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Содержимое, label: События}
+
+    bs_front.admin.video.gallery:
+        class: BS\FrontBundle\Admin\VideoGalleryAdmin
+        arguments: [~, BS\FrontBundle\Entity\VideoGallery, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Содержимое, label: Видео галлерея}

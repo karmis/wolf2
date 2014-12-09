@@ -1,0 +1,50 @@
+{% extends 'BSFrontBundle::layout.html.twig' %}
+{% block content %}
+
+    {% include 'BSFrontBundle::layout_section.html.twig' with {
+    secId: 'index',
+    secType: 'text',
+    secCaption: "Студия артистического фехтования <br />  «Волчий глаз»",
+    secBg: pRes~"/images/bg/bg1.jpg"
+    } %}
+
+    {% include 'BSFrontBundle::layout_section.html.twig' with {
+    entityEvents: entities['events'],
+    entityBlogs: entities['blogs'],
+    secId: 'action',
+    secType: 'action',
+    secCaption: 'Посмотреть шоу',
+    secBg: pRes~"/images/bg/bg2.jpg"
+    } %}
+
+    {% include 'BSFrontBundle::layout_section.html.twig' with {
+    grids: entities['blogs'],
+    secId: 'blogs',
+    secType: 'grid',
+    secCaption: 'Блог',
+    secBg: pRes~"/images/bg/bg3.jpg"
+    } %}
+
+    {% include 'BSFrontBundle::layout_section.html.twig' with {
+    grids: entities['events'],
+    secId: 'events',
+    secType: 'grid',
+    secCaption: 'События и история студии',
+    secBg: pRes~"/images/bg/bg4.jpg"
+    } %}
+
+    {% include 'BSFrontBundle::layout_section.html.twig' with {
+    secId: 'order',
+    secType: 'form',
+    secCaption: 'Заказать шоу',
+    secBg: pRes~"/images/bg/bg5.jpg"
+    } %} %}
+
+
+    {#{% include 'BSFrontBundle::Action/index.html.twig' %}#}
+    {#{% include 'BSFrontBundle::_Text/text.html.twig' %}#}
+    {#{% include 'BSFrontBundle::_Carousel/carousel.html.twig' %}#}
+    {#{% include 'BSFrontBundle::_Grid/grid.html.twig' %}#}
+    {#{% include 'BSFrontBundle::_Featured/featured.html.twig' %}#}
+    {#{% include 'BSFrontBundle::_Contact/contact.html.twig' %}#}
+{% endblock content %}

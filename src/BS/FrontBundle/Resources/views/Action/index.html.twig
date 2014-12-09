@@ -1,0 +1,17 @@
+<ul id="lightGallery">
+	{% if entityEvents.photoGallery|length > 0 %}
+        {% for key, photo in entityEvents.photoGallery %}
+            <li data-src="{{ asset('uploads/gallery/'~photo) }}">
+              <img src="{{ asset('uploads/gallery/'~photo|thumb(150, 150)) }}" class="lazy">
+            </li>
+        {% endfor %}
+    {% endif %}
+
+    {% if entityBlogs.photoGallery|length > 0 %}
+        {% for key, photo in entityBlogs.photoGallery %}
+            <li data-src="{{ asset('uploads/gallery/'~photo) }}">
+              <img src="{{ asset('uploads/gallery/'~photo|thumb(150, 150)) }}" class="lazy">
+            </li>
+        {% endfor %}
+    {% endif %}
+</ul>

@@ -1,0 +1,30 @@
+sonata_news:
+    title:        Sonata Project
+    link:         http://sonata-project.org
+    description:  Cool bundles on top of Symfony2
+    salt:         '96b1858f9c1b33947183a5ea1cb104675'
+#    permalink_generator: sonata.news.permalink.date # sonata.news.permalink.collection
+#    permalink:
+#        date:     %%1$04d/%%2$02d/%%3$02d/%%4$s
+
+    comment:
+        notification:
+            emails:   [init.reg@gmail.com]
+            from:     no-reply@brainstrap.ru
+            template: 'SonataNewsBundle:Mail:comment_notification.txt.twig'
+
+    class:
+        post:       Application\Sonata\NewsBundle\Entity\Post
+        comment:    Application\Sonata\NewsBundle\Entity\Comment
+        media:      Application\Sonata\MediaBundle\Entity\Media
+        user:       Application\Sonata\UserBundle\Entity\User
+
+    admin:
+        post:
+            class:       Sonata\NewsBundle\Admin\PostAdmin
+            controller:  SonataAdminBundle:CRUD
+            translation: SonataNewsBundle
+        comment:
+            class:       Sonata\NewsBundle\Admin\CommentAdmin
+            controller:  SonataAdminBundle:CRUD
+            translation: SonataNewsBundle

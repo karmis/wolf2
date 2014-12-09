@@ -1,0 +1,19 @@
+{
+    "name": "Booking System",
+    "dependencies": {
+        "jquery": "jquery#latest",
+        "jquery.migrate": "jquery.migrate#latest",
+        "bxslider-4":"bxslider-4#latest",
+        "bootstrap": "bootstrap#latest",
+        "jqBootstrapValidation":"jqBootstrapValidation#latest",
+        "jquery.lazyload":"jquery.lazyload#latest",
+        "font-awesome":"font-awesome#latest",
+        "cheet.js":"cheet.js#latest",
+        "owlcarousel":"owlcarousel#latest",
+        "wow":"wow#latest",
+        "lightbox2":"lightbox2#latest",
+        "jquery.easing":"jquery.easing#latest",
+        "jquery-backstretch":"jquery-backstretch#latest",
+        "jssor-slider":"jssor-slider#latest"
+    }
+}

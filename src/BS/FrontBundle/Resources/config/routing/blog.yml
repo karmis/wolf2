@@ -1,0 +1,10 @@
+blog:
+    path:     /
+    defaults: { _controller: "BSFrontBundle:Blog:index" }
+
+blog_show:
+    path:     /{id}/show
+    defaults: { _controller: "BSFrontBundle:Blog:show" }
+
+
+

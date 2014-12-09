@@ -1,0 +1,16 @@
+fos_comment:
+    db_driver: orm
+    acl: true
+    class:
+        model:
+            comment: BS\FrontBundle\Entity\Comment
+            thread: BS\FrontBundle\Entity\Thread
+    service:
+        acl:
+            thread:  fos_comment.acl.thread.roles
+            comment: fos_comment.acl.comment.roles
+            vote:    fos_comment.acl.vote.roles
+        manager:
+            thread:  fos_comment.manager.thread.acl
+            comment: fos_comment.manager.comment.acl
+            vote:    fos_comment.manager.vote.acl

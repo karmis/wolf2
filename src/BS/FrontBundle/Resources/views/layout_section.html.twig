@@ -1,0 +1,28 @@
+<article id="bs-block-{{ secId }}" class="section-wrapper clearfix"
+         data-custom-background-img="{{ asset(secBg) }}">
+    <div class="content-wrapper clearfix">
+        <div class="col-sm-11 pull-right">
+
+            <h1 class="section-title">{{ secCaption|raw }}</h1>
+
+            <!-- feature columns -->
+            <section class="feature-columns row clearfix">
+                {% if secType is not defined %}
+                    {% set secType = 'text' %}
+                {% endif %}
+
+                {% if secType == 'text' %}
+                    {% include 'BSFrontBundle::Common/text.html.twig' %}
+                {% elseif secType == 'grid' %}
+                    {% include 'BSFrontBundle::Common/grid.html.twig' %}
+                {% elseif secType == 'form' %}
+                    {% include 'BSFrontBundle::Common/form.html.twig' %}
+                {% elseif secType == 'action' %}
+                    {% include 'BSFrontBundle::Action/index.html.twig' %}
+                {% else %}
+                    {% include 'BSFrontBundle::Common/text.html.twig' %}
+                {% endif %}
+            </section>
+        </div>
+    </div>
+</article>

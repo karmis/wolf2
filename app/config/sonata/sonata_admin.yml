@@ -1,0 +1,38 @@
+sonata_admin:
+    title:      Волчий глаз
+#    title_logo: bundles/bsfront/images/logo.jpg
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+            -
+                position: right
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <h2>Проект разработан группой разработчиков Brainstrap</h2>
+                        <p>Данный проект был разработан группой разработчиков Brainstrap <br />
+                        -  <a href='http://brainstrap.ru/support' target='_blank'>Поддержка клиентов Brainstrap</a>
+
+            -
+                position: right
+                type: sonata.block.service.rss
+                settings:
+                    title: Справочная информация
+                    url: http://static.rss.services.brainstrap.ru/sonata.admin.manual.rss
+    templates:
+        layout:  ApplicationSonataAdminBundle::sonata_admin_base_layout.html.twig
+    security:
+        handler: sonata.admin.security.handler.acl
+        # acl security information
+        information:
+            GUEST:    [VIEW, LIST]
+            STAFF:    [EDIT, LIST, CREATE]
+            EDITOR:   [OPERATOR, EXPORT]
+            ADMIN:    [MASTER]
+        # permissions not related to an object instance and also to be available when objects do not exist
+        # the DELETE admin permission means the user is allowed to batch delete objects
+        admin_permissions: [CREATE, LIST, DELETE, UNDELETE, EXPORT, OPERATOR, MASTER]
+        # permission related to the objects
+        object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER]

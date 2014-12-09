@@ -1,0 +1,22 @@
+{% if alertType is not defined %}
+    {% set alertTitle = 'Упс!' %}
+{% else %}
+    {% if alertType == 'normal' %}
+        {% set alertTitle = 'Увы... :-(' %}
+    {% endif %}
+{% endif %}
+
+
+<div class="col-sm-10 col-md-9 pull-right">
+
+    <h1 class="section-title">
+        {{ alertTitle }}
+    </h1>
+
+    <p class="feature-paragraph">
+        <img
+                data-img-src="{{ asset(pRes~"/images/transp/transp-image5b.png") }}"
+                class="lazy pull-right" alt="{{ alertTitle }}">
+        {{ alertMsg|default('Что-то пошло не так') }}
+    </p>
+</div>
