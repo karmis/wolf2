@@ -265,8 +265,16 @@ img.lazy {
     max-height: 150px;
 }
 
-#lightGallery-outer {
+#lightGallery-outer, .splash-promo {
    background: url(../images/bg/background-image-overlay.png) repeat;
+}
+
+
+.splash-promo {
+   background: url(../images/black.png) repeat;
+box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
+-moz-box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
+-webkit-box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
 }
 
 .customHtml {
@@ -277,3 +285,43 @@ img.lazy {
 .modal-videos, .modal-photos {
     padding-bottom: 15px;
 }
+
+p.promo {
+    font-size: 16px;
+}
+
+p.promo-one {
+text-align: center;
+font-size: 21px;
+}
+
+p.promo-two {
+text-align: center;
+font-size: 21px;
+}
+
+p.promo-three {
+font-size: 20px;
+text-align: center;
+}
+
+p.promo-four {
+text-align: center;
+font-size: 23px;
+}
+
+p.promo-five {
+text-align: center;
+font-size: 19px;
+margin-top: -25px !important;
+}
+
+p.promo-six {
+text-align: right;
+font-size: 17px;
+font-weight: bold;
+}
+
+/*p.promo-one {
+    
+}*/
