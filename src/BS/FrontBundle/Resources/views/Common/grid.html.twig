@@ -25,7 +25,7 @@
                         <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');" style="cursor:pointer">
                             {{ entity.caption|truncate(100) }}
                         </h5>
-                        <p>
+                        <p class="descriptionForGrid">
                             {% if entity.smallContent %}
                                 {{ entity.smallContent|default('Краткое описание')|truncate(250) }}
                             {% else %}

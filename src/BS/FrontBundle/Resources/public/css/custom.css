@@ -1,7 +1,7 @@
 /* It is recommended to place all your extra/additional CSS rules here */
 #common-modal .modal-body p > span {
     color: #fff !important;
-    font-family: 'open_sanslight', sans-serif !important;
+    font-family: 'UnderDog', sans-serif !important;
     font-size: 22px !important;
 }
 
@@ -258,6 +258,7 @@ img.lazy {
     overflow: hidden!important;
     float: left;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .lightGallery img {
@@ -287,41 +288,87 @@ box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
 }
 
 p.promo {
+margin:0px;
     font-size: 16px;
 }
 
 p.promo-one {
+margin:10px !important;
 text-align: center;
-font-size: 21px;
+font-size: 60px;
 }
 
 p.promo-two {
+margin:8px !important;
 text-align: center;
-font-size: 21px;
+font-size: 40px;
 }
 
 p.promo-three {
+margin-top:25px !important;
 font-size: 20px;
 text-align: center;
 }
 
 p.promo-four {
+margin:13px !important;
 text-align: center;
-font-size: 23px;
+font-size: 30px;
 }
 
 p.promo-five {
+margin-top: 26px !important;
 text-align: center;
-font-size: 19px;
-margin-top: -25px !important;
+font-size: 20px;
 }
 
 p.promo-six {
+margin-top: 22px !important;
 text-align: right;
-font-size: 17px;
-font-weight: bold;
+font-size: 45px;
 }
 
+.descriptionForGrid {
+font-size: 18px !important;
+line-height: 25.2px;
+font-family: 'UnderDog', sans-serif !important;
+}
+
+.customHtml h4 {
+font-size: 25px !important;
+line-height: 25.2px;
+font-family: 'UnderDog', sans-serif !important;
+font-weight: normal;
+}
+
+.customHtml {
+    background: none repeat scroll 0 0 black;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 70px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+.customHtml p {
+    font-size: 14px;
+}
+.customHtml > h4 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+
+
+.grid-item .item-content h5 {
+    line-height: 37px;
+}
 /*p.promo-one {
-    
+  margin:0px;
+
 }*/

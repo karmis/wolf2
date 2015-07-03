@@ -606,24 +606,3 @@ left: 0;
 	text-decoration: none;
 	background-color: #000;
 }
-.customHtml {
-	background: none repeat scroll 0 0 black;
-	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
-	color: #fff;
-	font-family: Arial, sans-serif;
-	height: 70px;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 9;
-}
-.customHtml p {
-	font-size: 14px;
-}
-.customHtml > h4 {
-	font-family: Arial, sans-serif;
-	font-weight: bold;
-	margin-bottom: 5px;
-	margin-top: 15px;
-}
