@@ -37,7 +37,8 @@
         "sonata-project/user-bundle": "dev-master",
         "sonata-project/datagrid-bundle": "2.2.*@dev",
         "sonata-project/media-bundle": "2.3.*@dev",
-        "sonata-project/formatter-bundle": "2.3.*@dev"
+        "sonata-project/formatter-bundle": "2.3.*@dev",
+        "getjump/vk": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
