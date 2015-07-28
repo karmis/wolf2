@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
             new Comur\ImageBundle\ComurImageBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
 
             // Sonata
             new Sonata\IntlBundle\SonataIntlBundle(),

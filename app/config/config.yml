@@ -18,6 +18,7 @@ imports:
     - { resource: ivory_ck_editor.yml }
     - { resource: comur_image.yml }
     - { resource: knp_paginator.yml }
+    - { resource: liip_imagine.yml }
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }

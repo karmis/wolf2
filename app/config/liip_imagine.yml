@@ -1,0 +1,21 @@
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        prev_on_page_item_action:
+            quality: 80
+            filters:
+                thumbnail: { size: [150, 150], mode: outbound }
+        prev_on_page_item_slider:
+            quality: 60
+            filters:
+                thumbnail: { size: [223, 223], mode: outbound }
+        prev_on_window_item_slider:
+            quality: 85
+            filters:
+                thumbnail: { size: [260, 260], mode: outbound }
+        full_size_photo_in_window:
+            quality: 100
