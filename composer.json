@@ -32,14 +32,14 @@
         "liip/imagine-bundle": "^1.0@dev", 
 
         "sonata-project/core-bundle": "~2.2@dev",
-        "sonata-project/block-bundle": "2.2.*@dev",
+        "sonata-project/block-bundle": "~2.3",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/easy-extends-bundle": "dev-master",
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/user-bundle": "dev-master",
-        "sonata-project/datagrid-bundle": "2.2.*@dev",
-        "sonata-project/media-bundle": "2.3.*@dev",
-        "sonata-project/formatter-bundle": "2.3.*@dev"
+        "sonata-project/datagrid-bundle": "*",
+        "sonata-project/media-bundle": "*",
+        "sonata-project/formatter-bundle": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

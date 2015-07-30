@@ -88,7 +88,7 @@ file that was distributed with this source code.
         </title>
     </head>
     <body {% block body_attributes %}class="sonata-bc skin-black fixed"{% endblock %}>
-    {% include "ComurImageBundle:Form:croppable_image_modal.html.twig" with {'include_jquery': false, 'include_bootstrap': true} %}
+    {% include "ComurImageBundle:Form:croppable_image_modal.html.twig" with {'include_jquery': false, 'include_bootstrap': false} %}
         {% block sonata_header %}
             <header class="header">
                 {% block sonata_header_noscript_warning %}

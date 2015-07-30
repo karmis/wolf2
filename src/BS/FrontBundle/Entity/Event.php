@@ -67,11 +67,6 @@ class Event
     private $photo;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $originalPhoto;
-
-    /**
      * @ORM\Column(type="array", nullable=true)
      */
     private $photoGallery;
@@ -243,29 +238,6 @@ class Event
     public function getPhoto()
     {
         return $this->photo;
-    }
-
-    /**
-     * Set originalPhoto
-     *
-     * @param string $originalPhoto
-     * @return Event
-     */
-    public function setOriginalPhoto($originalPhoto)
-    {
-        $this->originalPhoto = $originalPhoto;
-
-        return $this;
-    }
-
-    /**
-     * Get originalPhoto
-     *
-     * @return string 
-     */
-    public function getOriginalPhoto()
-    {
-        return $this->originalPhoto;
     }
 
     /**

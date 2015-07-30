@@ -19,6 +19,8 @@ imports:
     - { resource: comur_image.yml }
     - { resource: knp_paginator.yml }
     - { resource: liip_imagine.yml }
+    - { resource: sonata_classification.yml }
+
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }

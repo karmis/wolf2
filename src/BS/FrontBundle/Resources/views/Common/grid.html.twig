@@ -12,7 +12,7 @@
                             {% set maxCount = 0 %}
                             {% for photo in entity.photoGallery if maxCount < 5 %}
                                 <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');">
-                                    <img src="{{ asset('uploads/gallery/'~photo)|imagine_filter('prev_on_page_item_slider') }}" alt="{{ entity.caption }}"
+                                    <img src="{{ asset('uploads/gallery/'~photo)|thumb(225, 225)|imagine_filter('prev_on_page_item_slider') }}" alt="{{ entity.caption }}"
                                          class="img-responsive lazy"/>
                                 </div>
                                 {% set maxCount = maxCount + 1 %}

@@ -1,0 +1,4 @@
+services:
+   bsvk:
+       class: BS\VKBundle\Library\VK
+       arguments:  [@kernel]

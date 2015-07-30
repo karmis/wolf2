@@ -113,21 +113,21 @@ class EventAdmin extends Admin
                     'libraryDir' => null, //optional
                     'libraryRoute' => 'comur_api_image_library', //optional
                     'showLibrary' => true, //optional
-                    'saveOriginal' => 'originalPhoto' //optional
                 ),
                 'cropConfig' => array(
-                    'maxWidth' => 605,
-                    'maxHeight' => 605,
-                    'minWidth' => 405,
-                    'minHeight' => 405,
+                    // 'maxWidth' => 605,
+                    // 'maxHeight' => 605,
+                    // 'minWidth' => 225,
+                    // 'minHeight' => 225,
                     'aspectRatio' => true, //optional
                     'cropRoute' => 'comur_api_crop', //optional
+                    'saveOriginal' => 'originalPhoto',
                     'forceResize' => false, //optional
                     'thumbs' => array( //optional
                         array(
-                            'maxWidth' => 410,
-                            'maxHeight' => 410,
-                            'useAsFieldImage' => true //optional
+                            'maxWidth' => 225,
+                            'maxHeight' => 225,
+                            // 'useAsFieldImage' => true //optional
                         )
                     )
                 )

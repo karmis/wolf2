@@ -46,6 +46,7 @@ class AppKernel extends Kernel
             new Sonata\DatagridBundle\SonataDatagridBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\NotificationBundle\SonataNotificationBundle(),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
 //            new Sonata\NewsBundle\SonataNewsBundle(),
 
             // App
@@ -59,6 +60,7 @@ class AppKernel extends Kernel
 
             // Project
             new BS\FrontBundle\BSFrontBundle(),
+            new BS\VKBundle\BSVKBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
