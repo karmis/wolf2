@@ -1,0 +1,5 @@
+iphp_file_store:
+    mappings:
+       photo:
+           upload_dir:  %kernel.root_dir%/../web/uploads/photo
+           upload_path: /uploads/photo

@@ -3,7 +3,6 @@
 namespace BS\FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Sonata\MediaBundle\Model\MediaInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -81,12 +80,6 @@ class Blog
      */
     protected $photoGallery;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery")
-     * @ORM\JoinColumn(name="video_gallery", referencedColumnName="id")
-     */
-    private $videoGallery;
-
     public function getUploadRootDir()
     {
         // absolute path to your directory where images must be saved
@@ -98,16 +91,6 @@ class Blog
         return self::BLOG_UPLOAD_DIR;
     }
 
-    public function getAbsolutePath()
-    {
-        return null === $this->photo ? null : $this->getUploadRootDir().'/'.$this->photo;
-    }
-
-    public function getWebPath()
-    {
-        return null === $this->photo ? null : '/'.$this->getUploadDir().'/'.$this->photo;
-    }
-
     public function getEntityType() {
         return "BLOG";
     }
@@ -115,7 +98,7 @@ class Blog
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -126,6 +109,7 @@ class Blog
      * Set caption
      *
      * @param string $caption
+     *
      * @return Blog
      */
     public function setCaption($caption)
@@ -138,7 +122,7 @@ class Blog
     /**
      * Get caption
      *
-     * @return string 
+     * @return string
      */
     public function getCaption()
     {
@@ -149,6 +133,7 @@ class Blog
      * Set smallContent
      *
      * @param string $smallContent
+     *
      * @return Blog
      */
     public function setSmallContent($smallContent)
@@ -161,7 +146,7 @@ class Blog
     /**
      * Get smallContent
      *
-     * @return string 
+     * @return string
      */
     public function getSmallContent()
     {
@@ -172,6 +157,7 @@ class Blog
      * Set content
      *
      * @param string $content
+     *
      * @return Blog
      */
     public function setContent($content)
@@ -184,7 +170,7 @@ class Blog
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
     public function getContent()
     {
@@ -195,6 +181,7 @@ class Blog
      * Set published
      *
      * @param boolean $published
+     *
      * @return Blog
      */
     public function setPublished($published)
@@ -207,7 +194,7 @@ class Blog
     /**
      * Get published
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getPublished()
     {
@@ -218,6 +205,7 @@ class Blog
      * Set photo
      *
      * @param string $photo
+     *
      * @return Blog
      */
     public function setPhoto($photo)
@@ -230,7 +218,7 @@ class Blog
     /**
      * Get photo
      *
-     * @return string 
+     * @return string
      */
     public function getPhoto()
     {
@@ -241,6 +229,7 @@ class Blog
      * Set originalPhoto
      *
      * @param string $originalPhoto
+     *
      * @return Blog
      */
     public function setOriginalPhoto($originalPhoto)
@@ -253,7 +242,7 @@ class Blog
     /**
      * Get originalPhoto
      *
-     * @return string 
+     * @return string
      */
     public function getOriginalPhoto()
     {
@@ -264,6 +253,7 @@ class Blog
      * Set photoGallery
      *
      * @param array $photoGallery
+     *
      * @return Blog
      */
     public function setPhotoGallery($photoGallery)
@@ -276,33 +266,10 @@ class Blog
     /**
      * Get photoGallery
      *
-     * @return array 
+     * @return array
      */
     public function getPhotoGallery()
     {
         return $this->photoGallery;
-    }
-
-    /**
-     * Set videoGallery
-     *
-     * @param \Application\Sonata\MediaBundle\Entity\Gallery $videoGallery
-     * @return Blog
-     */
-    public function setVideoGallery(\Application\Sonata\MediaBundle\Entity\Gallery $videoGallery = null)
-    {
-        $this->videoGallery = $videoGallery;
-
-        return $this;
-    }
-
-    /**
-     * Get videoGallery
-     *
-     * @return \Application\Sonata\MediaBundle\Entity\Gallery 
-     */
-    public function getVideoGallery()
-    {
-        return $this->videoGallery;
     }
 }

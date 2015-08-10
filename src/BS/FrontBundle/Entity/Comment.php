@@ -49,10 +49,11 @@ class Comment
      */
     private $published;
 
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -63,6 +64,7 @@ class Comment
      * Set type
      *
      * @param string $type
+     *
      * @return Comment
      */
     public function setType($type)
@@ -75,7 +77,7 @@ class Comment
     /**
      * Get type
      *
-     * @return string 
+     * @return string
      */
     public function getType()
     {
@@ -83,9 +85,34 @@ class Comment
     }
 
     /**
+     * Set caption
+     *
+     * @param string $caption
+     *
+     * @return Comment
+     */
+    public function setCaption($caption)
+    {
+        $this->caption = $caption;
+
+        return $this;
+    }
+
+    /**
+     * Get caption
+     *
+     * @return string
+     */
+    public function getCaption()
+    {
+        return $this->caption;
+    }
+
+    /**
      * Set content
      *
      * @param string $content
+     *
      * @return Comment
      */
     public function setContent($content)
@@ -98,10 +125,34 @@ class Comment
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set published
+     *
+     * @param boolean $published
+     *
+     * @return Comment
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return boolean
+     */
+    public function getPublished()
+    {
+        return $this->published;
     }
 }

@@ -1,0 +1,50 @@
+<?php
+
+namespace BS\FrontBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
+/**
+ * VideoGallery
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class PhotoGallery
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="caption", type="string", length=255)
+     */
+    private $caption;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @Assert\File( maxSize="20M")
+     * @FileStore\UploadableField(mapping="photo")
+     **/
+    private $photo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Event", inversedBy="photoGallery")
+     * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
+     */
+    private $event;
+}

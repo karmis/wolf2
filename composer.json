@@ -20,26 +20,11 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
 
-        "knplabs/knp-menu-bundle": "~2.0",
         "jms/serializer-bundle": "0.13.*@dev",
-        "knplabs/knp-markdown-bundle": "~1.2.0",
-        "friendsofsymfony/comment-bundle": "2.0.*@dev",
-        "tilleuls/ckeditor-sonata-media-bundle": "dev-master",
-        "egeloen/ckeditor-bundle": "2.*",
         "knplabs/knp-paginator-bundle": "~2.4",
-        "iphp/filestore-bundle":"dev-master",
-        "comur/image-bundle": "dev-master",
-        "liip/imagine-bundle": "^1.0@dev", 
-
-        "sonata-project/core-bundle": "~2.2@dev",
-        "sonata-project/block-bundle": "~2.3",
-        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
-        "sonata-project/easy-extends-bundle": "dev-master",
-        "sonata-project/admin-bundle": "dev-master",
-        "sonata-project/user-bundle": "dev-master",
-        "sonata-project/datagrid-bundle": "*",
-        "sonata-project/media-bundle": "*",
-        "sonata-project/formatter-bundle": "*"
+        "iphp/filestore-bundle" : "@stable" ,
+        "liip/imagine-bundle": "^1.0@dev",
+        "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

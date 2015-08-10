@@ -2,24 +2,22 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: knp_menu.yml }
     - { resource: fos_user.yml }
     # - { resource: fos_comment.yml }
-    - { resource: sonata/sonata_core.yml }
-    - { resource: sonata/sonata_block.yml }
-    - { resource: sonata/sonata_doctrine_orm_admin.yml }
-    - { resource: sonata/sonata_admin.yml }
-    - { resource: sonata/sonata_user.yml }
-    - { resource: sonata/sonata_media.yml }
+    # - { resource: sonata/sonata_core.yml }
+    # - { resource: sonata/sonata_block.yml }
+    # - { resource: sonata/sonata_doctrine_orm_admin.yml }
+    # - { resource: sonata/sonata_admin.yml }
+    # - { resource: sonata/sonata_user.yml }
+    # - { resource: sonata/sonata_media.yml }
 #    - { resource: sonata_news.yml }
-    - { resource: sonata/sonata_formatter.yml }
+    # - { resource: sonata/sonata_formatter.yml }
 #    - { resource: sonata/sonata_classification.yml }
-    - { resource: sonata/sonata_notification.yml }
-    - { resource: ivory_ck_editor.yml }
-    - { resource: comur_image.yml }
+    # - { resource: sonata/sonata_notification.yml }
+    # - { resource: ivory_ck_editor.yml }
+    - { resource: iphp_filestore.yml }
     - { resource: knp_paginator.yml }
     - { resource: liip_imagine.yml }
-    - { resource: sonata_classification.yml }
 
 framework:
     #esi:             ~
@@ -77,8 +75,8 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #     path:     "%database_path%"
-        types:
-            json: Sonata\Doctrine\Types\JsonType
+        # types:
+            # json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true

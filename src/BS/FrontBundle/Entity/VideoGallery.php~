@@ -114,6 +114,30 @@ class VideoGallery
     }
 
     /**
+     * Set smallHref
+     *
+     * @param string $smallHref
+     *
+     * @return VideoGallery
+     */
+    public function setSmallHref($smallHref)
+    {
+        $this->smallHref = $smallHref;
+
+        return $this;
+    }
+
+    /**
+     * Get smallHref
+     *
+     * @return string
+     */
+    public function getSmallHref()
+    {
+        return $this->smallHref;
+    }
+
+    /**
      * Set description
      *
      * @param string $description
@@ -141,6 +165,7 @@ class VideoGallery
      * Set event
      *
      * @param \BS\FrontBundle\Entity\Event $event
+     *
      * @return VideoGallery
      */
     public function setEvent(\BS\FrontBundle\Entity\Event $event = null)
@@ -153,7 +178,7 @@ class VideoGallery
     /**
      * Get event
      *
-     * @return \BS\FrontBundle\Entity\Event 
+     * @return \BS\FrontBundle\Entity\Event
      */
     public function getEvent()
     {

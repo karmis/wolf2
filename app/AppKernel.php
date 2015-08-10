@@ -18,49 +18,16 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
            // Dep
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
-            // new FOS\RestBundle\FOSRestBundle(),
-            // new FOS\CommentBundle\FOSCommentBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new CoopTilleuls\Bundle\CKEditorSonataMediaBundle\CoopTilleulsCKEditorSonataMediaBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Iphp\FileStoreBundle\IphpFileStoreBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new JMS\TranslationBundle\JMSTranslationBundle(),
-            new Comur\ImageBundle\ComurImageBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
-
-            // Sonata
-            new Sonata\IntlBundle\SonataIntlBundle(),
-            new Sonata\FormatterBundle\SonataFormatterBundle(),
-            new Sonata\CoreBundle\SonataCoreBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            // new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            new Sonata\MediaBundle\SonataMediaBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\DatagridBundle\SonataDatagridBundle(),
-            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Sonata\NotificationBundle\SonataNotificationBundle(),
-            new Sonata\ClassificationBundle\SonataClassificationBundle(),
-//            new Sonata\NewsBundle\SonataNewsBundle(),
-
-            // App
-            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-//            new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
-            new Application\Sonata\FormatterBundle\ApplicationSonataFormatterBundle(),
-            new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
-            new Application\Comur\ImageBundle\ApplicationComurImageBundle(),
 
             // Project
             new BS\FrontBundle\BSFrontBundle(),
             new BS\VKBundle\BSVKBundle(),
+            new BS\UserBundle\BSUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
