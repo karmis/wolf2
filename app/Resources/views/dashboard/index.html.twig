@@ -1,0 +1,237 @@
+{% extends 'base.html.twig' %}
+{% block css %}
+    {% stylesheets
+    'bundles/bsadmin/vendor/select2/select2.min.css'
+    'bundles/bsadmin/vendor/jQuery-File-Upload-9.10.0/css/jquery.fileupload.css'
+    'bundles/bsadmin/vendor/jQuery-File-Upload-9.10.0/css/jquery.fileupload-ui.css'
+    'bundles/bsadmin/vendor/jquery-ui-bootstrap-jquery-ui-bootstrap-71f2e47/css/custom-theme/jquery-ui-1.10.0.custom.css'
+    'bundles/bsadmin/vendor/bootstrap/css/bootstrap.min.css'
+    'bundles/bsadmin/vendor/uploadify/uploadify.css'
+    'bundles/bsadmin/vendor/font-awesome/css/font-awesome.min.css'
+    'bundles/bsadmin/vendor/tinymce/skins/lightgray/content.min.css'
+    'bundles/bsadmin/vendor/tinymce/skins/lightgray/skin.min.css'
+    'bundles/bsadmin/css/paging-dashboard.css'
+    'bundles/bsadmin/css/sb-admin.css'
+    filter='cssrewrite' output='compiled/css/all-admin.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block js %}
+    {% javascripts
+    'bundles/bsadmin/vendor/jquery/jquery.min.js'
+    'bundles/bsadmin/vendor/jquery/jquery-migrate.min.js'
+    'bundles/bsadmin/vendor/bootstrap/js/bootstrap.min.js'
+    'bundles/bsadmin/vendor/jquery-ui-bootstrap-jquery-ui-bootstrap-71f2e47/js/jquery-ui-1.9.2.custom.min.js'
+    'bundles/bsadmin/vendor/select2/select2.min.js'
+    'bundles/bsadmin/vendor/tinymce/tinymce.min.js'
+    'bundles/bsadmin/vendor/uploadify/jquery.uploadify.min.js'
+    'bundles/bsadmin/vendor/bootstrap-validator-master/js/validator.js'
+    'bundles/bsadmin/js/ui.datepicker-ru.js'
+    'bundles/bsadmin/vendor/maskedinput/jquery.maskedinput.js'
+    'bundles/bsadmin/js/bs.utils.js'
+    'bundles/bsadmin/js/scripts-admin.js'
+    output='compiled/js/all-admin.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock js %}
+
+    {% block body_wrap %}
+
+        {% block body %}
+            <div id="wrapper">
+                {% block navbar %}
+                    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target=".navbar-ex1-collapse">
+                                <span class="sr-only"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="http://colornew.ru/" class="navbar-brand" target="_blank">ColorNew</a>
+                        </div>
+                        <!-- Top Menu Items -->
+                        <ul class="nav navbar-right top-nav">
+                            <!-- <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                                <ul class="dropdown-menu message-dropdown">
+                                    <li class="message-preview">
+                                        <a href="#">
+                                        <div class="media">
+                                            <span class="pull-left">
+                                            <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                            </span>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><strong>John Smith</strong>
+                                                </h5>
+                                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </li>
+                                    <li class="message-preview">
+                                        <a href="#">
+                                        <div class="media">
+                                            <span class="pull-left">
+                                            <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                            </span>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><strong>John Smith</strong>
+                                                </h5>
+                                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </li>
+                                    <li class="message-preview">
+                                        <a href="#">
+                                        <div class="media">
+                                            <span class="pull-left">
+                                            <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                            </span>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><strong>John Smith</strong>
+                                                </h5>
+                                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </li>
+                                    <li class="message-footer">
+                                        <a href="#">Read All New Messages</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            <!--<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                                <ul class="dropdown-menu alert-dropdown">
+                                    <li>
+                                        <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">View All</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-user"></i>
+                                    {{ app.security.getToken().getUser().getUsername() }} <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-fw fa-user"></i>
+                                            Профиль</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="{{ path('fos_user_security_logout') }}"><i
+                                                    class="fa fa-fw fa-power-off"></i> Log
+                                            Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav side-nav">
+                                <li>
+                                    <a href="{{ path('admin_main_page') }}"><i class="fa fa-fw fa-dashboard"></i> Панель
+                                        управления</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-toggle="collapse" data-target="#admin_main">
+                                        <i class="fa fa-fw fa-file"></i>
+                                        Наполнение
+                                        <i class="fa fa-fw fa-caret-down"></i>
+                                    </a>
+                                    <ul id="admin_main" class="collapse">
+                                        <li>
+                                            <a href="{{ path('admin_article') }}"><i class="fa fa-fw fa-file"></i>
+                                                Статьи</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_page') }}"><i class="fa fa-fw fa-file"></i>
+                                                Текстовые страницы</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_module') }}"><i class="fa fa-fw fa-file"></i>
+                                                Модули</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="charts.html"><i class="fa fa-fw fa-wrench"></i> Настройки</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                {% endblock %}
+                {% block page %}
+                    <div id="page-wrapper">
+                        <div class="container-fluid">
+                            <!-- Page Heading -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="page-header">
+                                        <small>
+                                            {% block page_titile %}{% endblock %}
+                                        </small>
+                                    </h1>
+                                    {% block page_breadcrumb %}
+                                        <!--
+                            <ol class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-dashboard"></i>
+                                        <a href="index.html">Dashboard</a>
+                                    </li>
+                                    <li class="active">
+                                        <i class="fa fa-file"></i> Blank Page
+                                    </li>
+                            </ol>
+            -->
+                                    {% endblock %}
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {% block page_content %}{% endblock %}
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </div>
+
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+
+    {% endblock %}
+

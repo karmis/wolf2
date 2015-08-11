@@ -1,0 +1,71 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Payment list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Fio</th>
+                <th>Organization</th>
+                <th>Email</th>
+                <th>Summ</th>
+                <th>Phone</th>
+                <th>Inn</th>
+                <th>Bik</th>
+                <th>Rs</th>
+                <th>Ogrn</th>
+                <th>Kpp</th>
+                <th>Basis</th>
+                <th>Legaladdress</th>
+                <th>Mailaddress</th>
+                <th>Created</th>
+                <th>Deleted</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('payment_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.fio }}</td>
+                <td>{{ entity.organization }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.summ }}</td>
+                <td>{{ entity.phone }}</td>
+                <td>{{ entity.inn }}</td>
+                <td>{{ entity.bik }}</td>
+                <td>{{ entity.rs }}</td>
+                <td>{{ entity.ogrn }}</td>
+                <td>{{ entity.kpp }}</td>
+                <td>{{ entity.basis }}</td>
+                <td>{{ entity.legalAddress }}</td>
+                <td>{{ entity.mailAddress }}</td>
+                <td>{% if entity.created %}{{ entity.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.deleted }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('payment_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('payment_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('payment_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

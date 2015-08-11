@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block css %}
+    {% stylesheets
+    'bundles/bsadmin/vendor/bootstrap/css/bootstrap.min.css'
+    'bundles/bsadmin/css/security-styles.css'
+    filter='cssrewrite' output='compiled/css/all-security.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block js %}
+    {% javascripts
+    'bundles/bsadmin/vendor/jquery/jquery.min.js'
+    'bundles/bsadmin/vendor/jquery/jquery-migrate.min.js'
+    'bundles/bsadmin/vendor/bootstrap/js/bootstrap.min.js'
+    output='compiled/js/all-security.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock js %}
