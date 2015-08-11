@@ -1,3 +1,10 @@
-bs_user_homepage:
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
+
+new_color_user_homepage:
     path:     /hello/{name}
-    defaults: { _controller: BSUserBundle:Default:index }
+    defaults: { _controller: NewColorUserBundle:Default:index }

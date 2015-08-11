@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Action list</h1>
+    <h1>Event list</h1>
 
     <table class="records_list">
         <thead>
@@ -11,26 +11,30 @@
                 <th>Smallcontent</th>
                 <th>Content</th>
                 <th>Published</th>
-                <th>Photogallery</th>
+                <th>Photo</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('action_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('event_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.caption }}</td>
                 <td>{{ entity.smallContent }}</td>
                 <td>{{ entity.content }}</td>
                 <td>{{ entity.published }}</td>
-                <td>{{ entity.photoGallery }}</td>
+                <td>{{ entity.photo }}</td>
+                <td>{% if entity.startDate %}{{ entity.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.endDate %}{{ entity.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('action_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('event_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('action_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('event_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -41,7 +45,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('action_new') }}">
+            <a href="{{ path('event_new') }}">
                 Create a new entry
             </a>
         </li>
