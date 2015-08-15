@@ -3,8 +3,10 @@ namespace BS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
+
 /**
- * Blog
+ * Action
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -49,12 +51,34 @@ class Action
     private $published;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\ManyToMany(targetEntity="ActionGallery", orphanRemoval=true, cascade={"persist", "remove"})
+     * @ORM\JoinTable(
+     *      name="Action2ActionGallery",
+     *      joinColumns={
+     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id")
+     *      },
+     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
+     * )
      */
-    private $photoGallery;
+    public $gallery;
+
+    public function __toString()
+    {
+        return $this->caption;
+    }
 
     public function getEntityType() {
         return "ACTION";
+    }
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->gallery = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->published = true;
     }
 
     /**
@@ -164,26 +188,36 @@ class Action
     }
 
     /**
-     * Set photoGallery
+     * Add gallery
      *
-     * @param array $photoGallery
+     * @param \BS\AdminBundle\Entity\ActionGallery $gallery
      *
      * @return Action
      */
-    public function setPhotoGallery($photoGallery)
+    public function addGallery(\BS\AdminBundle\Entity\ActionGallery $gallery)
     {
-        $this->photoGallery = $photoGallery;
+        $this->gallery[] = $gallery;
 
         return $this;
     }
 
     /**
-     * Get photoGallery
+     * Remove gallery
      *
-     * @return array
+     * @param \BS\AdminBundle\Entity\ActionGallery $gallery
      */
-    public function getPhotoGallery()
+    public function removeGallery(\BS\AdminBundle\Entity\ActionGallery $gallery)
     {
-        return $this->photoGallery;
+        $this->gallery->removeElement($gallery);
+    }
+
+    /**
+     * Get gallery
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
     }
 }

@@ -19,7 +19,20 @@ class ActionType extends AbstractType
             ->add('smallContent')
             ->add('content')
             ->add('published')
-            ->add('photoGallery')
+            ->add(
+                'gallery',
+                'collection',
+                array(
+                    'type' => new ActionGalleryType('edit'),
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'required' => false,
+                    // 'options' => array('data_class' => 'BS\AdminBundle\Entity\ActionGallery'),
+                    'by_reference' => true,
+                    'attr' => array('class' => 'gallerey_item'),
+                    'label' => ''
+                )
+            )
         ;
     }
     
@@ -38,6 +51,6 @@ class ActionType extends AbstractType
      */
     public function getName()
     {
-        return 'bs_AdminBundle_action';
+        return 'bs_adminbundle_action';
     }
 }

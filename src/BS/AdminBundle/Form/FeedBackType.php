@@ -19,6 +19,7 @@ class FeedBackType extends AbstractType
             ->add('email')
             ->add('phone')
             ->add('content')
+            ->add('isNew')
         ;
     }
     
@@ -37,6 +38,6 @@ class FeedBackType extends AbstractType
      */
     public function getName()
     {
-        return 'bs_AdminBundle_feedback';
+        return 'bs_adminbundle_feedback';
     }
 }

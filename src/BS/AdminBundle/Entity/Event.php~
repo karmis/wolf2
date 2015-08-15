@@ -3,20 +3,16 @@ namespace BS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
 
-
-// define('TMP_EVENT_UPLOAD_ROOT_DIR', __DIR__ . '/../../../../web/uploads/');
 /**
- * Blog
+ * Event
  *
  * @ORM\Table()
  * @ORM\Entity
  */
 class Event
 {
-    // const EVENT_UPLOAD_ROOT_DIR =  TMP_EVENT_UPLOAD_ROOT_DIR;
-    // const EVENT_UPLOAD_DIR = "uploads/";
-
     /**
      * @var integer
      *
@@ -55,45 +51,34 @@ class Event
     private $published;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToMany(targetEntity="EventGallery", orphanRemoval=true, cascade={"persist", "remove"})
+     * @ORM\JoinTable(
+     *      name="Event2EventGallery",
+     *      joinColumns={
+     *          @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     *      },
+     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
+     * )
      */
-    private $photo;
+    public $gallery;
 
-    /**
-     * @ORM\OneToMany(targetEntity="PhotoGallery", mappedBy="event", cascade={"all"}, orphanRemoval=true)
-     */
-    private $photoGallery;
-
-    /**
-     * @ORM\OneToMany(targetEntity="VideoGallery", mappedBy="event", cascade={"all"}, orphanRemoval=true)
-     */
-    private $videoGallery;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="startDate", type="date")
-     */
-    private $startDate;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="endDate", type="date", nullable=true)
-     */
-    private $endDate;
+    public function __toString()
+    {
+        return $this->caption;
+    }
 
     public function getEntityType() {
         return "EVENT";
     }
 
+    
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->photoGallery = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->videoGallery = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->gallery = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->published = true;
     }
 
     /**
@@ -203,142 +188,36 @@ class Event
     }
 
     /**
-     * Set photo
+     * Add gallery
      *
-     * @param string $photo
+     * @param \BS\AdminBundle\Entity\EventGallery $gallery
      *
      * @return Event
      */
-    public function setPhoto($photo)
+    public function addGallery(\BS\AdminBundle\Entity\EventGallery $gallery)
     {
-        $this->photo = $photo;
+        $this->gallery[] = $gallery;
 
         return $this;
     }
 
     /**
-     * Get photo
+     * Remove gallery
      *
-     * @return string
+     * @param \BS\AdminBundle\Entity\EventGallery $gallery
      */
-    public function getPhoto()
+    public function removeGallery(\BS\AdminBundle\Entity\EventGallery $gallery)
     {
-        return $this->photo;
+        $this->gallery->removeElement($gallery);
     }
 
     /**
-     * Set startDate
-     *
-     * @param \DateTime $startDate
-     *
-     * @return Event
-     */
-    public function setStartDate($startDate)
-    {
-        $this->startDate = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * Get startDate
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->startDate;
-    }
-
-    /**
-     * Set endDate
-     *
-     * @param \DateTime $endDate
-     *
-     * @return Event
-     */
-    public function setEndDate($endDate)
-    {
-        $this->endDate = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * Get endDate
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->endDate;
-    }
-
-    /**
-     * Add photoGallery
-     *
-     * @param \BS\FrontBundle\Entity\PhotoGallery $photoGallery
-     *
-     * @return Event
-     */
-    public function addPhotoGallery(\BS\FrontBundle\Entity\PhotoGallery $photoGallery)
-    {
-        $this->photoGallery[] = $photoGallery;
-
-        return $this;
-    }
-
-    /**
-     * Remove photoGallery
-     *
-     * @param \BS\FrontBundle\Entity\PhotoGallery $photoGallery
-     */
-    public function removePhotoGallery(\BS\FrontBundle\Entity\PhotoGallery $photoGallery)
-    {
-        $this->photoGallery->removeElement($photoGallery);
-    }
-
-    /**
-     * Get photoGallery
+     * Get gallery
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPhotoGallery()
+    public function getGallery()
     {
-        return $this->photoGallery;
-    }
-
-    /**
-     * Add videoGallery
-     *
-     * @param \BS\FrontBundle\Entity\VideoGallery $videoGallery
-     *
-     * @return Event
-     */
-    public function addVideoGallery(\BS\FrontBundle\Entity\VideoGallery $videoGallery)
-    {
-        $this->videoGallery[] = $videoGallery;
-
-        return $this;
-    }
-
-    /**
-     * Remove videoGallery
-     *
-     * @param \BS\FrontBundle\Entity\VideoGallery $videoGallery
-     */
-    public function removeVideoGallery(\BS\FrontBundle\Entity\VideoGallery $videoGallery)
-    {
-        $this->videoGallery->removeElement($videoGallery);
-    }
-
-    /**
-     * Get videoGallery
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getVideoGallery()
-    {
-        return $this->videoGallery;
+        return $this->gallery;
     }
 }

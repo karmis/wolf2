@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use BS\AdminBundle\Entity\Event;
+use BS\AdminBundle\Form\EventType;
 
 /**
  * Event controller.
@@ -15,29 +17,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
  */
 class EventController extends Controller
 {
-    private $entityName = 'Event';
     private $routePrefix = 'admin_event';
-    private $entity = null;
-    private $form = null;
-
-    public function __construct()
-    {
-        $this->entity = new  \BS\AdminBundle\Entity\Event();
-        $this->form = new \BS\AdminBundle\Form\EventType();
-    }
 
     /**
-     * Lists all entities.
+     * Lists all Event entities.
      *
      * @Route("/", name="admin_event")
      * @Method("GET")
-     * @Template("BSAdminBundle:Event:index.html.twig")
+     * @Template()
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('BSAdminBundle:' . $this->entityName)->findAll();
+        $entities = $em->getRepository('BSAdminBundle:Event')->findAll();
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -56,15 +49,15 @@ class EventController extends Controller
         );
     }
     /**
-     * Creates a new entity.
+     * Creates a new Event entity.
      *
-     * @Route("/", name="admin_event_create")
+     * @Route("/create", name="admin_event_create")
      * @Method("POST")
      * @Template("BSAdminBundle:Event:item.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = $this->entity;
+        $entity = new Event();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -84,16 +77,16 @@ class EventController extends Controller
     }
 
     /**
-     * Creates a form to create a entity.
+     * Creates a form to create a Event entity.
      *
-     * @param Action $entity The entity
+     * @param Event $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm($entity)
+    private function createCreateForm(Event $entity)
     {
-        $form = $this->createForm($this->form, $entity, array(
-            'action' => $this->generateUrl($this->routePrefix . '_create'),
+        $form = $this->createForm(new EventType(), $entity, array(
+            'action' => $this->generateUrl('admin_event_create'),
             'method' => 'POST',
         ));
 
@@ -101,7 +94,7 @@ class EventController extends Controller
     }
 
     /**
-     * Displays a form to create a new entity.
+     * Displays a form to create a new Event entity.
      *
      * @Route("/new", name="admin_event_new")
      * @Method("GET")
@@ -109,7 +102,7 @@ class EventController extends Controller
      */
     public function newAction()
     {
-        $entity = $this->entity;
+        $entity = new Event();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -120,34 +113,9 @@ class EventController extends Controller
     }
 
     /**
-     * Finds and displays a entity.
+     * Displays a form to edit an existing Event entity.
      *
-     * @Route("/{id}", name="admin_event_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
-     * Displays a form to edit an existing entity.
-     *
-     * @Route("/{id}/edit", name="admin_event_edit")
+     * @Route("/edit/{id}", name="admin_event_edit")
      * @Method("GET")
      * @Template("BSAdminBundle:Event:item.html.twig")
      */
@@ -155,10 +123,10 @@ class EventController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+        $entity = $em->getRepository('BSAdminBundle:Event')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
+            throw $this->createNotFoundException('Unable to find Event entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -173,25 +141,25 @@ class EventController extends Controller
     }
 
     /**
-    * Creates a form to edit a entity.
+    * Creates a form to edit a Event entity.
     *
-    * @param Action $entity The entity
+    * @param Event $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm($entity)
+    private function createEditForm(Event $entity)
     {
-        $form = $this->createForm($this->form, $entity, array(
-            'action' => $this->generateUrl($this->routePrefix . '_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new EventType(), $entity, array(
+            'action' => $this->generateUrl('admin_event_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
         return $form;
     }
     /**
-     * Edits an existing entity.
+     * Edits an existing Event entity.
      *
-     * @Route("/{id}", name="admin_event_update")
+     * @Route("/update/{id}", name="admin_event_update")
      * @Method("PUT")
      * @Template("BSAdminBundle:Event:item.html.twig")
      */
@@ -199,10 +167,10 @@ class EventController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+        $entity = $em->getRepository('BSAdminBundle:Event')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
+            throw $this->createNotFoundException('Unable to find Event entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -223,9 +191,9 @@ class EventController extends Controller
         );
     }
     /**
-     * Deletes a entity.
+     * Deletes a Event entity.
      *
-     * @Route("/{id}", name="admin_event_delete")
+     * @Route("/delete/{id}", name="admin_event_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -235,10 +203,10 @@ class EventController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+            $entity = $em->getRepository('BSAdminBundle:Event')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find entity.');
+                throw $this->createNotFoundException('Unable to find Event entity.');
             }
 
             $em->remove($entity);
@@ -249,7 +217,7 @@ class EventController extends Controller
     }
 
     /**
-     * Creates a form to delete a entity by id.
+     * Creates a form to delete a Event entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -258,7 +226,7 @@ class EventController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl($this->routePrefix . '_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_event_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

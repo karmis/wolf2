@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use BS\AdminBundle\Entity\Blog;
+use BS\AdminBundle\Form\BlogType;
 
 /**
  * Blog controller.
@@ -15,29 +17,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
  */
 class BlogController extends Controller
 {
-    private $entityName = 'Blog';
     private $routePrefix = 'admin_blog';
-    private $entity = null;
-    private $form = null;
-
-    public function __construct()
-    {
-        $this->entity = new  \BS\AdminBundle\Entity\Blog();
-        $this->form = new \BS\AdminBundle\Form\BlogType();
-    }
 
     /**
-     * Lists all entities.
+     * Lists all Blog entities.
      *
      * @Route("/", name="admin_blog")
      * @Method("GET")
-     * @Template("BSAdminBundle:Blog:index.html.twig")
+     * @Template()
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('BSAdminBundle:' . $this->entityName)->findAll();
+        $entities = $em->getRepository('BSAdminBundle:Blog')->findAll();
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -56,15 +49,15 @@ class BlogController extends Controller
         );
     }
     /**
-     * Creates a new entity.
+     * Creates a new Blog entity.
      *
-     * @Route("/", name="admin_blog_create")
+     * @Route("/create", name="admin_blog_create")
      * @Method("POST")
-     * @Template("BSAdminBundle:Blog:item.html.twig")
+     * @Template("BSAdminBundle:Blog:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = $this->entity;
+        $entity = new Blog();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -84,16 +77,16 @@ class BlogController extends Controller
     }
 
     /**
-     * Creates a form to create a entity.
+     * Creates a form to create a Blog entity.
      *
-     * @param Action $entity The entity
+     * @param Blog $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm($entity)
+    private function createCreateForm(Blog $entity)
     {
-        $form = $this->createForm($this->form, $entity, array(
-            'action' => $this->generateUrl($this->routePrefix . '_create'),
+        $form = $this->createForm(new BlogType(), $entity, array(
+            'action' => $this->generateUrl('admin_blog_create'),
             'method' => 'POST',
         ));
 
@@ -101,7 +94,7 @@ class BlogController extends Controller
     }
 
     /**
-     * Displays a form to create a new entity.
+     * Displays a form to create a new Blog entity.
      *
      * @Route("/new", name="admin_blog_new")
      * @Method("GET")
@@ -109,7 +102,7 @@ class BlogController extends Controller
      */
     public function newAction()
     {
-        $entity = $this->entity;
+        $entity = new Blog();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -120,34 +113,9 @@ class BlogController extends Controller
     }
 
     /**
-     * Finds and displays a entity.
+     * Displays a form to edit an existing Blog entity.
      *
-     * @Route("/{id}", name="admin_blog_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
-     * Displays a form to edit an existing entity.
-     *
-     * @Route("/{id}/edit", name="admin_blog_edit")
+     * @Route("/edit/{id}", name="admin_blog_edit")
      * @Method("GET")
      * @Template("BSAdminBundle:Blog:item.html.twig")
      */
@@ -155,10 +123,10 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+        $entity = $em->getRepository('BSAdminBundle:Blog')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
+            throw $this->createNotFoundException('Unable to find Blog entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -173,25 +141,25 @@ class BlogController extends Controller
     }
 
     /**
-    * Creates a form to edit a entity.
+    * Creates a form to edit a Blog entity.
     *
-    * @param Action $entity The entity
+    * @param Blog $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm($entity)
+    private function createEditForm(Blog $entity)
     {
-        $form = $this->createForm($this->form, $entity, array(
-            'action' => $this->generateUrl($this->routePrefix . '_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new BlogType(), $entity, array(
+            'action' => $this->generateUrl('admin_blog_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
         return $form;
     }
     /**
-     * Edits an existing entity.
+     * Edits an existing Blog entity.
      *
-     * @Route("/{id}", name="admin_blog_update")
+     * @Route("/update/{id}", name="admin_blog_update")
      * @Method("PUT")
      * @Template("BSAdminBundle:Blog:item.html.twig")
      */
@@ -199,10 +167,10 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+        $entity = $em->getRepository('BSAdminBundle:Blog')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
+            throw $this->createNotFoundException('Unable to find Blog entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -223,9 +191,9 @@ class BlogController extends Controller
         );
     }
     /**
-     * Deletes a entity.
+     * Deletes a Blog entity.
      *
-     * @Route("/{id}", name="admin_blog_delete")
+     * @Route("/delete/{id}", name="admin_blog_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -235,10 +203,10 @@ class BlogController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+            $entity = $em->getRepository('BSAdminBundle:Blog')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find entity.');
+                throw $this->createNotFoundException('Unable to find Blog entity.');
             }
 
             $em->remove($entity);
@@ -249,7 +217,7 @@ class BlogController extends Controller
     }
 
     /**
-     * Creates a form to delete a Action entity by id.
+     * Creates a form to delete a Blog entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -258,7 +226,7 @@ class BlogController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl($this->routePrefix . '_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_blog_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

@@ -19,9 +19,20 @@ class BlogType extends AbstractType
             ->add('smallContent')
             ->add('content')
             ->add('published')
-            ->add('photo')
-            ->add('originalPhoto')
-            ->add('photoGallery')
+            ->add(
+                'gallery',
+                'collection',
+                array(
+                    'type' => new BlogGalleryType('edit'),
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'required' => false,
+                    // 'options' => array('data_class' => 'BS\AdminBundle\Entity\ActionGallery'),
+                    'by_reference' => true,
+                    'attr' => array('class' => 'gallerey_item'),
+                    'label' => ''
+                )
+            )
         ;
     }
     
@@ -40,6 +51,6 @@ class BlogType extends AbstractType
      */
     public function getName()
     {
-        return 'bs_AdminBundle_blog';
+        return 'bs_adminbundle_blog';
     }
 }

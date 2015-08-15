@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/tabs_jquery.js"></script>
+	<script src="js/calc.js"></script>
+</head>
+<body onload="podschet();" onclick="podschet();">
+
+	<div class="korpus">
+		<input type="radio" name="odin" checked="checked" id="vkl1"/><label for="vkl1"><a>САЙТ-ВИЗИТКА</a></label>
+		<input type="radio" name="odin" id="vkl2"/><label for="vkl2"><a>ИНТЕРНЕТ-МАГАЗИН</a></label>
+		<input type="radio" name="odin" id="vkl3"/><label for="vkl3"><a>КОРПОРАТИВНЫЙ САЙТ</a></label>
+		<input type="radio" name="odin" id="vkl4"/><label for="vkl4"><a>LANDING-PAGE</a></label>
+		<div>
+				<form name="site_vizitka" action="form_processing.php" method="post">
+
+				  	<p class="zagolovok_h1">Специальное предложение для клиентов</p>
+
+				  	<img src="image/dizain_logo.png" alt=""><p class="zagolovok_h2">Дизайн сайта</p>
+					<div class="radio"><input type="radio" name="dizayn" value="gotoviy" id="gotoviy" checked><label for="gotoviy">Готовый</label></div>
+					<div class="radio"><input type="radio" name="dizayn" value="tipovoy" id="tipovoy"><label for="tipovoy">Типовой</label></div>
+					<div class="radio"><input type="radio" name="dizayn" value="excluzivniy" id="excluzivniy"><label for="excluzivniy">Эксклюзивный</label></div>
+					<div class="checkbox"><input type="checkbox" name="razrabotka_logotipa" id="razrabotka_logotipa" checked=""><label for="razrabotka_logotipa">Разработка логотипа</label></div>
+					<div class="checkbox"><input type="checkbox" name="razraboka_bannerov" id="razraboka_bannerov"><label for="razraboka_bannerov">Разработка баннеров для слайдшоу</label><input type="text" id="k" value="0"> шт.</div>
+
+					<img src="image/verstka_logo.png" alt=""><p class="zagolovok_h2">Вёрстка сайта</p>
+
+					<div class="radio"><input type="radio" name="verstka" value="standart" id="standart" checked><label for="standart">Стандарт</label></div>
+					<div class="radio"><input type="radio" name="verstka" value="adaptivniy" id="adaptivniy"><label for="adaptivniy">Стандарт + мобильные и планшеты</label></div>
+					<div class="checkbox"><input type="checkbox" name="ie" id="ie"><label for="ie">Оптимизация под старые браузеры</label> </div>
+
+					<input type="checkbox" id="checkbox_spoyler"><label for="checkbox_spoyler" class="zagolovok_h2">Программирование</label>
+
+					<div id="spoyler">
+						<ul>
+							<li>
+								<div class="checkbox"><input type="checkbox" name="forma_otpravki_soobscheniy" id="forma_otpravki_soobscheniy"><label for="forma_otpravki_soobscheniy">Форма отправки сообщений</label></div>
+										<div class="item" style="top: 510px;">
+						                 <img src="image/1.png" />
+						                 <h3>Форма отправки сообщений</h3>
+						                 <span class="price">Цена: 990 руб.</span>
+						                 <div style="clear: right"></div>
+						                 <p class="opisanie">
+						                     Необходимость размещения на сайте формы обратной связи очевидна. Форма обратной связи позволяет вам общаться с посетителями, вести сбор необходимой информации, а также организовывать заказ товаров или услуг.
+						                 </p>
+						                 <p class="opisanie">
+						                     Мы предлагаем систему обратной связи на основе электронной почты. Сообщения, написанные в форме обратной связи, будут поступать на адрес электронной почты, который вы укажете.
+						                 </p>
+						             	</div>
+							</li>
+							<li>
+								<div class="checkbox"><input type="checkbox" name="online_konsultant" id="online_konsultant"><label for="online_konsultant">Онлайн-консультант</label></div>
+										<div class="item" style="top: 540px;">
+									     <img src="image/online.jpg" />
+									     <h3>Онлайн-консультант</h3>
+									     <span class="price">Цена: 1 290 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Онлайн-консультант – модуль, который позволяет вам общаться с вашими посетителями прямо через сайт. Такой диалог будет возможен, только когда посетитель нажмет на кнопку диалога. Онлайн-консультант, очень удобная форма общения еще потому, что по переписке можно выяснить многое из того, что клиент не решился бы спросить при звонке.
+									     </p>
+									     <p class="opisanie">
+									         Онлайн-консультант — незаменимая вещь для крупных интернет-магазинов и сайтов, продающих товары или услуги премимум- и VIP-класса.
+									     </p>
+									 	</div>
+							</li>
+							<li>
+								<div class="checkbox"><input type="checkbox" name="online_kalkulyator_uslug" id="online_kalkulyator_uslug"><label for="online_kalkulyator_uslug">Онлайн-калькулятор услуг</label></div>
+										<div class="item" style="top: 570px;">
+									     <img src="" />
+									     <h3>Онлайн-калькулятор услуг</h3>
+									     <span class="price">Цена: руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         
+									     </p>
+									     <p class="opisanie">
+									         
+									     </p>
+									 	</div>
+							</li>
+							<li>
+								<div class="checkbox"><input type="checkbox" name="slayder" id="slayder"><label for="slayder">Слайдер</label></div>
+										<div class="item" style="top: 600px;">
+									     <img src="image/Слайдер.png" />
+									     <h3>Слайдер</h3>
+									     <span class="price">Цена:1 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Слайдер – элемент веб дизайна, созданный для того, чтобы привлечь внимание посетителей к важной информации. Как правило слайдеры можно прокручивать, это осуществляется пользователем или автоматически. Если вы хотите оригинально преподать посетителю вашего сайта важный контент, особенно если это акции и предложения, то лучше это сделать с помощью слайдера.
+									     </p>
+										 </div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="karusel" id="karusel"><label for="karusel">Карусель</label></div>
+										<div class="item" style="top: 630px;">
+									     <img src="image/карусель.jpg" />
+									     <h3>Карусель</h3>
+									     <span class="price">Цена: 1 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+												Карусель, как и слайдер, служит для отображения информации, которая находится в прокручиваемых блоках. В отличие от слайдера, в карусели выводится несколько маленьких блоков, при нажатии на который он увеличивается. Информацию в карусели, можно прокручивать так же, как и в слайдере, ручном или автоматическом режиме.
+									     </p>
+									 	</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="akkordeon" id="akkordeon"><label for="akkordeon">Аккордеон</label></div>
+										<div class="item" style="top: 660px;">
+									     <img src="image/аккардион.png" />
+									     <h3>Аккордеон</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+											Аккордеон представляет собой вертикальные блоки, раскрывающиеся по клику. В блоках аккордеона может быть размещена как графическая, так и текстовая информация. Принцип работы аккордеона заключается в том, чтобы заинтересовать пользователя, так как все блоки скрыты, кроме одного. Когда пользователь раскрывает следующий блок аккордеона, то предыдущий скрывается.
+									     </p>
+									 	</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="vkladki_tabi" id="vkladki_tabi"><label for="vkladki_tabi">Вкладки-табы</label></div>
+										<div class="item" style="top: 690px;">
+									     <img src="image/табы.jpg" />
+									     <h3>Вкладки-табы</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+											Вкладки-табы, еще один элемент оформления информации на вашем сайте. Вкладки-табы, представляют собой закладки с названиями тематических разделов. Щёлкнув на такую закладку мы перейдем уже  на ее полный вид и нам отобразиться информация. Информация в таком элементе как правило отображается в статичном блоке. Вкладки-табы при должном исполнении, могут стать оригинальным решением для вашего сайта.
+									     </p>
+									 	</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="vopros_otvet" id="vopros_otvet"><label for="vopros_otvet">Вопрос-ответ</label></div>
+										<div class="item" style="top: 720px;">
+									     <img src="image/вопрос-ответ.jpg" />
+									     <h3>Вопрос-ответ</h3>
+									     <span class="price">Цена: 1 490 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+											Модуль вопрос-ответ – хорошее решение для сайтов, когда предполагаются диалоги с посетителями, например консультация юриста онлайн. Такой модуль очень хороший способ не только донести информацию, но и помочь вашему посетителю, который потом непременно вернется. Обычно модуль вопрос-ответ состоит из двух частей, таких как текст вопросов и ответов и форма обратной связи, которая позволит задать собственный вопрос.
+									     </p>
+										</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="lenta_novostey" id="lenta_novostey" checked><label for="lenta_novostey">Лента новостей</label></div>
+										<div class="item" style="top: 750px;">
+									     <img src="image/новости.jpg" />
+									     <h3>Лента новостей</h3>
+									     <span class="price">Цена: 0 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Планируете разместить на сайте новостную ленту? Этот модуль создан как раз для того, чтобы она выглядела красиво и легко изменялась. Всё что вам нужно - это просто добавить новость: модуль сам уберёт одну из старых с главной и поставит сверху свежую, сформирует анонсы и расставит ссылки на полные тексты, если это нужно.
+									     </p>
+									     <p class="opisanie">
+									         Правильно организованные новости помогают сайту в поисковом продвижении: мы рекомендуем этот модуль для любых коммерческих ресурсов.
+									     </p>
+									     <p class="opisanie">
+									         Сами новости могут выводиться как на специально предназначенной для этого странице, так и на главной или в боковой колонке всех страниц сайта.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="odnourovnevaya_fotogalereya" id="odnourovnevaya_fotogalereya"><label for="odnourovnevaya_fotogalereya">Одноуровневая фотогаллерея</label></div>
+										<div class="item" style="top: 780px;">
+									     <img src="" />
+									     <h3>Одноуровневая фотогаллерея</h3>
+									     <span class="price">Цена: руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         
+									     </p>
+									     <p class="opisanie">
+									         
+									     </p>
+									     <p class="opisanie">
+									         
+									     </p>
+										</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="mnogourovnevaya_fotogalereya" id="mnogourovnevaya_fotogalereya"><label for="mnogourovnevaya_fotogalereya">Многоуровневая фотогаллерея</label></div>
+										<div class="item" style="top: 810px;">
+									     <img src="" />
+									     <h3>Многоуровневая фотогаллерея</h3>
+									     <span class="price">Цена: руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         
+									     </p>
+									     <p class="opisanie">
+									         
+									     </p>
+									     <p class="opisanie">
+									         
+									     </p>
+									 	</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="poisk_po_saitu" id="poisk_po_saitu"><label for="poisk_po_saitu">Поиск по сайту</label></div>
+										 <div class="item" style="top: 840px;">
+									     <img src="image/search.jpg" />
+									     <h3>Поиск по сайту</h3>
+									     <span class="price">Цена: 1 490 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Поиск по сайту – очень удобный модуль, когда нужно найти конкретную информацию, а сайт ею переполнен.</p>
+									         <p>Данный модуль актуален не только для крупных информационный порталов, но и для интернет – магазинов. 
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="specpredlogheniya" id="specpredlogheniya"><label for="specpredlogheniya">Спецпредложения</label></div>
+										<div class="item" style="top: 870px;">
+									     <img src="image/спецпредложения.jpg" />
+									     <h3>Специальные предложения</h3>
+									     <span class="price">Цена: 1 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Специальные предложения – устанавливаются на сайте для привлечения внимания к акциям, действующим в настоящий момент. Данная функция очень полезна, так как вы сможете легко оповещать всех посетителей о наиболее важных событиях вашего  сайта.
+									     </p>
+									 	</div>
+							</li>
+							<li>
+								<div class="checkbox"><input type="checkbox" name="multiyazichnost" id="multiyazichnost"><label for="multiyazichnost">Мультиязычность</label></div>
+										<div class="item" style="top: 900px;">
+									     <img src="image/мультиязычность.jpg" />
+									     <h3>Мультиязычность</h3>
+									     <span class="price">Цена: 2 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Мультиязычность – данный модуль вам пригодится, если ваша работа заключается не только на территории России. Суть мультиязычности заключается в том, что весь сайт дублируется на другом или нескольких языка. 
+									     </p>
+										</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="forum" id="forum"><label for="forum">Форум</label></div>
+										<div class="item" style="top: 930px;">
+									     <img src="image/phpbb.png" />
+									     <h3>Форум</h3>
+									     <span class="price">Цена: 3 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Форум – место для общения ваших посетителей. Вы, в лице администратора создаете разделы и общаетесь с пользователями, отвечая на интересующие их вопросы (система «Вопрос – ответ»). В качестве администратора вы имеете право на редактирование и удаление сообщений и тем. Хороший тематический форум – это одно из наиболее эффективных средств для удержания и привлечения аудитории. Форум так же может работать, как доска объявлений или для проведения опросов и голосований. Форум, это один из наиболее мощных инструментов маркетинга.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="kommentarii_k_stranice" id="kommentarii_k_stranice"><label for="kommentarii_k_stranice">Комментарии к странице</label></div>
+										<div class="item" style="top: 960px;">
+									     <img src="image/коментарии.jpg" />
+									     <h3>Комментарии к странице</h3>
+									     <span class="price">Цена: 1 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Комментарии к странице – модуль, позволяющий пользователям оставлять комментарии к выбранной странице или элементу сайта. Отлично подходит интернет магазинам для обсуждения товаров и услуг, или для обсуждения какой-либо информации на порталах. Используя данный модуль, вы получите максимально удобную обратную связь с вашими посетителями.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="obratniy_zvonok" id="obratniy_zvonok"><label for="obratniy_zvonok">Обратный звонок</label></div>
+										<div class="item" style="top: 990px;">
+									     <img src="image/zv_obr.png" />
+									     <h3>Обратный звонок</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Обратный звонок – очень полезная функция для вашего сайта. Человек посетивший вас сайт, может оставить заявку, чтобы ему перезвонили в любое время дня и ночи. Обратный звонок является одним из самых незаменимых вещей для интернет – магазинов, так как люди из разных часовых поясов заходят в разное время.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="katalog_tovarov_i_uslug" id="katalog_tovarov_i_uslug"><label for="katalog_tovarov_i_uslug">Каталог товаров и услуг</label></div>
+										<div class="item" style="top: 1020px;">
+									     <img src="image/Каталог товаров.jpg" />
+									     <h3>Каталог товаров или услуг</h3>
+									     <span class="price">Цена: 6 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Каталог товаров – размещается на сайте не только для отображения, но и для эффективного управления товарами. С данным модулем, Вам будет легко и просто загружать новые и удалять более не актуальные товары.</p> 
+									    <p class="opisanie">
+									         Каталог товаров позволит вам загружать новые страницы пакетно и полуавтоматически их обрабатывать. Вы просто указываете параметры товара и прикрепляете его фото или картинку, а система управления делает все остальное.
+									     </p>
+									 	</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="foto_v_laytbokse" id="foto_v_laytbokse"><label for="foto_v_laytbokse">Фото в лайтбоксе</label></div>
+										<div class="item" style="top: 1050px;">
+									     <img src="image/Фото в лайтбоксе.jpg" />
+									     <h3>Фото в лайтбоксе</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Фото в лайтбоксе – данный модуль служит для того, чтобы изображение показывалось прямо на текущей странице поверх всего, после просмотра, картинку можно закрыть и вернуться к просмотру текущей страницы. Отлично сочетается в совокупности с фотогалереей.
+									     </p>
+										</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="blog" id="blog"><label for="blog">Блог</label></div>
+										<div class="item" style="top: 1080px;">
+									     <h3>Блог</h3>
+									     <span class="price">Цена: 4 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Блог – служит для размещения информации, как текстовой, графической или смешанной. Информация в блоге, размещается в виде статей. Каждая статья имеет свою ленту комментариев под страницей. Блог отлично подходит тем, кто хочет организовать новостную ленту и информировать пользователей сайта о грядущих акциях или новинках.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="priem_plateghey_na_saite" id="priem_plateghey_na_saite"><label for="priem_plateghey_na_saite">Приём платежей на сайте</label></div>
+										<div class="item" style="top: 1110px;">
+									     <img src="image/priem_platezei_na_saite.jpg" />
+									     <h3>Прием платежей</h3>
+									     <span class="price">Цена: от 4 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Прием платежей – без данного модуля не обходится ни один интернет-магазин. Автоматический прием оплаты, это то, что делает обычный каталог, интернет-магазином. С помощью данного модуля, оплата товаров Вашего магазина становится простой и легкой.  После выбора способа оплаты, Ваш клиент попадает на защищенный сайт для совершения сделки(транзакции), затем он возвращается к Вам. Данные об оплате автоматически добавляются в заказ.
+									     </p>
+									 	</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="zaschita_ot_kopirovaniya" id="zaschita_ot_kopirovaniya"><label for="zaschita_ot_kopirovaniya">Защита от копирования</label></div>
+										<div class="item" style="top: 1140px;">
+									     <img src="image/защита.jpg" />
+									     <h3>Защита от копирования</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Защита от копирования – Как следует из названия, данный модуль позволяет защитить ваши тексты и изображения от копирования. Смело ставьте, если вы уже сталкивались с подобными происками ваших конкурентов.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="knopka_naverh" id="knopka_naverh" checked><label for="knopka_naverh">Кнопка "наверх"</label></div>
+										<div class="item" style="top: 1170px;">
+									     <img src="image/вверх.jpg" />
+									     <h3>Кнопка "Наверх"</h3>
+									     <span class="price">Цена: 0 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Кнопка «Наверх» - при нажатии позволяет попасть на самый верх просматриваемой страницы. Очень удобна, если страница или страницы вашего ресурса, длинные. Кнопка «Наверх» поможет быстро и удобно возвращаться в шапку Вашего сайта.
+									     </p>
+										</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="shema_proezda" id="shema_proezda"><label for="shema_proezda">Карта, схема проезда</label></div>
+										<div class="item" style="top: 1200px;">
+									     <img src="image/карта.jpg" />
+									     <h3>Карта, схема проезда</h3>
+									     <span class="price">Цена: 490 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Схема проезда позволит Вашим клиентам найти Вас быстрее!
+									     </p>
+										</div>
+							</li>
+
+
+								<p class="zagolovok_h2">Связь с соц.сетями</p>
+
+							<li>
+								<div class="checkbox"><input type="checkbox" name="iconci_soc_podelitsya" id="iconci_soc_podelitsya"><label for="iconci_soc_podelitsya">Иконки соц.сетей "поделиться"</label></div>
+										<div class="item" style="top: 1282px;">
+									     <img src="image/поделиться.jpg" />
+									     <h3>Иконки соц.сетей "Поделиться"</h3>
+									     <span class="price">Цена: 490 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Иконки соц. сетей «Поделиться» - позволяют пользователям, делиться информацией со страниц вашего сайта. Посетитель просто «щелкает» на иконку с нужной ему соц. сетью и отправляет информацию к себе на страницу. Далее он может делиться ей с другими пользователями соц. сети.
+									     </p>
+										</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="kommentarii_soc" id="kommentarii_soc"><label for="kommentarii_soc">Комментарии соц.сетей к странице</label></div>
+										<div class="item" style="top: 1312px;">
+									     <img src="image/коментарии соц.jpg" />
+									     <h3>Комментарии соц. сетей</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Комментарии соц. Сетей – один из самых простых способов для комментариев информации на вашем сайте. Человеку, пришедшему на ваш сайт не нужно регистрироваться, так как данный модуль использует регистрацию из соц. сети Вконтакте. Комментарии, оставленные пользователями, могут быть транслированы в данную соц. сеть со ссылкой на вашу страницу.
+									     </p>
+										</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="iconci_soc_mne_nravitsa" id="iconci_soc_mne_nravitsa"><label for="iconci_soc_mne_nravitsa">Иконки соц.сетей "мне нравиться"</label></div>
+										<div class="item" style="top: 1342px;">
+									     <img src="image/like.jpg" />
+									     <h3>Иконки соц.сетей "Мне нравится"</h3>
+									     <span class="price">Цена: 490 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Иконки соц.сетей "Мне нравится" – добавляет на Ваш сайт такой функциональный виджет, как «Мне нравится». Пользователь, нажавший данную кнопку, подчеркивает, что материал, который он прочитал или увидел, ему понравился. 
+									     </p>
+										</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="golosovanie_soc" id="golosovanie_soc"><label for="golosovanie_soc">Голосование соц.сетей</label></div>
+										<div class="item" style="top: 1372px;">
+									     <img src="image/голосования соц сети.jpg" />
+									     <h3>Голосование в соц.сетях</h3>
+									     <span class="price">Цена: 990 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Голосование в соц. сетях – один из самых простых способов для голосования на вашем сайте. Человеку, пришедшему на ваш сайт не нужно регистрироваться, так как данный модуль использует регистрацию из соц. сети Вконтакте. Голоса, оставленные пользователями, могут быть транслированы в данную соц. сеть со ссылкой на вашу страницу.
+									     </p>
+									 	</div>
+							</li>	
+							<li>
+								<div class="checkbox"><input type="checkbox" name="plagin_soc" id="plagin_soc"><label for="plagin_soc">Плагин соц.сетей</label></div>
+										<div class="item" style="top: 1402px;">
+									     <img src="image/плагин соц сети.jpg" />
+									     <h3>Плагин для соц.сетей - группы, сообщества</h3>
+									     <span class="price">Цена: 490 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Материал готовится к публикации
+									     </p>
+										</div>
+							</li>
+							<li>	
+								<div class="checkbox"><input type="checkbox" name="paket_moduley_soc" id="paket_moduley_soc"><label for="paket_moduley_soc">Пакет модулей соц.сетей (все модули)</label></div>
+										<div class="item" style="top: 1432px;">
+									     <h3>Пакет модулей соц.сетей </h3>
+									     <span class="price">Цена: 1 323 руб.</span>
+									     <div style="clear: right"></div>
+									     <p class="opisanie">
+									         Модули соц сетей - "поделиться", "мне нравится", плагин групп и сообществ)
+									     </p>
+									 	</div>
+							</li>
+						</ul>
+					</div>
+
+					
+					<div class="forma_zakaza">
+						<p id="itogo">Итого:  <span id="cena" name="cena"></span> руб.</p>
+						<div class="checkbox_skidka"><input type="checkbox" name="checkbox_skidka" id="checkbox_skidka" checked><label for="checkbox_skidka">СДЕЛАТЬ СКИДКУ <span id="skidka" name="skidka"></span>%</label></div>
+						<p id="pri_zakaze_prodvigheniya">при заказе продвижения</p>
+						<p id="zakazat_pryamo_seychas"></p>
+						<input type="text" name="name" placeholder="Ваше имя" required>
+						<br>
+						<input type="email" name="email"  placeholder="Ваша электронная почта" required>
+						<br>
+						<input type="tel" name="tel"  placeholder="Телефон" required>
+						<br>
+						<input type="submit" name="submit" id="submit" value="ЗАКАЗАТЬ СЕЙЧАС">
+					</div>
+
+
+				     
+				</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<div>вторая вкладка</div>
+		<div>третья вкладка</div>
+		<div>четвёртая вкладка</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+</body>
+</html>

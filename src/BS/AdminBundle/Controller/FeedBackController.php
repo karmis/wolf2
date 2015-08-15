@@ -11,35 +11,26 @@ use BS\AdminBundle\Entity\FeedBack;
 use BS\AdminBundle\Form\FeedBackType;
 
 /**
- * Action controller.
+ * FeedBack controller.
  *
  * @Route("/feedback")
  */
 class FeedBackController extends Controller
 {
-    private $entityName = 'FeedBack';
     private $routePrefix = 'admin_feedback';
-    private $entity = null;
-    private $form = null;
-
-    public function __construct()
-    {
-        $this->entity = new FeedBack();
-        $this->form = new FeedBackType();
-    }
 
     /**
-     * Lists all Action entities.
+     * Lists all FeedBack entities.
      *
      * @Route("/", name="admin_feedback")
      * @Method("GET")
-     * @Template("BSAdminBundle:FeedBack:index.html.twig")
+     * @Template()
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('BSAdminBundle:' . $this->entityName)->findAll();
+        $entities = $em->getRepository('BSAdminBundle:FeedBack')->findAll();
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -57,72 +48,9 @@ class FeedBackController extends Controller
                 'delete_forms' => $deleteForms
         );
     }
-    /**
-     * Creates a new entity.
-     *
-     * @Route("/", name="admin_feedback_create")
-     * @Method("POST")
-     * @Template("BSAdminBundle:FeedBack:item.html.twig")
-     */
-    public function createAction(Request $request)
-    {
-        $entity = $this->entity;
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirectAfterSubmit($request, $entity);
-        }
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-            'operationType' => 'new'
-        );
-    }
 
     /**
-     * Creates a form to create a entity.
-     *
-     * @param Action $entity The entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createCreateForm(FeedBack $entity)
-    {
-        $form = $this->createForm($this->form, $entity, array(
-            'action' => $this->generateUrl($this->routePrefix . '_create'),
-            'method' => 'POST',
-        ));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new entity.
-     *
-     * @Route("/new", name="admin_feedback_new")
-     * @Method("GET")
-     * @Template("BSAdminBundle:FeedBack:item.html.twig")
-     */
-    public function newAction()
-    {
-        $entity = $this->entity;
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-            'operationType' => 'new'
-        );
-    }
-
-    /**
-     * Finds and displays a entity.
+     * Finds and displays a FeedBack entity.
      *
      * @Route("/{id}", name="admin_feedback_show")
      * @Method("GET")
@@ -132,10 +60,10 @@ class FeedBackController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+        $entity = $em->getRepository('BSAdminBundle:FeedBack')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
+            throw $this->createNotFoundException('Unable to find FeedBack entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -147,85 +75,7 @@ class FeedBackController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing entity.
-     *
-     * @Route("/{id}/edit", name="admin_feedback_edit")
-     * @Method("GET")
-     * @Template("BSAdminBundle:FeedBack:item.html.twig")
-     */
-    public function editAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-            'operationType' => 'edit'
-        );
-    }
-
-    /**
-    * Creates a form to edit a entity.
-    *
-    * @param Action $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(FeedBack $entity)
-    {
-        $form = $this->createForm($this->form, $entity, array(
-            'action' => $this->generateUrl($this->routePrefix . '_update', array('id' => $entity->getId())),
-            'method' => 'PUT',
-        ));
-
-        return $form;
-    }
-    /**
-     * Edits an existing entity.
-     *
-     * @Route("/{id}", name="admin_feedback_update")
-     * @Method("PUT")
-     * @Template("BSAdminBundle:FeedBack:item.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
-            $em->flush();
-
-            return $this->redirectAfterSubmit($request, $entity);
-        }
-
-        return array(
-            'entity'      => $entity,
-            'form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-            'operationType' => 'edit'
-        );
-    }
-    /**
-     * Deletes a entity.
+     * Deletes a FeedBack entity.
      *
      * @Route("/{id}", name="admin_feedback_delete")
      * @Method("DELETE")
@@ -237,21 +87,21 @@ class FeedBackController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('BSAdminBundle:' . $this->entityName)->find($id);
+            $entity = $em->getRepository('BSAdminBundle:FeedBack')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find entity.');
+                throw $this->createNotFoundException('Unable to find FeedBack entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirectAfterSubmit($request, $entity);
+        return $this->redirect($this->generateUrl('feedback'));
     }
 
     /**
-     * Creates a form to delete a Action entity by id.
+     * Creates a form to delete a FeedBack entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -260,7 +110,7 @@ class FeedBackController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl($this->routePrefix . '_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('feedback_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
@@ -280,6 +130,8 @@ class FeedBackController extends Controller
             return $this->redirect($this->generateUrl($this->routePrefix . '_new'));
         } elseif($request->request->get('edit')) {
             return $this->redirect($this->generateUrl($this->routePrefix . '_edit', array('id' => $entity->getId())));
+        } else {
+            return $this->redirect($this->generateUrl($this->routePrefix . ''));
         }
     }
 }

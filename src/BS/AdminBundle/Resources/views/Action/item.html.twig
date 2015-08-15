@@ -3,14 +3,46 @@
 {% set word_roditelniy = 'статьи' %}
 {% set word_predl = 'статью' %}
 {% block page_titile %}
-    {% if operationType == 'edit' %}
-        Изменение записи
-    {% else %}
-        Создание записи
-    {% endif %}
+{% if operationType == 'edit' %}
+    Изменение записи
+{% else %}
+    Создание записи
+{% endif %}
     
 {% endblock %}
+{% macro collectionItem_actionPhoto(data) %}
+    <li class="form-group">
 
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="thumbnail adminGalleryBlockItem">
+                    <div class="form-group">
+                        <label for="input_caption" class="col-md-2 control-label">Заголовок</label>
+
+                        <div class="col-md-10">
+                            {{ form_widget(data.caption, { 'attr': {'class': 'form-control validate-caption', 'id': 'input_caption', 'placeholder': 'Заголовок'} }) }}
+                            <div class="inputErrors">
+                                {{ form_errors(data.caption) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_caption" class="col-md-2 control-label">Изображение</label>
+
+                        <div class="col-md-10">
+                            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                {{ form_widget(data.photo, { 'attr': {'class': 'form-control validate-photo', 'id': 'input_photo', 'placeholder': 'Фото'} }) }}
+                                <div class="inputErrors">
+                                    {{ form_errors(data.photo) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
 {% block page_breadcrumb %}
     {#
 <ol class="breadcrumb">
@@ -83,6 +115,19 @@
         </div>
 
         <div class="form-group">
+            <label for="input_partition" class="col-md-2 control-label">Галерея</label>
+
+            <div class="col-md-10">
+                <ul class="list-unstyled" id="gallery-fields-list"
+                    data-prototype="{{ _self.collectionItem_actionPhoto(form.gallery.vars.prototype)|e }}">
+                    {% for gal in form.gallery %}
+                        {{ _self.collectionItem_actionPhoto(gal) }}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="input_price" class="col-md-2 control-label">Публикация</label>
 
             <div class="col-md-10">
@@ -108,10 +153,17 @@
             </div>
         </div>
     </div>
+    {{ form_widget(form.gallery) }}
     {{ form_end(form) }}       
 {% endblock %}
 
-{% block javascripts %}
+{% block js %}
     {{ parent() }}
+    <script type="text/javascript">
+        $(function () {
+            BS.Forms.Collection.init(['#gallery-fields-list']);
+        });
+    </script>
+
     {# {{ form_javascript(form) }} #}
-{% endblock javascripts %}
+{% endblock js %}

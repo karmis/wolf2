@@ -1,9 +1,9 @@
 <?php
-
 namespace BS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
 
 /**
  * Blog
@@ -29,17 +29,6 @@ class Blog
      */
     private $caption;
 
-    // *
-    //  * @var string
-    //  * @Assert\Regex(
-    //  *     pattern="/^[A-Za-z0-9-]+$/",
-    //  *     match=true,
-    //  *     message="Адрес должен содержать только латинске буквы"
-    //  * )
-    //  * @ORM\Column(name="slug", type="string", length=255, unique=true)
-     
-    // private $slug;
-
     /**
      * @var string
      *
@@ -62,33 +51,34 @@ class Blog
     private $published;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToMany(targetEntity="BlogGallery", orphanRemoval=true, cascade={"persist", "remove"})
+     * @ORM\JoinTable(
+     *      name="Blog2BlogGallery",
+     *      joinColumns={
+     *          @ORM\JoinColumn(name="blog_id", referencedColumnName="id")
+     *      },
+     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
+     * )
      */
-    protected $photo;
+    public $gallery;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    protected $originalPhoto;
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    protected $photoGallery;
-
-    public function getUploadRootDir()
+    public function __toString()
     {
-        // absolute path to your directory where images must be saved
-        return self::BLOG_UPLOAD_ROOT_DIR;
-    }
-
-    public function getUploadDir()
-    {
-        return self::BLOG_UPLOAD_DIR;
+        return $this->caption;
     }
 
     public function getEntityType() {
         return "BLOG";
+    }
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->gallery = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->published = true;
     }
 
     /**
@@ -198,74 +188,36 @@ class Blog
     }
 
     /**
-     * Set photo
+     * Add gallery
      *
-     * @param string $photo
+     * @param \BS\AdminBundle\Entity\BlogGallery $gallery
      *
      * @return Blog
      */
-    public function setPhoto($photo)
+    public function addGallery(\BS\AdminBundle\Entity\BlogGallery $gallery)
     {
-        $this->photo = $photo;
+        $this->gallery[] = $gallery;
 
         return $this;
     }
 
     /**
-     * Get photo
+     * Remove gallery
      *
-     * @return string
+     * @param \BS\AdminBundle\Entity\BlogGallery $gallery
      */
-    public function getPhoto()
+    public function removeGallery(\BS\AdminBundle\Entity\BlogGallery $gallery)
     {
-        return $this->photo;
+        $this->gallery->removeElement($gallery);
     }
 
     /**
-     * Set originalPhoto
+     * Get gallery
      *
-     * @param string $originalPhoto
-     *
-     * @return Blog
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setOriginalPhoto($originalPhoto)
+    public function getGallery()
     {
-        $this->originalPhoto = $originalPhoto;
-
-        return $this;
-    }
-
-    /**
-     * Get originalPhoto
-     *
-     * @return string
-     */
-    public function getOriginalPhoto()
-    {
-        return $this->originalPhoto;
-    }
-
-    /**
-     * Set photoGallery
-     *
-     * @param array $photoGallery
-     *
-     * @return Blog
-     */
-    public function setPhotoGallery($photoGallery)
-    {
-        $this->photoGallery = $photoGallery;
-
-        return $this;
-    }
-
-    /**
-     * Get photoGallery
-     *
-     * @return array
-     */
-    public function getPhotoGallery()
-    {
-        return $this->photoGallery;
+        return $this->gallery;
     }
 }

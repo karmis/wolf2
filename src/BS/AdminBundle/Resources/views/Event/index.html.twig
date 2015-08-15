@@ -27,8 +27,6 @@
                     <tr>
                         <th>Название</th>
                         <th>Публикация</th>
-                        <th>Дата начала</th>
-                        <th>Дата окончания</th>
                         <th>Управление</th>
                     </tr>
                     </thead>
@@ -42,12 +40,6 @@
                                 {% else %}
                                     <span class="label label-danger">Нет</span>
                                 {% endif %}
-                            </td>
-                            <td>
-                                {{ entity.startDate|date('d.m.Y') }}
-                            </td>
-                            <td>
-                                {{ entity.endDate|date('d.m.Y') }}
                             </td>
                             <td class="text-right" style="width: 150px;">
                                 <div class="col-md-3">

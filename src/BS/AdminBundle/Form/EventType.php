@@ -19,9 +19,20 @@ class EventType extends AbstractType
             ->add('smallContent')
             ->add('content')
             ->add('published')
-            ->add('photo')
-            ->add('startDate')
-            ->add('endDate')
+            ->add(
+                'gallery',
+                'collection',
+                array(
+                    'type' => new EventGalleryType('edit'),
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'required' => false,
+                    // 'options' => array('data_class' => 'BS\AdminBundle\Entity\ActionGallery'),
+                    'by_reference' => true,
+                    'attr' => array('class' => 'gallerey_item'),
+                    'label' => ''
+                )
+            )
         ;
     }
     
@@ -40,6 +51,6 @@ class EventType extends AbstractType
      */
     public function getName()
     {
-        return 'bs_AdminBundle_event';
+        return 'bs_adminbundle_event';
     }
 }

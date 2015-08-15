@@ -1,5 +1,25 @@
 iphp_file_store:
     mappings:
-       photo:
-           upload_dir:  %kernel.root_dir%/../web/uploads/photo
-           upload_path: /uploads/photo
+        action_photo:
+            upload_dir:  %kernel.root_dir%/../web/uploads/photos/action
+            upload_path: /uploads/photos/action
+            namer:
+                translit: ~
+                propertyPrefix:
+                    params: { field : id, use_field_name : true, delimiter: "_" }
+
+        blog_photo:
+            upload_dir:  %kernel.root_dir%/../web/uploads/photos/blog
+            upload_path: /uploads/photos/blog
+            namer:
+                translit: ~
+                propertyPrefix:
+                    params: { field : id, use_field_name : true, delimiter: "_" }
+
+        event_photo:
+            upload_dir:  %kernel.root_dir%/../web/uploads/photos/event
+            upload_path: /uploads/photos/event
+            namer:
+                translit: ~
+                propertyPrefix:
+                    params: { field : id, use_field_name : true, delimiter: "_" }
