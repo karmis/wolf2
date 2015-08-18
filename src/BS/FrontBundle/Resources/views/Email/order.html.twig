@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Заказ из формы обратной связи</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	С сайта "Волчий глаз" пришло сообщение из формы обратной связи: <br>
+	Посетитель <strong>{{ entity.name }}</strong> оставил свои контактные данные: <br>
+	- Почтовый ящик: {{ entity.email }} <br>
+	- Телефон: {{ entity.phone }} <br>
+	и сообщение: <br>
+
+	<i>
+		{{ entity.content }}
+	</i>
+</body>
+</html>

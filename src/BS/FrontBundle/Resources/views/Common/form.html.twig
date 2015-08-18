@@ -1,2 +1,76 @@
-
-{% render url('feedback_new') %}
+<!-- CONTACT DETAILS -->
+<div class="contact-details col-sm-5 col-md-3">
+    <p>г. Владимир,<br/>Molestie Lorem Avenue,<br/>Aliquam<br/>AAA0010</p>
+    <p>Tel: (+20) 21 301 524</p>
+    <p><a href="mailto:info@loremipsum.com">info@loremipsum.com</a></p>
+</div>
+<!-- END: CONTACT DETAILS -->
+<!-- CONTACT FORM -->
+<div class="col-sm-7 col-md-9">
+    <!-- IMPORTANT: change the email address at the top of the assets/php/mail.php file to the email address that you want this form to send to -->
+    {# <form id="feedBackForm" class="form-style validate-form clearfix" bs-action="{{ path('feedback_create') }}" method="POST" {{ form_enctype(feedBackForm) }} #}
+    {{ form_start(feedBackForm, { 'attr': {'class': 'form-style validate-form clearfix', 'role': 'form' } }) }}
+        <!-- form left col -->
+        <div class="col-md-6">
+            <div class="form-group">
+                {{ form_widget(feedBackForm.name, { 
+                    'attr': {
+                            'class': 'text-field form-control validate-field required',
+                            'placeholder': 'Имя',
+                            'required':'required',
+                            'data-error':'Поле обязательно для заполнения',
+                            'data-validation-type': 'string'
+                        } 
+                    }) 
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_widget(feedBackForm.email, { 
+                    'attr': {
+                            'class': 'text-field form-control validate-field required',
+                            'placeholder': 'Email',
+                            'required':'required',
+                            'data-error':'Поле обязательно для заполнения',
+                            'data-validation-type': 'email'
+                        } 
+                    }) 
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_widget(feedBackForm.phone, { 
+                    'attr': {
+                            'class': 'text-field form-control validate-field phone',
+                            'placeholder': 'Контактный номер',
+                            'required':'required',
+                            'data-error':'Поле обязательно для заполнения',
+                            'data-validation-type': 'string'
+                        } 
+                    }) 
+                }}
+            </div>
+        </div>
+        <!-- end: form left col -->
+        <!-- form right col -->
+        <div class="col-md-6">
+            <div class="form-group">
+                {{ form_widget(feedBackForm.content, { 
+                    'attr': {
+                            'class': 'form-control validate-field required',
+                            'placeholder': 'Сообщение',
+                            'required':'required',
+                            'data-error':'Поле обязательно для заполнения',
+                            'data-validation-type': 'string'
+                        } 
+                    }) 
+                }}
+            </div>
+            <div class="form-group">
+                <img src=" {{ asset(pRes~"/images/icons/loader-form.GIF") }}" class="form-loader">
+                <button type="submit" class="btn btn-sm btn-outline-inverse">Отправить</button>
+            </div>
+            <div class="form-group form-general-error-container"></div>
+        </div>
+        <!-- end: form right col -->
+    {{ form_end(feedBackForm) }}   
+</div>
+<!-- end: CONTACT FORM -->

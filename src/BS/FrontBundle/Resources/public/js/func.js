@@ -260,7 +260,9 @@ function validate_and_submit_forms(t) {
                 }
             }), 1 == a ? ($(this).find(".form-loader").fadeOut("fast"), !1) : ($.ajax({type: "POST", url: i, data: $(this).serialize(), dataType: "html", success: function (e) {
                 t.find(".form-loader").fadeOut("fast");
+                var e = JSON.parse(e);
                 var i = "success" == e ? !0 : !1;
+                var n = "";
                 switch (e) {
                     case"success":
                         n = "Спасибо. Заявка оставлена";

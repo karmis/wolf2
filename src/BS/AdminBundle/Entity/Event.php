@@ -43,6 +43,21 @@ class Event
      */
     private $content;
 
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="startDate", type="datetime", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="endDate", type="datetime", nullable=true)
+     */
+    private $endDate;
+
     /**
      * @var boolean
      *
@@ -219,5 +234,53 @@ class Event
     public function getGallery()
     {
         return $this->gallery;
+    }
+
+    /**
+     * Set startDate
+     *
+     * @param string $startDate
+     *
+     * @return Event
+     */
+    public function setStartDate($startDate)
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Get startDate
+     *
+     * @return string
+     */
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
+
+    /**
+     * Set endDate
+     *
+     * @param string $endDate
+     *
+     * @return Event
+     */
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * Get endDate
+     *
+     * @return string
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
     }
 }

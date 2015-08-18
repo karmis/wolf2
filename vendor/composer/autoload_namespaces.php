@@ -23,6 +23,7 @@ return array(
     'JMS\\' => array($vendorDir . '/jms/parser-lib/src'),
     'Iphp\\FileStoreBundle' => array($vendorDir . '/iphp/filestore-bundle'),
     'Imagine' => array($vendorDir . '/imagine/imagine/lib'),
+    'Genemu\\Bundle\\FormBundle' => array($vendorDir . '/genemu/form-bundle'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),

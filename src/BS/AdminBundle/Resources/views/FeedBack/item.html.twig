@@ -3,12 +3,7 @@
 {% set word_roditelniy = 'обратная связь' %}
 {% set word_predl = 'обратной связи' %}
 {% block page_titile %}
-    {% if operationType == 'edit' %}
-        Изменение записи
-    {% else %}
-        Создание записи
-    {% endif %}
-    
+    Просмотр записи    
 {% endblock %}
 
 {% block page_breadcrumb %}
@@ -26,79 +21,36 @@
 {% endblock %}
 
 {% block page_content -%}
-    {{ form_start(form, { 'attr': {'class': 'form-horizontal', 'role': 'form', 'data-toggle':'validator' } }) }}
+    <div class="form-horizontal">
         <div class="form-group">
-            <label for="input_name" class="col-md-2 control-label">Имя</label>
+            <label class="col-md-2 control-label">Имя</label>
 
             <div class="col-md-10">
-                {{ form_widget(form.name, { 
-                    'attr': {
-                            'class': 'form-control input-name-for-meta '~operationType,
-                            'placeholder': 'Название статьи',
-                            'required':'required',
-                            'data-error':'Поле обязательно для заполнения'
-                        } 
-                    }) 
-                }}
-                <div class="help-block with-errors">
-                    {{ form_errors(form.name) }}
-                </div>
+                {{ entity.name }}
             </div>
         </div>
 
         <div class="form-group">
-            <label for="input_name" class="col-md-2 control-label">Телефон</label>
+            <label class="col-md-2 control-label">Телефон</label>
 
             <div class="col-md-10">
-                {{ form_widget(form.phone, { 
-                    'attr': {
-                            'class': 'form-control input-phone-for-meta '~operationType,
-                            'placeholder': 'Название статьи',
-                            'required':'required',
-                            'data-error':'Поле обязательно для заполнения'
-                        } 
-                    }) 
-                }}
-                <div class="help-block with-errors">
-                    {{ form_errors(form.phone) }}
-                </div>
+                {{ entity.phone }}
             </div>
         </div>
 
         <div class="form-group">
-            <label for="input_name" class="col-md-2 control-label">Email</label>
+            <label class="col-md-2 control-label">Email</label>
 
             <div class="col-md-10">
-                {{ form_widget(form.email, { 
-                    'attr': {
-                            'class': 'form-control input-email-for-meta '~operationType,
-                            'placeholder': 'Название статьи',
-                            'required':'required',
-                            'data-error':'Поле обязательно для заполнения'
-                        } 
-                    }) 
-                }}
-                <div class="help-block with-errors">
-                    {{ form_errors(form.email) }}
-                </div>
+                {{ entity.email }}
             </div>
         </div>
 
         <div class="form-group">
-            <label for="input_partition" class="col-md-2 control-label">Содержание</label>
+            <label class="col-md-2 control-label">Сообщение</label>
 
             <div class="col-md-10">
-                {{ form_widget(form.content, { 
-                    'attr': {
-                            'class': 'form-control',
-                            'placeholder': 'Содержание',
-                            'data-error':'Поле обязательно для заполнения'
-                        } 
-                    }) 
-                }}
-                <div class="help-block with-errors">
-                    {{ form_errors(form.content) }}
-                </div>
+                {{ entity.content }}
             </div>
         </div>
 
@@ -106,21 +58,5 @@
          <div class="row pull-left">
          	<a href="{{ path(route) }}" class="btn btn-link">Назад</a>
          </div>
-{#         <div class="row pull-right">
-            <div class="col-md-12">
-                <input type="submit" name='list' class='btn btn-success' rel='list'
-                       value="Сохранить и вернуться на список"/>
-                <input type="submit" name='create' class='btn btn-success' rel='create'
-                       value="Сохранить и создать еще"/>
-                <input type="submit" name='edit' class='btn btn-success' rel='edit'
-                       value="Сохранить и редактировать"/>
-            </div>
-        </div> #}
-    </div>
-    {{ form_end(form) }}       
+    </div>    
 {% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    {# {{ form_javascript(form) }} #}
-{% endblock javascripts %}

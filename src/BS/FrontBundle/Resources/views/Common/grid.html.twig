@@ -5,54 +5,55 @@
 
 
         {% for entity in grids %}
-            <div class="grid-item col-md-4">
-                <div class="item-content clearfix">
-                    {% if entity.photoGallery|length %}
-                        <div class="grid-slider bxslider">
-                            {% set maxCount = 0 %}
-                            {% for photo in entity.photoGallery if maxCount < 5 %}
-                                <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');">
-                                    <img src="{{ asset('uploads/gallery/'~photo)|imagine_filter('prev_on_page_item_slider') }}" alt="{{ entity.caption }}"
-                                         class="img-responsive lazy"/>
-                                </div>
-                                {% set maxCount = maxCount + 1 %}
-                            {% endfor %}
+            {% if entity.gallery is defined and entity.gallery|length > 0 %}
+                <div class="grid-item col-md-4">
+                    <div class="item-content clearfix">
+                        
+                            <div class="grid-slider bxslider">
+                                {% set maxCount = 0 %}
+                                {% for item in entity.gallery if maxCount < 5 %}
+                                    <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');">
+                                        <img src="{{ asset(item.photo.path)|imagine_filter('prev_on_page_item_slider') }}" alt="{{ item.caption }}"
+                                             class="img-responsive lazy"/>
+                                    </div>
+                                    {% set maxCount = maxCount + 1 %}
+                                {% endfor %}
+                            </div>
+                        {# {% else %}
+                            {% include 'BSFrontBundle::Common/randomImage.html.twig' with {} %} #}
+
+                        <div class="text-content text-center">
+                            {% autoescape true %}
+                            <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');" style="cursor:pointer">
+                                {{ entity.caption|truncate(100) }}
+                            </h5>
+                            <p class="descriptionForGrid">
+                                {% if entity.smallContent %}
+                                    {{ entity.smallContent|default('Краткое описание')|truncate(250) }}
+                                {% else %}
+                                    {{ entity.content|striptags|truncate(250) }}
+                                {% endif %}
+                            </p>
+
+                            <p>
+                                <a href=""
+                                   onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');"
+                                   class="btn btn-outline-inverse btn-sm">
+                                    Подробнее...
+                                </a>
+                            </p>
+
+                            <div class="content-to-populate-in-modal" id="modal-uid-{{ entity.id }}-{{entity.getEntityType}}">
+                                {% include 'BSFrontBundle::Common/modal-populate.html.twig' with {
+                                    entity:entity,
+                                } %}
+                            </div>
+
+                            {% endautoescape %}
                         </div>
-                    {# {% else %}
-                        {% include 'BSFrontBundle::Common/randomImage.html.twig' with {} %} #}
-                    {% endif %}
-
-                    <div class="text-content text-center">
-                        {% autoescape true %}
-                        <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');" style="cursor:pointer">
-                            {{ entity.caption|truncate(100) }}
-                        </h5>
-                        <p class="descriptionForGrid">
-                            {% if entity.smallContent %}
-                                {{ entity.smallContent|default('Краткое описание')|truncate(250) }}
-                            {% else %}
-                                {{ entity.content|striptags|truncate(250) }}
-                            {% endif %}
-                        </p>
-
-                        <p>
-                            <a href=""
-                               onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');"
-                               class="btn btn-outline-inverse btn-sm">
-                                Подробнее...
-                            </a>
-                        </p>
-
-                        <div class="content-to-populate-in-modal" id="modal-uid-{{ entity.id }}-{{entity.getEntityType}}">
-                            {% include 'BSFrontBundle::Common/modal-populate.html.twig' with {
-                                entity:entity,
-                            } %}
-                        </div>
-
-                        {% endautoescape %}
                     </div>
                 </div>
-            </div>
+            {% endif %}
         {% endfor %}
 
     {% else %}

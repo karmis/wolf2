@@ -16,10 +16,10 @@ class FeedBackType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('email')
+            ->add('email', 'email')
             ->add('phone')
             ->add('content')
-            ->add('isNew')
+            // ->add('isNew')
         ;
     }
     

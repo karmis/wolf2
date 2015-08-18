@@ -14,8 +14,8 @@ imports:
     # - { resource: sonata/sonata_formatter.yml }
 #    - { resource: sonata/sonata_classification.yml }
     # - { resource: sonata/sonata_notification.yml }
-    # - { resource: ivory_ck_editor.yml }
     - { resource: iphp_filestore.yml }
+    - { resource: genemu_form.yml }
     - { resource: knp_paginator.yml }
     - { resource: liip_imagine.yml }
 

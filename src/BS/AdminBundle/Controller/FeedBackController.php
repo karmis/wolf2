@@ -30,7 +30,7 @@ class FeedBackController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('BSAdminBundle:FeedBack')->findAll();
+        $entities = $em->getRepository('BSAdminBundle:FeedBack')->findBy(array(), array( 'id' => 'DESC'));
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -54,7 +54,7 @@ class FeedBackController extends Controller
      *
      * @Route("/{id}", name="admin_feedback_show")
      * @Method("GET")
-     * @Template()
+     * @Template("BSAdminBundle:FeedBack:item.html.twig")
      */
     public function showAction($id)
     {
@@ -65,7 +65,9 @@ class FeedBackController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find FeedBack entity.');
         }
-
+        $em = $this->getDoctrine()->getManager();
+        $entity->setIsNew(false);
+        $em->flush();
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -97,7 +99,7 @@ class FeedBackController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('feedback'));
+        return $this->redirect($this->generateUrl($this->routePrefix));
     }
 
     /**
@@ -110,7 +112,7 @@ class FeedBackController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('feedback_delete', array('id' => $id)))
+            ->setAction($this->generateUrl($this->routePrefix . '_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

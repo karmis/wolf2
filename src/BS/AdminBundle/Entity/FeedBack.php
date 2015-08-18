@@ -55,10 +55,17 @@ class FeedBack
      * @ORM\Column(name="isNew", type="boolean", nullable=true)
      */
     private $isNew;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="createAt", type="datetime")
+     */
+    private $createAt;
 
     public function __construct()
     {
         $this->isNew = true;
+        $this->createAt = new \DateTime('now');
     }
 
     /**
@@ -189,5 +196,29 @@ class FeedBack
     public function getIsNew()
     {
         return $this->isNew;
+    }
+
+    /**
+     * Set createAt
+     *
+     * @param \DateTime $createAt
+     *
+     * @return FeedBack
+     */
+    public function setCreateAt($createAt)
+    {
+        $this->createAt = $createAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createAt
+     *
+     * @return \DateTime
+     */
+    public function getCreateAt()
+    {
+        return $this->createAt;
     }
 }

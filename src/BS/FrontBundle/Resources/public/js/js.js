@@ -42,5 +42,23 @@ $(function () {
         // enableDrag: false,
         loop:true,
         speed:1500
-    }); 
+    });
+
+
+    $('#feedBackForm').submit(function(e){
+        e.preventDefault();
+        var url = $(this).attr('bs-action');
+        var data = $(this).serialize();
+
+        $.ajax({
+            url: url,
+            data: data,
+            dataType: 'json',
+            type: 'post',
+            success: function(xhr){
+                debugger;
+            },
+
+        });
+    });
 });

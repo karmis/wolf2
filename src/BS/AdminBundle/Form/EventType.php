@@ -18,6 +18,12 @@ class EventType extends AbstractType
             ->add('caption')
             ->add('smallContent')
             ->add('content')
+            ->add('startDate', 'genemu_jquerydate', array(
+                'widget' => 'single_text'
+            ))
+            ->add('endDate', 'genemu_jquerydate', array(
+                'widget' => 'single_text'
+            ))
             ->add('published')
             ->add(
                 'gallery',

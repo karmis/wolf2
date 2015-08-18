@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new Iphp\FileStoreBundle\IphpFileStoreBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
 
@@ -28,7 +29,7 @@ class AppKernel extends Kernel
             new BS\FrontBundle\BSFrontBundle(),
             new BS\VKBundle\BSVKBundle(),
             new BS\UserBundle\BSUserBundle(),
-            new BS\AdminBundle\BSAdminBundle(),
+            new BS\AdminBundle\BSAdminBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

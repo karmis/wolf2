@@ -38,13 +38,15 @@
     <div class="clearfix"></div>
     <!-- Photos -->
     <div class="row modal-photos">
-        {% for key, photo in entity.photoGallery %}
+        {% if entity.gallery is defined and entity.gallery|length > 0 %}
+        {% for key, item in entity.gallery %}
         <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6 center-block" style="padding:15px;">
-            <a href="{{ asset('uploads/gallery/'~photo)|comur_getOrigin}}" data-lightbox="image-{{entity.id}}_{{key}}" data-title="{{entity.caption}}">
-                <img src="{{ asset('uploads/gallery/'~photo)|imagine_filter('prev_on_page_item_slider') }}" class="img-responsive lazy">
+            <a href="{{ asset(item.photo.path)|imagine_filter('full_size_photo_in_window')}}" data-lightbox="image-{{entity.id}}_{{key}}" data-title="{{entity.caption}}">
+                <img src="{{ asset(item.photo.path)|imagine_filter('prev_on_page_item_slider') }}" class="img-responsive lazy">
             </a>
         </div>
         {% endfor %}
+        {% endif %}
     </div>
     <br />
     <hr />

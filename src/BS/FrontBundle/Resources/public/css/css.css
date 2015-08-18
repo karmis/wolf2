@@ -1217,8 +1217,8 @@ h6 {
 
 #main-content .form-style input.text-field:focus,
 #main-content .form-style textarea:focus {
-    color:#000;
-    background:#fff;
+    color:#fff;
+    /*background:#fff;*/
     border-color:#fff;
     -webkit-box-shadow: none;
     -moz-box-shadow:    none;

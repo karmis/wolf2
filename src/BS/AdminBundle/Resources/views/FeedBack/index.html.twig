@@ -1,7 +1,7 @@
 {% extends 'BSAdminBundle::layout.html.twig' %}
 {% set route = 'admin_feedback' %}
-{% set pageCaption = 'Список записей' %}
-{% set addCaption = 'Добавить запись' %}}
+{% set pageCaption = 'Список заявок' %}
+{% set addCaption = 'Добавить запись' %}
 {% block page_content %}
 
     <div class="row">
@@ -26,10 +26,11 @@
                     <thead>
                     <tr>
                         <th>Имя</th>
-                        <th>Почта</th>
+                        <th>Email</th>
                         <th>Телефон</th>
-                        <th>Сообщение</th>
-                        <th>Статус</th>
+                        <th>Дата</th>
+                        <th>Просмотрено</th>
+                        <th>Управление</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,21 +39,21 @@
                             <td>{{ entity.name }}</td>
                             <td>{{ entity.email }}</td>
                             <td>{{ entity.phone }}</td>
-                            <td>{{ entity.content }}</td>
+                            <td>{{ entity.createAt|date('d.m.Y') }}</td>
                             <td>
                                 {% if entity.isNew == true %}
                                     <span class="label label-success">Новое</span>
                                 {% else %}
-                                    <span class="label label-default">Прочитанное</span>
+                                    <span class="label label-default">старое</span>
                                 {% endif %}
                             </td>
                             <td class="text-right" style="width: 150px;">
                                 <div class="col-md-3">
                                     <div class="input-group">
-                                        <a href="{{ path(route~'_edit', {id: entity.id}) }}"
+                                        <a href="{{ path(route~'_show', {id: entity.id}) }}"
                                            class="btn btn-default btn-xs pull-left">
                                             <i class="icon-pencil"></i>
-                                            Редактировать
+                                            Посмотреть
                                         </a>
                                         <span class="input-group-btn">
                                             {{ form_start(delete_forms[entity.id]) }}
@@ -85,11 +86,6 @@
                         </div>
                     </div>
                 </div>
-{#                 <div class="row">
-                    <div class="col-sm-12 pull-rigth">
-                        <a class='btn btn-success btn-xs' href="{{ path(route~'_new') }}">{{ addCaption }}</a>
-                    </div>
-                </div> #}
             </div>
         </div>
     </div>
