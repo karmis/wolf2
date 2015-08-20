@@ -18,6 +18,9 @@ class ActionVideoGalleryType extends AbstractType
             ->add('caption')
             ->add('description')
             ->add('ref')
+            ->add('photo', 'iphp_file', array(
+                'data_class' => null
+            ))
         ;
     }
     

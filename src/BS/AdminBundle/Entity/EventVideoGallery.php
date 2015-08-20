@@ -2,6 +2,9 @@
 namespace BS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
+
 /**
  * EventVideoGallery
  *
@@ -39,6 +42,13 @@ class EventVideoGallery
      * @ORM\Column(name="ref", type="string", length=255, nullable=true)
      */
     private $ref;
+
+    /**
+     * @Assert\File(maxSize="20M")
+     * @FileStore\UploadableField(mapping="video_fav_photo")
+     * @ORM\Column(type="array", nullable=true)
+     **/
+    private $photo;
 
     public function __toString()
     {
@@ -125,5 +135,29 @@ class EventVideoGallery
     public function getRef()
     {
         return $this->ref;
+    }
+
+    /**
+     * Set photo
+     *
+     * @param array $photo
+     *
+     * @return EventVideoGallery
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return array
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
     }
 }

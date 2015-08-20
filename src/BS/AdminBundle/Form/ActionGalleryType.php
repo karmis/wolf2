@@ -8,16 +8,6 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ActionGalleryType extends AbstractType
 {
-    private $widgetType;
-
-    public function __construct($type)
-    {
-        // if($type == 'edit'){
-        //     $this->widgetType = 'iphp_file';
-        // } else {
-        //     $this->widgetType = 'file';
-        // }
-    }
 
     /**
      * @param FormBuilderInterface $builder

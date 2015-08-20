@@ -5,6 +5,10 @@ liip_imagine:
 
     filter_sets:
         cache: ~
+        video_fav_photo:
+            quality: 80
+            filters:
+                thumbnail: { size: [150, 150], mode: outbound }
         prev_on_page_item_action:
             quality: 80
             filters:
