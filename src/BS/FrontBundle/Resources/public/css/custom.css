@@ -372,3 +372,32 @@ font-weight: normal;
   margin:0px;
 
 }*/
+
+
+.html5gallery-container-0 {
+display: block;
+position: absolute;
+left: 0px;
+top: 0px;
+width: 600px;
+height: 409px;
+ background: none !important; 
+background-color: transparent !important;
+}
+
+.html5gallery-car-0 {
+position: absolute;
+display: block;
+overflow: hidden;
+left: 12px;
+top: 337px;
+width: 480px;
+height: 60px;
+border-top: 1px solid #666666;
+border-bottom: 1px solid #111111;
+background-color: transparent !important; 
+ background: none !important; 
+background: none !important;
+filter: none !important;
+-ms-filter: none !important;
+}

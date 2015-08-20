@@ -10,46 +10,32 @@
     </div>
     <!-- /.row -->
 
-    <!-- Content -->
-    <div class="panel panel-default">
-        <div class="panel-body">
-            {{entity.content|raw}}
-        </div>
-    </div>
-    <br />
-    <hr />
-    <br />
-    <!-- Videos -->
-    <div class="row modal-videos">
-        {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}
-        {% for key, video in entity.videoGallery %}
-        <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6 center-block">
-            <div class="video-container">
-                {{video.href|raw}}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Ololo
+                    {{entity.content|raw}}
+                </div>
             </div>
         </div>
-        {% endfor %}
-        {% endif %}
-    </div>
-    <br />
-    <hr />
-    <br />
-
-    <div class="clearfix"></div>
-    <!-- Photos -->
-    <div class="row modal-photos">
-        {% if entity.gallery is defined and entity.gallery|length > 0 %}
-        {% for key, item in entity.gallery %}
-        <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6 center-block" style="padding:15px;">
-            <a href="{{ asset(item.photo.path)|imagine_filter('full_size_photo_in_window')}}" data-lightbox="image-{{entity.id}}_{{key}}" data-title="{{entity.caption}}">
-                <img src="{{ asset(item.photo.path)|imagine_filter('prev_on_page_item_slider') }}" class="img-responsive lazy">
-            </a>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <ul class="lightGalleryBlockInModal">
+                    {# {% for key, gallery in entity.gallery %} #}
+                    {% for i in 0..10 %}
+                    <li
+                        {# data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>" #}
+                        {# data-src="{{ video.smallHref }}" #}
+                        data-sub-html="<div class='customHtml'><h4>OLk</h4><p>asdasdassa</p></div>"
+                        data-src='http://www.youtube.com/embed/YE7VzlLtp-4'
+                        class="lightGallery"
+                        >
+                        <img src="{{ asset(pRes~'/images/icons/video.png') }}" />
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        {% endfor %}
-        {% endif %}
     </div>
-    <br />
-    <hr />
-    <br />
-    <!-- Comments -->
 </div>

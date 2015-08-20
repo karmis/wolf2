@@ -59,6 +59,19 @@ function initialise_document_ready_functions()
           }); 
         }
 
+        if($("#common-modal .lightGalleryBlockInModal").length > 0){
+            $('.lightGalleryBlockInModal').lightGallery({
+                showThumbByDefault:true,
+                // addClass:'showThumbByDefault',
+                cssEasing:'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
+                // closable:false,
+                // enableTouch: false,
+                // enableDrag: false,
+                loop:true,
+                speed:1500
+            });
+        }
+
         // initialise popup alternate image gallery
         if ($('#common-modal .popup-alt-image-gallery').length > 0)
         {

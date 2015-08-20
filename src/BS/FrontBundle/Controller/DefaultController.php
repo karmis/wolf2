@@ -29,6 +29,12 @@ class DefaultController extends Controller
             ->orderBy('event.id', 'ASC')
             ->getQuery()->getResult();
 
+        $entities['actions'] = $em->getRepository('BSAdminBundle:Action')->createQueryBuilder('action')
+            ->where('action.published = :is')
+            ->setParameter('is', true)
+            ->orderBy('action.id', 'ASC')
+            ->getQuery()->getResult();
+
         $feedBackForm = $this->getFeedBackForm();
 
         return $this->render('BSFrontBundle:Default:index.html.twig', array(

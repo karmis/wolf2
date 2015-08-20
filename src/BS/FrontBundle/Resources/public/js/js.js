@@ -32,11 +32,10 @@ $(function () {
     });
 
 
-
-    $('#lightGallery').lightGallery({
-        // showThumbByDefault:true,
+    $('.lightGalleryBlock').lightGallery({
+        showThumbByDefault:true,
         // addClass:'showThumbByDefault',
-        // cssEasing:'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
+        cssEasing:'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
         // closable:false,
         // enableTouch: false,
         // enableDrag: false,
