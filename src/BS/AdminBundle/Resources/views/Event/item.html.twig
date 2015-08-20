@@ -43,6 +43,49 @@
         </div>
     </li>
 {% endmacro %}
+
+{% macro collectionItem_eventVideo(data) %}
+    <li class="form-group">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="thumbnail adminGalleryBlockItem">
+                    <div class="form-group">
+                        <label for="input_caption" class="col-md-2 control-label">Заголовок</label>
+
+                        <div class="col-md-10">
+                            {{ form_widget(data.caption, { 'attr': {'class': 'form-control validate-caption', 'id': 'input_caption', 'placeholder': 'Заголовок'} }) }}
+                            <div class="inputErrors">
+                                {{ form_errors(data.caption) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_caption" class="col-md-2 control-label">Заголовок</label>
+
+                        <div class="col-md-10">
+                            {{ form_widget(data.description, { 'attr': {'class': 'form-control validate-description', 'id': 'input_description', 'placeholder': 'Описание'} }) }}
+                            <div class="inputErrors">
+                                {{ form_errors(data.description) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_caption" class="col-md-2 control-label">Ссылка на видео</label>
+
+                        <div class="col-md-10">
+                            {{ form_widget(data.ref, { 'attr': {'class': 'form-control validate-ref', 'id': 'input_ref', 'placeholder': 'Ссылка на видео'} }) }}
+                            <div class="inputErrors">
+                                {{ form_errors(data.ref) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+
 {% block page_breadcrumb %}
     {#
 <ol class="breadcrumb">
@@ -115,7 +158,7 @@
         </div>
 
         <div class="form-group">
-            <label for="input_caption" class="col-md-2 control-label">Начало тура</label>
+            <label for="input_caption" class="col-md-2 control-label">Начало события</label>
 
             <div class="col-md-4">
                 {{ form_widget(form.startDate, { 'attr': {'class': 'form-control validate-startDate', 'id': 'input_startDate'} }) }}
@@ -126,7 +169,7 @@
         </div>
 
         <div class="form-group">
-            <label for="input_caption" class="col-md-2 control-label">Окончание тура</label>
+            <label for="input_caption" class="col-md-2 control-label">Окончание события</label>
 
             <div class="col-md-4">
                 {{ form_widget(form.endDate, { 'attr': {'class': 'form-control validate-endDate', 'id': 'input_endDate'} }) }}
@@ -145,6 +188,19 @@
                     data-prototype="{{ _self.collectionItem_actionPhoto(form.gallery.vars.prototype)|e }}">
                     {% for gal in form.gallery %}
                         {{ _self.collectionItem_actionPhoto(gal) }}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="input_partition" class="col-md-2 control-label">Видео галерея</label>
+
+            <div class="col-md-10">
+                <ul class="list-unstyled" id="video-gallery-fields-list"
+                    data-prototype="{{ _self.collectionItem_eventVideo(form.videoGallery.vars.prototype)|e }}">
+                    {% for gal in form.videoGallery %}
+                        {{ _self.collectionItem_eventVideo(gal) }}
                     {% endfor %}
                 </ul>
             </div>
@@ -177,6 +233,7 @@
         </div>
     </div>
     {{ form_widget(form.gallery) }}
+    {{ form_widget(form.videoGallery) }}
     {{ form_end(form) }}       
 {% endblock %}
 
@@ -185,7 +242,7 @@
     <script type="text/javascript">
         $(function () {
             BS.Forms.Collection.init(['#gallery-fields-list']);
-
+            BS.Forms.Collection.init(['#video-gallery-fields-list']);
             $('body').on('focus',".validate-startDate", function(){
                 $(this).datepicker({dateFormat: 'yy-mm-dd'});
             });

@@ -18,10 +18,10 @@ class EventType extends AbstractType
             ->add('caption')
             ->add('smallContent')
             ->add('content')
-            ->add('startDate', 'genemu_jquerydate', array(
+            ->add('startDate', null, array(
                 'widget' => 'single_text'
             ))
-            ->add('endDate', 'genemu_jquerydate', array(
+            ->add('endDate', null, array(
                 'widget' => 'single_text'
             ))
             ->add('published')
@@ -30,6 +30,20 @@ class EventType extends AbstractType
                 'collection',
                 array(
                     'type' => new EventGalleryType('edit'),
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'required' => false,
+                    // 'options' => array('data_class' => 'BS\AdminBundle\Entity\ActionGallery'),
+                    'by_reference' => true,
+                    'attr' => array('class' => 'gallerey_item'),
+                    'label' => ''
+                )
+            )
+            ->add(
+                'videoGallery',
+                'collection',
+                array(
+                    'type' => new EventVideoGalleryType('edit'),
                     'allow_add' => true,
                     'allow_delete' => true,
                     'required' => false,

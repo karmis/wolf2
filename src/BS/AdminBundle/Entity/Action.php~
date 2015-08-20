@@ -62,6 +62,19 @@ class Action
      */
     public $gallery;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="ActionVideoGallery", orphanRemoval=true, cascade={"persist", "remove"})
+     * @ORM\JoinTable(
+     *      name="Action2ActionVideoGallery",
+     *      joinColumns={
+     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id")
+     *      },
+     *      inverseJoinColumns={@ORM\JoinColumn(name="video_gallery_id", referencedColumnName="id")}
+     * )
+     */
+    public $videoGallery;
+
+
     public function __toString()
     {
         return $this->caption;
@@ -219,5 +232,39 @@ class Action
     public function getGallery()
     {
         return $this->gallery;
+    }
+
+    /**
+     * Add videoGallery
+     *
+     * @param \BS\AdminBundle\Entity\ActionVideoGallery $videoGallery
+     *
+     * @return Action
+     */
+    public function addVideoGallery(\BS\AdminBundle\Entity\ActionVideoGallery $videoGallery)
+    {
+        $this->videoGallery[] = $videoGallery;
+
+        return $this;
+    }
+
+    /**
+     * Remove videoGallery
+     *
+     * @param \BS\AdminBundle\Entity\ActionVideoGallery $videoGallery
+     */
+    public function removeVideoGallery(\BS\AdminBundle\Entity\ActionVideoGallery $videoGallery)
+    {
+        $this->videoGallery->removeElement($videoGallery);
+    }
+
+    /**
+     * Get videoGallery
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVideoGallery()
+    {
+        return $this->videoGallery;
     }
 }

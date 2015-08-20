@@ -257,8 +257,9 @@ img.lazy {
 .lightGallery {
     overflow: hidden!important;
     float: left;
-    margin-top: 5px;
+    margin-top: 2px;
     cursor: pointer;
+    margin-left: -7px;
 }
 
 .lightGallery img {

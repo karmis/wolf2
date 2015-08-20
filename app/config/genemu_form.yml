@@ -1,2 +1,10 @@
 genemu_form:
     date: ~
+    # autocomplete: ~
+    # select2:
+    #     enabled: true
+    #     configs:
+    #         placeholder: Выберете значение
+    #         width: 550
+    #         allowClear: false
+    #         minimumInputLength: 0

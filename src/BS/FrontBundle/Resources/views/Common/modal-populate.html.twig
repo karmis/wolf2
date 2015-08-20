@@ -22,18 +22,28 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <ul class="lightGalleryBlockInModal">
-                    {# {% for key, gallery in entity.gallery %} #}
-                    {% for i in 0..10 %}
-                    <li
-                        {# data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>" #}
-                        {# data-src="{{ video.smallHref }}" #}
-                        data-sub-html="<div class='customHtml'><h4>OLk</h4><p>asdasdassa</p></div>"
-                        data-src='http://www.youtube.com/embed/YE7VzlLtp-4'
-                        class="lightGallery"
-                        >
-                        <img src="{{ asset(pRes~'/images/icons/video.png') }}" />
-                    </li>
-                    {% endfor %}
+                    {% if entity.gallery is defined and entity.gallery|length > 0 %}
+                        {% for key, photo in entity.gallery %}
+                        <li
+                            data-sub-html="<div class='customHtml'><h4>{{ photo.caption }}</h4><p>{{ photo.caption }}</p></div>"
+                            data-src="{{ asset(photo.photo.path)|imagine_filter('full_size_photo_in_window') }}"
+                            class="lightGallery"
+                            >
+                            <img src="{{ asset(photo.photo.path)|imagine_filter('prev_on_page_item_slider') }}" />
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                    {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}]
+                        {% for key, video in entity.videoGallery %}
+                        <li
+                            data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>"
+                            data-src="{{ video.ref }}"
+                            class="lightGallery"
+                            >
+                            <img src="{{ asset(pRes~'/images/icons/video.png')|imagine_filter('prev_on_page_item_slider') }}" />
+                        </li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
         </div>

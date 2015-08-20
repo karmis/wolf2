@@ -33,6 +33,20 @@ class ActionType extends AbstractType
                     'label' => ''
                 )
             )
+            ->add(
+                'videoGallery',
+                'collection',
+                array(
+                    'type' => new ActionVideoGalleryType('edit'),
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'required' => false,
+                    // 'options' => array('data_class' => 'BS\AdminBundle\Entity\ActionGallery'),
+                    'by_reference' => true,
+                    'attr' => array('class' => 'gallerey_item'),
+                    'label' => ''
+                )
+            )
         ;
     }
     

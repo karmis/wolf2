@@ -77,6 +77,19 @@ class Event
      */
     public $gallery;
 
+
+    /**
+     * @ORM\ManyToMany(targetEntity="EventVideoGallery", orphanRemoval=true, cascade={"persist", "remove"})
+     * @ORM\JoinTable(
+     *      name="Event2EventVideoGallery",
+     *      joinColumns={
+     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id")
+     *      },
+     *      inverseJoinColumns={@ORM\JoinColumn(name="event_gallery_id", referencedColumnName="id")}
+     * )
+     */
+    public $videoGallery;
+
     public function __toString()
     {
         return $this->caption;
@@ -282,5 +295,39 @@ class Event
     public function getEndDate()
     {
         return $this->endDate;
+    }
+
+    /**
+     * Add videoGallery
+     *
+     * @param \BS\AdminBundle\Entity\EventVideoGallery $videoGallery
+     *
+     * @return Event
+     */
+    public function addVideoGallery(\BS\AdminBundle\Entity\EventVideoGallery $videoGallery)
+    {
+        $this->videoGallery[] = $videoGallery;
+
+        return $this;
+    }
+
+    /**
+     * Remove videoGallery
+     *
+     * @param \BS\AdminBundle\Entity\EventVideoGallery $videoGallery
+     */
+    public function removeVideoGallery(\BS\AdminBundle\Entity\EventVideoGallery $videoGallery)
+    {
+        $this->videoGallery->removeElement($videoGallery);
+    }
+
+    /**
+     * Get videoGallery
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVideoGallery()
+    {
+        return $this->videoGallery;
     }
 }
