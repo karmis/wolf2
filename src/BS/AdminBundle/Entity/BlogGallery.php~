@@ -2,13 +2,13 @@
 namespace BS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * BlogGallery
  *
  * @ORM\Table()
- * @FileStore\Uploadable
+ * @Vich\Uploadable
  * @ORM\HasLifecycleCallbacks
  * @ORM\Entity
  */
@@ -37,10 +37,19 @@ class BlogGallery
     private $description;
     
     /**
-     * @Assert\File(maxSize="20M")
-     * @FileStore\UploadableField(mapping="blog_photo")
-     * @ORM\Column(type="array", nullable=true)
-     **/
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="event_photo", fileNameProperty="photo")
+     * 
+     * @var File
+     */
+    private $photoFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
     private $photo;
 
     public function __toString()
@@ -171,6 +180,29 @@ class BlogGallery
         return $this->photo;
     }
 
+    /**
+     * Set photo
+     *
+     * @param array $photo
+     *
+     * @return ActionGallery
+     */
+    public function setPhotoFile($photo)
+    {
+        $this->photoFile = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return array
+     */
+    public function getPhotoFile()
+    {
+        return $this->photoFile;
+    }
     /**
      * Set action
      *

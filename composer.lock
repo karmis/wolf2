@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "72637b4224944c2456bda919211ae7e4",
+    "hash": "5da56af1be3e55cf5c745618264ef107",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -150,12 +150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "3661cd8bc5152598dbe6772e98b78d1fa8281a67"
+                "reference": "aacbad222c7daaf94b8e40285b66f1e315065937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/3661cd8bc5152598dbe6772e98b78d1fa8281a67",
-                "reference": "3661cd8bc5152598dbe6772e98b78d1fa8281a67",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/aacbad222c7daaf94b8e40285b66f1e315065937",
+                "reference": "aacbad222c7daaf94b8e40285b66f1e315065937",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-08-05 11:14:49"
+            "time": "2015-08-19 10:02:04"
         },
         {
             "name": "doctrine/common",
@@ -1013,66 +1013,6 @@
             "time": "2015-06-03 08:27:03"
         },
         {
-            "name": "iphp/filestore-bundle",
-            "version": "dev-master",
-            "target-dir": "Iphp/FileStoreBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vitiko/IphpFileStoreBundle.git",
-                "reference": "8512c77480a6bc1cba3c90c0b9b783b16dd1e5d0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vitiko/IphpFileStoreBundle/zipball/8512c77480a6bc1cba3c90c0b9b783b16dd1e5d0",
-                "reference": "8512c77480a6bc1cba3c90c0b9b783b16dd1e5d0",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": "~2.3"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "doctrine/doctrine-bundle": "@stable",
-                "doctrine/orm": "@stable",
-                "mikey179/vfsstream": "@stable",
-                "sensio/framework-extra-bundle": "@stable",
-                "symfony/browser-kit": "@stable",
-                "symfony/class-loader": "@stable",
-                "symfony/css-selector": "@stable",
-                "symfony/finder": "@stable",
-                "symfony/form": "~2.3",
-                "symfony/process": "@stable",
-                "symfony/twig-bundle": "~2.3",
-                "symfony/validator": "@stable",
-                "symfony/yaml": "@stable"
-            },
-            "type": "bundle",
-            "autoload": {
-                "psr-0": {
-                    "Iphp\\FileStoreBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vitiko",
-                    "email": "vitiko@mail.ru"
-                }
-            ],
-            "description": "Upload files for doctrine entities in symfony 2 project",
-            "homepage": "http://symfonydev.ru",
-            "keywords": [
-                "file upload",
-                "sonata admin file upload",
-                "symfony file upload",
-                "upload"
-            ],
-            "time": "2015-08-14 15:04:35"
-        },
-        {
             "name": "jdorn/sql-formatter",
             "version": "dev-master",
             "source": {
@@ -1485,12 +1425,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "cba8311072155d3be4ab6b6366de171a0a3d100b"
+                "reference": "35b328142a9657622a927aba987501157a305a97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cba8311072155d3be4ab6b6366de171a0a3d100b",
-                "reference": "cba8311072155d3be4ab6b6366de171a0a3d100b",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/35b328142a9657622a927aba987501157a305a97",
+                "reference": "35b328142a9657622a927aba987501157a305a97",
                 "shasum": ""
             },
             "require": {
@@ -1501,15 +1441,15 @@
                 "cssmin/cssmin": "*",
                 "joliclic/javascript-packer": "*",
                 "kamicane/packager": "*",
-                "leafo/lessphp": "*",
-                "leafo/scssphp": "*",
-                "leafo/scssphp-compass": "*",
+                "leafo/lessphp": "^0.3.7",
+                "leafo/scssphp": "*@dev",
+                "leafo/scssphp-compass": "*@dev",
                 "mrclay/minify": "*",
-                "patchwork/jsqueeze": "~1.0",
+                "patchwork/jsqueeze": "~1.0|~2.0",
                 "phpunit/phpunit": "~4",
                 "psr/log": "~1.0",
                 "ptachoire/cssembed": "*",
-                "twig/twig": "~1.6"
+                "twig/twig": "~1.8"
             },
             "suggest": {
                 "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
@@ -1551,7 +1491,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-08-05 10:16:31"
+            "time": "2015-08-20 11:09:44"
         },
         {
             "name": "liip/imagine-bundle",
@@ -1703,6 +1643,69 @@
                 "psr-3"
             ],
             "time": "2015-08-17 16:40:30"
+        },
+        {
+            "name": "ocramius/proxy-manager",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/ProxyManager.git",
+                "reference": "57e9272ec0e8deccf09421596e0e2252df440e11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/57e9272ec0e8deccf09421596e0e2252df440e11",
+                "reference": "57e9272ec0e8deccf09421596e0e2252df440e11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-code": ">2.2.5,<3.0"
+            },
+            "require-dev": {
+                "ext-phar": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "suggest": {
+                "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
+                "zendframework/zend-json": "To have the JsonRpc adapter (Remote Object feature)",
+                "zendframework/zend-soap": "To have the Soap adapter (Remote Object feature)",
+                "zendframework/zend-stdlib": "To use the hydrator proxy",
+                "zendframework/zend-xmlrpc": "To have the XmlRpc adapter (Remote Object feature)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "ProxyManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A library providing utilities to generate, instantiate and generally operate with Object Proxies",
+            "homepage": "https://github.com/Ocramius/ProxyManager",
+            "keywords": [
+                "aop",
+                "lazy loading",
+                "proxy",
+                "proxy pattern",
+                "service proxies"
+            ],
+            "time": "2015-08-09 04:28:19"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2065,12 +2068,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "4282ddd31ff2a0f7f91c90d42ef3947b23b8e4a3"
+                "reference": "9e8dff63f6a4ef6818220b4ee5179fd9f1bf3bb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/4282ddd31ff2a0f7f91c90d42ef3947b23b8e4a3",
-                "reference": "4282ddd31ff2a0f7f91c90d42ef3947b23b8e4a3",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/9e8dff63f6a4ef6818220b4ee5179fd9f1bf3bb7",
+                "reference": "9e8dff63f6a4ef6818220b4ee5179fd9f1bf3bb7",
                 "shasum": ""
             },
             "require": {
@@ -2085,11 +2088,12 @@
                 "kriswallsmith/spork": "<=0.2"
             },
             "require-dev": {
-                "kriswallsmith/spork": "~0.2",
+                "kriswallsmith/spork": "~0.3",
                 "patchwork/jsqueeze": "~1.0",
                 "symfony/class-loader": "~2.3",
                 "symfony/css-selector": "~2.3",
                 "symfony/dom-crawler": "~2.3",
+                "symfony/phpunit-bridge": "~2.7",
                 "symfony/twig-bundle": "~2.3"
             },
             "suggest": {
@@ -2125,7 +2129,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-05-26 13:09:36"
+            "time": "2015-08-20 12:36:34"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -2418,21 +2422,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "5f253f77a8dfc5e288cae52c643f6ea2abff443a"
+                "reference": "92fa52b87489e4d517c5023d389c243d153ba179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5f253f77a8dfc5e288cae52c643f6ea2abff443a",
-                "reference": "5f253f77a8dfc5e288cae52c643f6ea2abff443a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/92fa52b87489e4d517c5023d389c243d153ba179",
+                "reference": "92fa52b87489e4d517c5023d389c243d153ba179",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.7"
             },
+            "require-dev": {
+                "symfony/debug": "~2.7",
+                "symfony/phpunit-bridge": "~2.7"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.20-dev"
+                    "dev-master": "1.21-dev"
                 }
             },
             "autoload": {
@@ -2467,7 +2475,234 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-08-17 19:42:30"
+            "time": "2015-08-19 21:10:59"
+        },
+        {
+            "name": "vich/uploader-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dustin10/VichUploaderBundle.git",
+                "reference": "41a74352fac4668f50cc42f9155a570727f62051"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/41a74352fac4668f50cc42f9155a570727f62051",
+                "reference": "41a74352fac4668f50cc42f9155a570727f62051",
+                "shasum": ""
+            },
+            "require": {
+                "jms/metadata": "~1.5",
+                "ocramius/proxy-manager": "~1.0",
+                "php": ">=5.4",
+                "symfony/finder": ">=2.0",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/property-access": "~2.3"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/mongodb-odm": "@dev",
+                "doctrine/orm": "*",
+                "ext-sqlite3": "*",
+                "knplabs/knp-gaufrette-bundle": "*",
+                "matthiasnoback/symfony-dependency-injection-test": "0.*",
+                "mikey179/vfsstream": "~1.0",
+                "oneup/flysystem-bundle": "dev-master",
+                "phpunit/phpunit": "~4.0",
+                "symfony/symfony": "*"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/mongodb-odm-bundle": "*",
+                "doctrine/orm": ">=2.2.3",
+                "doctrine/phpcr-odm": "~1.0",
+                "knplabs/knp-gaufrette-bundle": "*",
+                "symfony/yaml": "@stable",
+                "willdurand/propel-eventdispatcher-bundle": ">=1.2"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vich\\UploaderBundle\\": "",
+                    "Vich\\TestBundle\\": "Tests/Fixtures/App/src/TestBundle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dustin Dobervich",
+                    "email": "ddobervich@gmail.com"
+                }
+            ],
+            "description": "Ease file uploads attached to entities",
+            "homepage": "https://github.com/dustin10/VichUploaderBundle",
+            "keywords": [
+                "file uploads",
+                "upload"
+            ],
+            "time": "2015-08-12 07:04:24"
+        },
+        {
+            "name": "zendframework/zend-code",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-code.git",
+                "reference": "a97ef49f82496fabc3b7379b37f6bbff925b58b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/a97ef49f82496fabc3b7379b37f6bbff925b58b8",
+                "reference": "a97ef49f82496fabc3b7379b37f6bbff925b58b8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "zendframework/zend-eventmanager": "~2.5"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.1",
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "zendframework/zend-stdlib": "~2.5",
+                "zendframework/zend-version": "~2.5"
+            },
+            "suggest": {
+                "doctrine/common": "Doctrine\\Common >=2.1 for annotation features",
+                "zendframework/zend-stdlib": "Zend\\Stdlib component"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev",
+                    "dev-develop": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Code\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides facilities to generate arbitrary code using an object oriented interface",
+            "homepage": "https://github.com/zendframework/zend-code",
+            "keywords": [
+                "code",
+                "zf2"
+            ],
+            "time": "2015-07-21 22:40:59"
+        },
+        {
+            "name": "zendframework/zend-eventmanager",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-eventmanager.git",
+                "reference": "2308f72bc3e428581d416767c0bbb9d75bfec571"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/2308f72bc3e428581d416767c0bbb9d75bfec571",
+                "reference": "2308f72bc3e428581d416767c0bbb9d75bfec571",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "zendframework/zend-stdlib": "~2.5"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev",
+                    "dev-develop": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\EventManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-eventmanager",
+            "keywords": [
+                "eventmanager",
+                "zf2"
+            ],
+            "time": "2015-07-16 19:02:45"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-stdlib.git",
+                "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/297c69931ebc0d17a454656fd3b63e3fb0098f1d",
+                "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "zendframework/zend-config": "~2.5",
+                "zendframework/zend-eventmanager": "~2.5",
+                "zendframework/zend-filter": "~2.5",
+                "zendframework/zend-inputfilter": "~2.5",
+                "zendframework/zend-serializer": "~2.5",
+                "zendframework/zend-servicemanager": "~2.5"
+            },
+            "suggest": {
+                "zendframework/zend-eventmanager": "To support aggregate hydrator usage",
+                "zendframework/zend-filter": "To support naming strategy hydrator usage",
+                "zendframework/zend-serializer": "Zend\\Serializer component",
+                "zendframework/zend-servicemanager": "To support hydrator plugin manager usage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev",
+                    "dev-develop": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-stdlib",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2015-07-21 17:11:52"
         }
     ],
     "packages-dev": [
@@ -2524,7 +2759,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "jms/serializer-bundle": 20,
-        "iphp/filestore-bundle": 20,
+        "vich/uploader-bundle": 20,
         "liip/imagine-bundle": 20,
         "friendsofsymfony/user-bundle": 20
     },

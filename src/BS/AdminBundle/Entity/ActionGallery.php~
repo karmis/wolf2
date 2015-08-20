@@ -3,12 +3,10 @@ namespace BS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
 /**
  * ActionGallery
  *
  * @ORM\Table()
- * @FileStore\Uploadable
  * @ORM\HasLifecycleCallbacks
  * @ORM\Entity
  */
@@ -38,7 +36,6 @@ class ActionGallery
     
     /**
      * @Assert\File(maxSize="20M")
-     * @FileStore\UploadableField(mapping="action_photo")
      * @ORM\Column(type="array", nullable=true)
      **/
     private $photo;

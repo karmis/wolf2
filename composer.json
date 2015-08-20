@@ -22,7 +22,7 @@
 
         "jms/serializer-bundle": "0.13.*@dev",
         "knplabs/knp-paginator-bundle": "~2.4",
-        "iphp/filestore-bundle":"dev-master",
+        "vich/uploader-bundle" : "dev-master",
         "liip/imagine-bundle": "^1.0@dev",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "genemu/form-bundle": "2.2.*"

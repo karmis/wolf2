@@ -16,7 +16,8 @@ class EventGalleryType extends AbstractType
     {
         $builder
             ->add('caption')
-            ->add('photo', 'iphp_file', array(
+            ->add('description')
+            ->add('photoFile', 'file', array(
                 'data_class' => null
             ))
         ;

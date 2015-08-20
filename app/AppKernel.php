@@ -22,8 +22,9 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
-            new Iphp\FileStoreBundle\IphpFileStoreBundle(),
+            // new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
 
             // Project
             new BS\FrontBundle\BSFrontBundle(),

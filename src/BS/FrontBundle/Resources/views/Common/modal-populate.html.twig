@@ -24,13 +24,15 @@
                 <ul class="lightGalleryBlockInModal">
                     {% if entity.gallery is defined and entity.gallery|length > 0 %}
                         {% for key, photo in entity.gallery %}
-                        <li
-                            data-sub-html="<div class='customHtml'><h4>{{ photo.caption }}</h4><p>{{ photo.caption }}</p></div>"
-                            data-src="{{ asset(photo.photo.path)|imagine_filter('full_size_photo_in_window') }}"
-                            class="lightGallery"
-                            >
-                            <img src="{{ asset(photo.photo.path)|imagine_filter('prev_on_page_item_slider') }}" />
-                        </li>
+                            {% if photo.photo.path is defined %}
+                                <li
+                                    data-sub-html="<div class='customHtml'><h4>{{ photo.caption }}</h4><p>{{ photo.caption }}</p></div>"
+                                    data-src="{{ asset(photo.photo.path)|imagine_filter('full_size_photo_in_window') }}"
+                                    class="lightGallery"
+                                    >
+                                    <img src="{{ asset(photo.photo.path)|imagine_filter('prev_on_page_item_slider') }}" />
+                                </li>
+                            {% endif %}
                         {% endfor %}
                     {% endif %}
                     {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}]

@@ -14,7 +14,7 @@ imports:
     # - { resource: sonata/sonata_formatter.yml }
 #    - { resource: sonata/sonata_classification.yml }
     # - { resource: sonata/sonata_notification.yml }
-    - { resource: iphp_filestore.yml }
+    # - { resource: iphp_filestore.yml }
     - { resource: genemu_form.yml }
     - { resource: knp_paginator.yml }
     - { resource: liip_imagine.yml }
@@ -88,3 +88,25 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        event_photo:
+            uri_prefix:         /uploads/events/photo
+            upload_destination: %kernel.root_dir%/../web/uploads/events/photo
+            namer:              vich_uploader.namer_uniqid
+        eventvideo_photo_fav:
+                uri_prefix:         /uploads/events/photo/fav
+                upload_destination: %kernel.root_dir%/../web/uploads/events/photo/fav
+                namer:              vich_uploader.namer_uniqid
+        action_photo:
+            uri_prefix:         /uploads/actions/photo
+            upload_destination: %kernel.root_dir%/../web/uploads/actions/photo
+            namer:              vich_uploader.namer_uniqid
+        actionvideo_photo_fav:
+                uri_prefix:         /uploads/actions/photo/fav
+                upload_destination: %kernel.root_dir%/../web/uploads/events/photo/fav
+                namer:              vich_uploader.namer_uniqid
