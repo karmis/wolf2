@@ -108,5 +108,9 @@ vich_uploader:
             namer:              vich_uploader.namer_uniqid
         actionvideo_photo_fav:
                 uri_prefix:         /uploads/actions/photo/fav
-                upload_destination: %kernel.root_dir%/../web/uploads/events/photo/fav
+                upload_destination: %kernel.root_dir%/../web/uploads/actions/photo/fav
                 namer:              vich_uploader.namer_uniqid
+        blog_photo:
+            uri_prefix:         /uploads/blogs/photo
+            upload_destination: %kernel.root_dir%/../web/uploads/blogs/photo
+            namer:   

@@ -10,7 +10,7 @@
     {% endif %}
     
 {% endblock %}
-{% macro collectionItem_actionPhoto(data, entity) %}
+{% macro collectionItem_eventPhoto(data, entity) %}
     <li class="form-group">
 
         <div class="row">
@@ -215,9 +215,9 @@
 
             <div class="col-md-10">
                 <ul class="list-unstyled" id="gallery-fields-list"
-                    data-prototype="{{ _self.collectionItem_actionPhoto(form.gallery.vars.prototype)|e }}">
+                    data-prototype="{{ _self.collectionItem_eventPhoto(form.gallery.vars.prototype)|e }}">
                     {% for key, gal in form.gallery %}
-                        {{ _self.collectionItem_actionPhoto(gal, entity.gallery[key]) }}
+                        {{ _self.collectionItem_eventPhoto(gal, entity.gallery[key]) }}
                     {% endfor %}
                 </ul>
             </div>
@@ -274,8 +274,7 @@
     
     <script type="text/javascript">
         $(function () {
-            BS.Forms.Collection.init(['#gallery-fields-list']);
-            BS.Forms.Collection.init(['#video-gallery-fields-list']);
+            BS.Forms.Collection.init(['#gallery-fields-list', '#video-gallery-fields-list']);
             $('body').on('focus',".validate-startDate", function(){
                 $(this).datepicker({dateFormat: 'yy-mm-dd'});
             });

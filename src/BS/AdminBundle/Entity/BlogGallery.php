@@ -39,7 +39,7 @@ class BlogGallery
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="event_photo", fileNameProperty="photo")
+     * @Vich\UploadableField(mapping="blog_photo", fileNameProperty="photo")
      * 
      * @var File
      */

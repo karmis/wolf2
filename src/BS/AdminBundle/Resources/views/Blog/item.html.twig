@@ -10,7 +10,7 @@
     {% endif %}
     
 {% endblock %}
-{% macro collectionItem_actionPhoto(data) %}
+{% macro collectionItem_eventPhoto(data, entity) %}
     <li class="form-group">
 
         <div class="row">
@@ -27,15 +27,27 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="input_caption" class="col-md-2 control-label">Изображение</label>
+                        <label for="input_caption" class="col-md-2 control-label">Описание</label>
 
                         <div class="col-md-10">
+                            {{ form_widget(data.description, { 'attr': {'class': 'form-control validate-description', 'id': 'input_description', 'placeholder': 'Описание'} }) }}
+                            <div class="inputErrors">
+                                {{ form_errors(data.description) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_caption" class="col-md-2 control-label">Изображение</label>
+                        <div class="col-md-10">
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                {{ form_widget(data.photo, { 'attr': {'class': 'form-control validate-photo', 'id': 'input_photo', 'placeholder': 'Фото'} }) }}
+                                {{ form_widget(data.photoFile, { 'attr': {'class': 'form-control validate-photoFile', 'id': 'input_photoFile', 'placeholder': 'Фото'} }) }}
                                 <div class="inputErrors">
-                                    {{ form_errors(data.photo) }}
+                                    {# <img src="{{ vich_uploader_asset(gallery[key], 'photoFile') }}" alt="" /> #}
                                 </div>
                             </div>
+                            {% if entity is defined and entity is not null and entity.photo is not null %}
+                                <img src="{{ vich_uploader_asset(entity, 'photoFile')|imagine_filter('prev_on_page_item_slider')  }}" alt="" /> 
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -119,9 +131,9 @@
 
             <div class="col-md-10">
                 <ul class="list-unstyled" id="gallery-fields-list"
-                    data-prototype="{{ _self.collectionItem_actionPhoto(form.gallery.vars.prototype)|e }}">
-                    {% for gal in form.gallery %}
-                        {{ _self.collectionItem_actionPhoto(gal) }}
+                    data-prototype="{{ _self.collectionItem_eventPhoto(form.gallery.vars.prototype)|e }}">
+                    {% for key, gal in form.gallery %}
+                        {{ _self.collectionItem_eventPhoto(gal, entity.gallery[key]) }}
                     {% endfor %}
                 </ul>
             </div>
