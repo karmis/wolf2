@@ -61,4 +61,8 @@ class DefaultController extends Controller
 
         return $form;
     }
+
+    public function loadContentAction() {
+        
+    }
 }

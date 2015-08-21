@@ -17,3 +17,6 @@ bs_front_blog:
 main:
     path:     /
     defaults: { _controller: BSFrontBundle:Default:index }
+load_content:
+    path:     /load/content/{entityType}/{id}
+    defaults: { _controller: BSFrontBundle:Default:loadContent }
