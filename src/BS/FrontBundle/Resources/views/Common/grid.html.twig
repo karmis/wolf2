@@ -11,10 +11,10 @@
                         
                             <div class="grid-slider bxslider">
                                 {% set maxCount = 0 %}
-                                {% for item in entity.gallery if maxCount < 5 %}
-                                    {% if item.photo.path is defined %}
-                                        <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');">
-                                            <img src="{{ asset(item.photo.path)|imagine_filter('prev_on_page_item_slider') }}" alt="{{ item.caption }}"
+                                {% for gallery in entity.gallery if maxCount < 5 %}
+                                    {% if gallery is defined and gallery is not null and gallery.photo is not null  %}
+                                        <div onclick="populate_and_open_modal(event, 'modal-uid-{{ gallery.id }}-{{entity.getEntityType}}');">
+                                            <img onclick="populate_and_open_modal(event, 'modal-uid-{{ gallery.id }}-{{entity.getEntityType}}');" src="{{ vich_uploader_asset(gallery, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" alt="{{ entity.caption }}"
                                                  class="img-responsive lazy"/>
                                         </div>
                                         {% set maxCount = maxCount + 1 %}

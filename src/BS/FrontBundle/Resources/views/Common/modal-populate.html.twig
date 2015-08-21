@@ -24,26 +24,28 @@
                 <ul class="lightGalleryBlockInModal">
                     {% if entity.gallery is defined and entity.gallery|length > 0 %}
                         {% for key, photo in entity.gallery %}
-                            {% if photo.photo.path is defined %}
+                            {% if photo is defined and photo is not null and photo.photo is not null  %}
                                 <li
-                                    data-sub-html="<div class='customHtml'><h4>{{ photo.caption }}</h4><p>{{ photo.caption }}</p></div>"
-                                    data-src="{{ asset(photo.photo.path)|imagine_filter('full_size_photo_in_window') }}"
+                                    data-sub-html="<div class='customHtml'><h4>{{ photo.caption }}</h4><p>{{ photo.description }}</p></div>"
+                                    data-src="{{ vich_uploader_asset(photo, 'photoFile')|imagine_filter('full_size_photo_in_window') }}"
                                     class="lightGallery"
                                     >
-                                    <img src="{{ asset(photo.photo.path)|imagine_filter('prev_on_page_item_slider') }}" />
+                                    <img src="{{ vich_uploader_asset(photo, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" />
                                 </li>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
                     {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}]
                         {% for key, video in entity.videoGallery %}
-                        <li
-                            data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>"
-                            data-src="{{ video.ref }}"
-                            class="lightGallery"
-                            >
-                            <img src="{{ asset(pRes~'/images/icons/video.png')|imagine_filter('prev_on_page_item_slider') }}" />
-                        </li>
+                            {% if video is defined and video is not null and video.photo is not null  %}
+                                <li
+                                    data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>"
+                                    data-src="{{ video.ref }}"
+                                    class="lightGallery"
+                                    >
+                                    <img src="{{ vich_uploader_asset(video, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" />
+                                </li>
+                            {% endif %}
                         {% endfor %}
                     {% endif %}
                 </ul>
