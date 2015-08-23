@@ -13,8 +13,8 @@
                                 {% set maxCount = 0 %}
                                 {% for gallery in entity.gallery if maxCount < 5 %}
                                     {% if gallery is defined and gallery is not null and gallery.photo is not null  %}
-                                        <div onclick="populate_and_open_modal(event, 'modal-uid-{{ gallery.id }}-{{entity.getEntityType}}');">
-                                            <img onclick="populate_and_open_modal(event, 'modal-uid-{{ gallery.id }}-{{entity.getEntityType}}');" src="{{ vich_uploader_asset(gallery, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" alt="{{ entity.caption }}"
+                                        <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');">
+                                            <img src="{{ vich_uploader_asset(gallery, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" alt="{{ entity.caption }}"
                                                  class="img-responsive lazy"/>
                                         </div>
                                         {% set maxCount = maxCount + 1 %}
@@ -26,7 +26,7 @@
 
                         <div class="text-content text-center">
                             {% autoescape true %}
-                            <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');" style="cursor:pointer">
+                            <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');" style="cursor:pointer">
                                 {{ entity.caption|truncate(100) }}
                             </h5>
                             <p class="descriptionForGrid">
@@ -38,13 +38,13 @@
                             </p>
 
                             <p>
-                                <a href=""
-                                   onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}');"
-                                   class="btn btn-outline-inverse btn-sm">
+                                <a href="#"
+                                   onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');"
+                                   class="btn btn-outline-inverse btn-sm isNotOpened">
                                     Подробнее...
                                 </a>
                             </p>
-
+                            <div class="content-to-populate-in-modal isLoaded" id="modal-uid-{{ entity.id }}-{{entity.getEntityType}}"></div>
                             {% endautoescape %}
                         </div>
                     </div>

@@ -35,7 +35,7 @@
                             {% endif %}
                         {% endfor %}
                     {% endif %}
-                    {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}]
+                    {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}
                         {% for key, video in entity.videoGallery %}
                             {% if video is defined and video is not null and video.photo is not null  %}
                                 <li

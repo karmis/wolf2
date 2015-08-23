@@ -60,7 +60,7 @@ class Action
      *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
      * )
      */
-    public $gallery;
+    private $gallery;
 
     /**
      * @ORM\ManyToMany(targetEntity="ActionVideoGallery", orphanRemoval=true, cascade={"persist", "remove"})
@@ -72,7 +72,7 @@ class Action
      *      inverseJoinColumns={@ORM\JoinColumn(name="video_gallery_id", referencedColumnName="id")}
      * )
      */
-    public $videoGallery;
+    private $videoGallery;
 
 
     public function __toString()
