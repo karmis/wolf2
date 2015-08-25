@@ -50,8 +50,8 @@ class DefaultController extends Controller
 
         $entities = array(
             'blogs' => $blogs,
-            'action' => $events,
-            'events' => $actions,
+            'action' => $actions,
+            'events' => $events,
         );
 
         return $this->render('BSFrontBundle:Default:index.html.twig', array(
@@ -105,7 +105,7 @@ class DefaultController extends Controller
             $query = $repository->createQueryBuilder($entityType)
                 ->innerJoin($entityType.".gallery", "gallery");
             if($entityType != 'BLOG'){
-                $query->innerJoin($entityType.".videoGallery", "videoGallery");
+                $query->leftJoin($entityType.".videoGallery", "videoGallery");
             }
 
             $entity = $query->where($entityType.'.published = :is')

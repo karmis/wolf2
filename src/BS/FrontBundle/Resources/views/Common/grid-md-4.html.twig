@@ -1,0 +1,62 @@
+{% import _self as forms %}
+<div class="grid-wrapper">
+    {% if grids is defined and grids|length > 0 %}
+        <!-- grid -->
+
+
+        {% for entity in grids %}
+            {% if entity.gallery is defined and entity.gallery|length > 0 %}
+                <div class="grid-item grid-item-4 col-md-4">
+                    <div class="item-content clearfix">
+                        
+                            <div class="grid-slider bxslider">
+                                {% set maxCount = 0 %}
+                                {% for gallery in entity.gallery if maxCount < 5 %}
+                                    {% if gallery is defined and gallery is not null and gallery.photo is not null  %}
+                                        <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');">
+                                            <img src="{{ vich_uploader_asset(gallery, 'photoFile')|imagine_filter('prev_on_page_item_slider_grid_4') }}" alt="{{ entity.caption }}"
+                                                 class="img-responsive lazy"/>
+                                        </div>
+                                        {% set maxCount = maxCount + 1 %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {# {% else %}
+                            {% include 'BSFrontBundle::Common/randomImage.html.twig' with {} %} #}
+
+                        <div class="text-content text-center">
+                            {% autoescape true %}
+                            <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');" style="cursor:pointer">
+                                {{ entity.caption|truncate(100) }}
+                            </h5>
+                            <p class="descriptionForGrid">
+                                {% if entity.smallContent %}
+                                    {{ entity.smallContent|default('Краткое описание')|truncate(250) }}
+                                {% else %}
+                                    {{ entity.content|striptags|truncate(250) }}
+                                {% endif %}
+                            </p>
+
+                            <p>
+                                <a href="#"
+                                   onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');"
+                                   class="btn btn-outline-inverse btn-sm isNotOpened">
+                                    Подробнее...
+                                </a>
+                            </p>
+                            <div class="content-to-populate-in-modal isLoaded" id="modal-uid-{{ entity.id }}-{{entity.getEntityType}}"></div>
+                            {% endautoescape %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+        {% include 'BSFrontBundle::Common/alert.html.twig' with {
+        alertType:'normal',
+        alertMsg:'В этом разделе еще нет ни одной записи'
+        } %}
+
+    {% endif %}
+</div>

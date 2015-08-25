@@ -13,8 +13,12 @@
 
                 {% if secType == 'text' %}
                     {% include 'BSFrontBundle::Common/text.html.twig' %}
-                {% elseif secType == 'grid' %}
-                    {% include 'BSFrontBundle::Common/grid.html.twig' %}
+                {% elseif secType == 'grid-md-2' %}
+                    {% include 'BSFrontBundle::Common/grid-md-2.html.twig' %}
+                {% elseif secType == 'grid-md-3' %}
+                    {% include 'BSFrontBundle::Common/grid-md-3.html.twig' %}
+                {% elseif secType == 'grid-md-4' %}
+                    {% include 'BSFrontBundle::Common/grid-md-4.html.twig' %}
                 {% elseif secType == 'form' %}
                     {% include 'BSFrontBundle::Common/form.html.twig' %}
                 {% elseif secType == 'action' %}

@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: 'UnderDog';
-    src: url('Rupster.eot');
-    src: url('Rupster.eot?#iefix') format('embedded-opentype'),
-         url('Rupster.svg#Rupster') format('svg'),
-         url('Rupster.woff') format('woff'),
-         url('Rupster.ttf') format('truetype');
+    src: url('Larisascript.eot');
+    src: url('Larisascript.eot?#iefix') format('embedded-opentype'),
+         url('Larisascript.svg#Larisascript') format('svg'),
+         url('Larisascript.woff') format('woff'),
+         url('Larisascript.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 

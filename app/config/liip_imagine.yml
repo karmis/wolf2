@@ -13,10 +13,27 @@ liip_imagine:
             quality: 80
             filters:
                 thumbnail: { size: [150, 150], mode: outbound }
+
+        prev_on_page_item_slider_grid_2:
+            quality: 85
+            filters:
+                thumbnail: { size: [170, 170], mode: outbound }
+
+        prev_on_page_item_slider_grid_3:
+            quality: 95
+            filters:
+                thumbnail: { size: [250, 250], mode: outbound }
+
+        prev_on_page_item_slider_grid_4:
+            quality: 95
+            filters:
+                thumbnail: { size: [250, 250], mode: outbound }
+
         prev_on_page_item_slider:
             quality: 90
             filters:
                 thumbnail: { size: [223, 223], mode: outbound }
+
         prev_on_window_item_slider:
             quality: 95
             filters:

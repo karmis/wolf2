@@ -10,6 +10,13 @@
     margin: 40px auto;
 }
 
+h1 {
+font-size: 2.25em;
+line-height: 0.9;
+margin: 0.01em 0;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33);
+}
+
 img.lazy {
     display: block;
 }
@@ -23,10 +30,22 @@ img.lazy {
     *zoom: 1;
 }
 
-.bx-wrapper, .bx-viewport {
-    width: 225px !important;
-    max-width: 225px; 
-    height: 220px !important;
+.grid-item-4 .bx-wrapper, .grid-item-4 .bx-viewport {
+    width: 250px !important;
+    max-width: 250px; 
+    height: 245px !important;
+}
+
+.grid-item-3 .bx-wrapper, .grid-item-3 .bx-viewport {
+    width: 210px !important;
+    max-width: 210px; 
+    height: 205px !important;
+}
+
+.grid-item-2 .bx-wrapper, .grid-item-2 .bx-viewport {
+    width: 170px !important;
+    max-width: 170px; 
+    height: 165px !important;
 }
 
 .bx-wrapper img {
@@ -300,27 +319,30 @@ font-size: 60px;
 }
 
 p.promo-two {
-margin:8px !important;
+margin: 8px !important;
 text-align: center;
-font-size: 40px;
+font-size: 38px;
+line-height: 32px;
 }
 
 p.promo-three {
-margin-top:25px !important;
-font-size: 20px;
+margin-top: 24px !important;
+font-size: 38px;
 text-align: center;
+line-height: 32px;
 }
 
 p.promo-four {
-margin:13px !important;
+margin-top: 22px !important;
 text-align: center;
-font-size: 30px;
+font-size: 54px;
+line-height: 51px;
 }
 
 p.promo-five {
-margin-top: 26px !important;
+margin-top: 15px !important;
 text-align: center;
-font-size: 20px;
+font-size: 28px;
 }
 
 p.promo-six {
@@ -330,7 +352,7 @@ font-size: 45px;
 }
 
 .descriptionForGrid {
-font-size: 18px !important;
+font-size: 20px !important;
 line-height: 25.2px;
 font-family: 'UnderDog', sans-serif !important;
 }
@@ -346,7 +368,7 @@ font-weight: normal;
     background: none repeat scroll 0 0 black;
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'UnderDog', sans-serif;
     height: 70px;
     left: 0;
     position: absolute;
@@ -358,20 +380,62 @@ font-weight: normal;
     font-size: 14px;
 }
 .customHtml > h4 {
-    font-family: Arial, sans-serif;
+    font-family: 'UnderDog', sans-serif;
     font-weight: bold;
     margin-bottom: 5px;
     margin-top: 15px;
 }
 
+.grid-item {
+    position: relative;
+}
 
+@media (min-width: 992px)
+#main-content .grid-item-2 .btn-sm {
+font-size: 0.95em;
+position: absolute;
+bottom: 18px;
+left: 50%;
+margin-left: -70px;
+}
+
+.grid-item.grid-item-2 {
+    height: 410px;
+    max-height: 410px;
+    min-height: 410px;
+}
 
 .grid-item .item-content h5 {
-    line-height: 37px;
+    font-family: 'UnderDog', sans-serif;
+    cursor: pointer;
 }
-/*p.promo-one {
-  margin:0px;
 
+.grid-item.grid-item-2 .item-content h5{
+    line-height: 30px;
+    font-family: 'UnderDog', sans-serif;
+    font-size: 31px !important;
+    word-wrap: break-word;
+}
+
+.grid-item.grid-item-2 .descriptionForGrid {
+    font-size: 22px !important;
+    line-height: 23px;
+    font-family: 'UnderDog', sans-serif !important;
+
+    word-wrap: break-word;
+    max-height: 90px;
+    overflow: hidden;
+    height: 90px;
+    min-height: 90px;
+}
+
+/*.grid-item.grid-item-3 .item-content h5{
+    line-height: 29px;
+    font-family: 'UnderDog', sans-serif;
+    font-size: 36px !important;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    width: 150px;
 }*/
 
 
@@ -401,4 +465,8 @@ background-color: transparent !important;
 background: none !important;
 filter: none !important;
 -ms-filter: none !important;
+}
+
+.modal-block-text {
+    text-align: left;
 }

@@ -5,32 +5,31 @@
     secId: 'index',
     secType: 'text',
     secCaption: "Студия артистического фехтования <br />  «Волчий глаз»",
-    secBg: pRes~"/images/bg/bg1.jpg"
-    } %}
-
-    {% include 'BSFrontBundle::layout_section.html.twig' with {
-    entityEvents: entities['events'],
-    entityBlogs: entities['blogs'],
-    secId: 'action',
-    secType: 'grid',
-    secCaption: 'Посмотреть шоу',
     secBg: pRes~"/images/bg/bg2.jpg"
     } %}
 
     {% include 'BSFrontBundle::layout_section.html.twig' with {
-    grids: entities['blogs'],
-    secId: 'blogs',
-    secType: 'grid',
-    secCaption: 'Блог',
+    grids: entities['action'],
+    secId: 'action',
+    secType: 'grid-md-4',
+    secCaption: 'Посмотреть шоу',
     secBg: pRes~"/images/bg/bg3.jpg"
     } %}
 
     {% include 'BSFrontBundle::layout_section.html.twig' with {
     grids: entities['events'],
     secId: 'events',
-    secType: 'grid',
+    secType: 'grid-md-2',
     secCaption: 'События и история студии',
     secBg: pRes~"/images/bg/bg4.jpg"
+    } %}
+
+    {% include 'BSFrontBundle::layout_section.html.twig' with {
+    grids: entities['blogs'],
+    secId: 'blogs',
+    secType: 'grid-md-3',
+    secCaption: 'Блог',
+    secBg: pRes~"/images/bg/bg1.jpg"
     } %}
 
     {% include 'BSFrontBundle::layout_section.html.twig' with {
