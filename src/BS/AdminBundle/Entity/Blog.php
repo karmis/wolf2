@@ -55,9 +55,9 @@ class Blog
      * @ORM\JoinTable(
      *      name="Blog2BlogGallery",
      *      joinColumns={
-     *          @ORM\JoinColumn(name="blog_id", referencedColumnName="id")
+     *          @ORM\JoinColumn(name="blog_id", referencedColumnName="id", onDelete="CASCADE")
      *      },
-     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id", onDelete="CASCADE")}
      * )
      */
     public $gallery;

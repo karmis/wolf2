@@ -55,9 +55,9 @@ class Action
      * @ORM\JoinTable(
      *      name="Action2ActionGallery",
      *      joinColumns={
-     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id")
+     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id", onDelete="CASCADE")
      *      },
-     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id", onDelete="CASCADE")}
      * )
      */
     private $gallery;
@@ -67,9 +67,9 @@ class Action
      * @ORM\JoinTable(
      *      name="Action2ActionVideoGallery",
      *      joinColumns={
-     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id")
+     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id", onDelete="CASCADE")
      *      },
-     *      inverseJoinColumns={@ORM\JoinColumn(name="video_gallery_id", referencedColumnName="id")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="video_gallery_id", referencedColumnName="id", onDelete="CASCADE")}
      * )
      */
     private $videoGallery;

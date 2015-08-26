@@ -70,9 +70,9 @@ class Event
      * @ORM\JoinTable(
      *      name="Event2EventGallery",
      *      joinColumns={
-     *          @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     *          @ORM\JoinColumn(name="event_id", referencedColumnName="id", onDelete="CASCADE")
      *      },
-     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="gallery_id", referencedColumnName="id", onDelete="CASCADE")}
      * )
      */
     public $gallery;
@@ -83,9 +83,9 @@ class Event
      * @ORM\JoinTable(
      *      name="Event2EventVideoGallery",
      *      joinColumns={
-     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id")
+     *          @ORM\JoinColumn(name="action_id", referencedColumnName="id", onDelete="CASCADE")
      *      },
-     *      inverseJoinColumns={@ORM\JoinColumn(name="event_gallery_id", referencedColumnName="id")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="event_gallery_id", referencedColumnName="id", onDelete="CASCADE")}
      * )
      */
     public $videoGallery;
