@@ -42,11 +42,97 @@ img.lazy {
     height: 205px !important;
 }
 
+.grid-item.grid-item-2 {
+	height: 285px;
+	max-height: 285px;
+	min-height: 285px;
+	margin-bottom: 10px;
+}
+
+.grid-item.grid-item-3 {
+	height: 350px;
+	max-height: 350px;
+	min-height: 350px;
+	margin-bottom: 10px;
+}
+
+.grid-item.grid-item-4 {
+	height: 400px;
+	max-height: 400px;
+	min-height: 400px;
+	margin-bottom: 10px;
+}
+
+.grid-item .item-content h5 {
+    font-family: 'UnderDog', sans-serif;
+    cursor: pointer;
+}
+
+.grid-item.grid-item-2 .item-content h5{
+    line-height: 19px;
+    font-family: 'UnderDog', sans-serif;
+    font-size: 22px !important;
+    word-wrap: break-word;
+}
+
+.grid-item.grid-item-3 .item-content h5{
+	line-height: 31px;
+	font-family: 'UnderDog', sans-serif;
+	font-size: 30px !important;
+	word-wrap: break-word;
+	padding-top: 5px;
+	word-wrap: break-word;
+}
+
+.grid-item.grid-item-4 .item-content h5{
+	line-height: 34px;
+	font-family: 'UnderDog', sans-serif;
+	font-size: 35px !important;
+	word-wrap: break-word;
+	padding-top: 5px;
+	word-wrap: break-word;
+}
+
+
+.grid-item.grid-item-2 .descriptionForGrid {
+    font-size: 22px !important;
+    line-height: 23px;
+    font-family: 'UnderDog', sans-serif !important;
+
+    word-wrap: break-word;
+    max-height: 90px;
+    overflow: hidden;
+    height: 90px;
+    min-height: 90px;
+}
+
+.grid-item .btn-item-grid{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+
+.grid-item-2 .btn-item-grid {
+	margin-left: -68px;
+}
+
+.grid-item-3 .btn-item-grid {
+	margin-left: -70px;
+}
+
+
+.grid-item-4 .btn-item-grid {
+	margin-left: -71px;
+}
+
+
+
 .grid-item-2 .bx-wrapper, .grid-item-2 .bx-viewport {
     width: 170px !important;
     max-width: 170px; 
     height: 165px !important;
 }
+
 
 .bx-wrapper img {
     width: 100%;
@@ -399,35 +485,7 @@ left: 50%;
 margin-left: -70px;
 }
 
-.grid-item.grid-item-2 {
-    height: 410px;
-    max-height: 410px;
-    min-height: 410px;
-}
 
-.grid-item .item-content h5 {
-    font-family: 'UnderDog', sans-serif;
-    cursor: pointer;
-}
-
-.grid-item.grid-item-2 .item-content h5{
-    line-height: 30px;
-    font-family: 'UnderDog', sans-serif;
-    font-size: 31px !important;
-    word-wrap: break-word;
-}
-
-.grid-item.grid-item-2 .descriptionForGrid {
-    font-size: 22px !important;
-    line-height: 23px;
-    font-family: 'UnderDog', sans-serif !important;
-
-    word-wrap: break-word;
-    max-height: 90px;
-    overflow: hidden;
-    height: 90px;
-    min-height: 90px;
-}
 
 /*.grid-item.grid-item-3 .item-content h5{
     line-height: 29px;

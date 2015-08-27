@@ -210,16 +210,24 @@ function populate_and_open_modal(t, e, i, a, route, type, id) {
     if (void 0 !== a && "" != a && (r = a), o.length > 0 && s.length > 0) {
         $("#outer-container").fadeTo("fast", .2);
         var c = $('#modal-uid-'+id+'-'+type).html();
+        var modal = $('.content-to-populate-in-modal#modal-uid-'+id+'-'+type);
         if(c){
             showModalWindow(c, n, o, s, r, a, e, id, type);
         } else {
             request(route, {}, {
                 success:function(c){
-                    $('.content-to-populate-in-modal#modal-uid-'+id+'-'+type).html(c);
-                    showModalWindow(c, n, o, s, r, a, e, id, type);
+
+                    modal.html(c);
+                    showModalWindow(c, n, o, s, r, a, e, id, type, modal);
+                    modalGallery = modal.find('.lightGalleryBlockInModal img');
+		            modalGallery.find('.lightGalleryBlockInModal img').on('load', function(){
+		            	debugger;
+		            	$(window).resize();
+            		});
+            
                 }, 
                 error: function(){
-                    showModalWindow('Ничего не найдено', n, o, s, r, a, e, id, type);
+                    showModalWindow('Ничего не найдено', n, o, s, r, a, e, id, type, modal);
                 }
             }, 'post'); 
         }
@@ -234,7 +242,7 @@ function showModalWindow(c, n, o, s, r, a, e, id, type)
     }), "" != r && n.addClass(r), n.on("shown.bs.modal", function () {
         if (position_modal_at_centre(), void 0 !== i && "" != i && $("#common-modal.modal").find(i).length > 0) {
             var t = $("#common-modal.modal").find(i).offset().top;
-            $("#common-modal.modal").stop().animate({scrollTop: t}, 800, "easeInOutCubic")
+            $("#common-modal.modal").stop().animate({scrollTop: t}, 800, "easeInOutCubic");
         }
     }), n.on("hide.bs.modal", function () {
         $("#outer-container").fadeTo("fast", 1), $("#" + e).find("a[data-mod-lightbox]").each(function () {

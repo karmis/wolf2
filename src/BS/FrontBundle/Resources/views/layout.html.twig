@@ -5,78 +5,50 @@
         Студия артистического фехтования "Волчий глаз"
     {% endblock %}
 
-    {% block css %}
-        {{ parent() }}
+{% block css %}
+    {% stylesheets
+    'bower/components/bootstrap/dist/css/bootstrap.min.css'
+    'bower/components/bootstrap/dist/css/bootstrap-theme.min.css'
+    'bower/components/wow/css/libs/animate.css'
+    'bower/components/font-awesome/css/font-awesome.min.css'
+    'bower/components/lightbox2/css/lightbox.css'
+    'bundles/bsfront/css/css.css'
+    'bundles/bsfront/lightGallery-master/light-gallery/css/lightGallery.css'
+    'bundles/bsfront/css/custom.css'
 
-        <link rel="stylesheet" href="{{ asset(pCom~'/bootstrap/dist/css/bootstrap.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/bootstrap/dist/css/bootstrap-theme.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/owlcarousel/owl-carousel/owl.carousel.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/owlcarousel/owl-carousel/owl.theme.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/owlcarousel/owl-carousel/owl.transitions.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/wow/css/libs/animate.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/font-awesome/css/font-awesome.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pCom~'/lightbox2/css/lightbox.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pRes~'/css/css.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pRes~'/lightGallery-master/light-gallery/css/lightGallery.css') }}"/>
-        <link rel="stylesheet" href="{{ asset(pRes~'/css/custom.css') }}"/>
-
-    {% endblock %}
-
-    {% block js %}
-        {{ parent() }}
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ asset(pRes~'/js/jquery.min.js') }}"><\/script>')</script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/js/jquery-ui-1.11.2.custom/jquery-ui.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/jquery.migrate/jquery-migrate-1.2.1.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/jquery.lazyload/jquery.lazyload.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/cheet.js/cheet.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/jquery-backstretch/jquery.backstretch.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/js/detectmobilebrowser.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/owlcarousel/owl-carousel/owl.carousel.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/lightbox2/js/lightbox.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pCom~'/wow/dist/wow.min.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/js/jquery.bxslider-rahisified.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/lightGallery-master/light-gallery/js/lightGallery.min.js') }}"></script>
+    filter='cssrewrite' output='compiled/css/all.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
 
 
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/html5gallery/html5gallery.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/js/func.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/js/init-func.js') }}"></script>
-        <script type="text/javascript"
-                src="{{ asset(pRes~'/js/js.js') }}"></script>
+
+{% block js %}
+    {% javascripts
+    'bundles/bsfront/js/jquery.min.js'
+    'bundles/bsfront/js/jquery-ui-1.11.2.custom/jquery-ui.min.js'
+    'bower/components/jquery.migrate/jquery-migrate-1.2.1.min.js'
+    'bower/components/bootstrap/dist/js/bootstrap.min.js'
+    'bower/components/jquery-backstretch/jquery.backstretch.min.js'
+    'bundles/bsfront/js/detectmobilebrowser.js'
+    'bower/components/lightbox2/js/lightbox.min.js'
+    'bower/components/wow/dist/wow.min.js'
+    'bundles/bsfront/js/jquery.bxslider-rahisified.js'
+    'bundles/bsfront/lightGallery-master/light-gallery/js/lightGallery.min.js'
+    'bundles/bsfront/js/recliner.min.js'
+    'bundles/bsfront/js/func.js'
+    'bundles/bsfront/js/init-func.js'
+    'bundles/bsfront/js/js.js'
 
 
-        <script type="text/javascript">
-        // $(document)
-        //     .on('fos_comment_show_form', '.fos_comment_comment_reply_show_form', function (event, data) {
-        //         // do stuffs
-        // });
-        </script>
-    {% endblock %}
-
-
+    output='compiled/js/all.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock js %}
     {% block body %}
         <div class="background-image-overlay"></div>
-        <div id="outer-background-container" data-default-background-img="{{ asset(pRes~"/images/bg/bg4.jpg") }}"
-             style="background-image:url("{{ asset(pRes~"/images/bg/bg1.jpg") }}")";>
+        <div id="outer-background-container" data-default-background-img="{{ asset("bundles/bsfront/images/bg/bg4.jpg") }}"
+             style="background-image:url("{{ asset("bundles/bsfront/images/bg/bg1.jpg") }}")";>
         </div>
 
 
@@ -90,9 +62,9 @@
 
                 <div class="logo">
                     <a href="#bs-block-index" class="link-scroll">
-                        <img src="{{ asset(pRes~"/images/logo.png") }}" class="img-responsive logo-image"
+                        <img src="{{ asset("bundles/bsfront/images/logo.png") }}" class="img-responsive logo-image"
                              alt="Студия артистического фехтования «Волчий глаз»"/>
-                        <img src="{{ asset(pRes~"/images/logo-color.png") }}" class="img-responsive logo-image color"
+                        <img src="{{ asset("bundles/bsfront/images/logo-color.png") }}" class="img-responsive logo-image color"
                              style="opacity: 0; margin-top: -141px;"
                              alt="Студия артистического фехтования «Волчий глаз»"/>
                     </a>
@@ -127,11 +99,11 @@
 
                 <ul class="social-icons">
                     <li><a href="#" target="_blank" title="Facebook"><img
-                                    src=" {{ asset(pRes~"/images/icons/facebook.png") }}" alt="Facebook"></a></li>
+                                    src=" {{ asset("bundles/bsfront/images/icons/facebook.png") }}" alt="Facebook"></a></li>
                     <li><a href="#" target="_blank" title="Twitter"><img
-                                    src=" {{ asset(pRes~"/images/icons/twitter.png") }}" alt="Twitter"></a></li>
+                                    src=" {{ asset("bundles/bsfront/images/icons/twitter.png") }}" alt="Twitter"></a></li>
                     <li><a href="#" target="_blank" title="Google+"><img
-                                    src=" {{ asset(pRes~"/images/icons/googleplus.png") }}" alt="Google+"></a></li>
+                                    src=" {{ asset("bundles/bsfront/images/icons/googleplus.png") }}" alt="Google+"></a></li>
                 </ul>
 
                 <!-- copyright text -->

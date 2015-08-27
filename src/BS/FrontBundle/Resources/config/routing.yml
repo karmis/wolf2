@@ -2,18 +2,6 @@ bs_front_feedback:
     resource: "@BSFrontBundle/Resources/config/routing/feedback.yml"
     prefix:   /feedback
 
-bs_front_comment:
-    resource: "@BSFrontBundle/Resources/config/routing/comment.yml"
-    prefix:   /comment
-
-bs_front_event:
-    resource: "@BSFrontBundle/Resources/config/routing/event.yml"
-    prefix:   /event
-
-bs_front_blog:
-    resource: "@BSFrontBundle/Resources/config/routing/blog.yml"
-    prefix:   /blog
-
 main:
     path:     /
     defaults: { _controller: BSFrontBundle:Default:index }
@@ -21,3 +9,11 @@ main:
 load_content:
     path:     /load/content/{entityType}/{id}
     defaults: { _controller: BSFrontBundle:Default:loadContent }
+
+lazy_load_block_intro:
+    path:     /lazy/load/intro
+    defaults: { _controller: BSFrontBundle:Default:intro }
+
+lazy_load_block_action:
+    path:     /lazy/load/intro
+    defaults: { _controller: BSFrontBundle:Default:action }

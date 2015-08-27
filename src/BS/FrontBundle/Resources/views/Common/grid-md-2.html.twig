@@ -14,7 +14,7 @@
                                 {% for gallery in entity.gallery if maxCount < 5 %}
                                     {% if gallery is defined and gallery is not null and gallery.photo is not null  %}
                                         <div onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');">
-                                            <img src="{{ vich_uploader_asset(gallery, 'photoFile')|imagine_filter('prev_on_page_item_slider_grid_2') }}" alt="{{ entity.caption }}"
+                                            <img data-src="{{ vich_uploader_asset(gallery, 'photoFile')|imagine_filter('prev_on_page_item_slider_grid_2') }}" src="{{ asset(pRes~'/images/placeholderimage.png')|imagine_filter('prev_on_page_item_slider_grid_2_low') }}" alt="{{ entity.caption }}"
                                                  class="img-responsive lazy"/>
                                         </div>
                                         {% set maxCount = maxCount + 1 %}
@@ -27,20 +27,12 @@
                         <div class="text-content text-center">
                             {% autoescape true %}
                             <h5 onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');" style="cursor:pointer">
-                                {{ entity.caption|truncate(25) }}
+                                {{ entity.caption|truncate(40) }}
                             </h5>
-                            <p class="descriptionForGrid">
-                                {% if entity.smallContent %}
-                                    {{ entity.smallContent|default('Краткое описание')|truncate(50) }}
-                                {% else %}
-                                    {{ entity.content|striptags|truncate(50) }}
-                                {% endif %}
-                            </p>
-
                             <p>
                                 <a href="#"
                                    onclick="populate_and_open_modal(event, 'modal-uid-{{ entity.id }}-{{entity.getEntityType}}', null, null,  '{{ path('load_content', {entityType: entity.getEntityType, id: entity.id })}}', '{{ entity.getEntityType }}', '{{ entity.id }}');"
-                                   class="btn btn-outline-inverse btn-sm isNotOpened">
+                                   class="btn btn-outline-inverse btn-sm isNotOpened btn-item-grid">
                                     Подробнее...
                                 </a>
                             </p>

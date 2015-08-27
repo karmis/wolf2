@@ -7,27 +7,3 @@ services:
         public: false
         tags:
             - { name: twig.extension }
-
-    bs_front.admin.blog:
-        class: BS\FrontBundle\Admin\BlogAdmin
-        arguments: [~, BS\FrontBundle\Entity\Blog, SonataAdminBundle:CRUD]
-        tags:
-            - {name: sonata.admin, manager_type: orm, group: Содержимое, label: Блог}
-
-    bs_front.admin.event:
-        class: BS\FrontBundle\Admin\EventAdmin
-        arguments: [~, BS\FrontBundle\Entity\Event, SonataAdminBundle:CRUD]
-        tags:
-            - {name: sonata.admin, manager_type: orm, group: Содержимое, label: События}
-
-    bs_front.admin.video.gallery:
-        class: BS\FrontBundle\Admin\VideoGalleryAdmin
-        arguments: [~, BS\FrontBundle\Entity\VideoGallery, SonataAdminBundle:CRUD]
-        tags:
-            - {name: sonata.admin, manager_type: orm, group: Содержимое, label: Видео галлерея}
-
-    bs_front.admin.feedbacksdssd:
-        class: BS\FrontBundle\Admin\FeedBackAdmin
-        arguments: [~, BS\FrontBundle\Entity\FeedBack, SonataAdminBundle:CRUD]
-        tags:
-            - {name: sonata.admin, manager_type: orm, group: Заявки, label: Заявки}

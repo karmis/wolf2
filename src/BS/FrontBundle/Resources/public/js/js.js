@@ -19,7 +19,10 @@ $(function () {
         slideWidth: 450,
         responsive: false,
         adaptiveHeight: false,
-        pager:false
+        pager:false,
+		onSlideBefore: function($slideElement){
+			$(window).resize();
+		}
 
     });
 
@@ -28,7 +31,10 @@ $(function () {
       mode: 'fade',
       auto: true,
       autoControls: true,
-      pause: 2000
+      pause: 2000,
+      onSlideBefore: function(){
+      	$(window).resize();
+      }
     });
 
 
@@ -44,6 +50,13 @@ $(function () {
         },
         loop:false,
         speed:1500
+    });
+
+    $(".lazy").recliner({
+        attrib: "data-src", // selector for attribute containing the media src
+        throttle: 1000,      // millisecond interval at which to process events
+        threshold: 3000,     // scroll distance from element before its loaded
+        live: true          // auto bind lazy loading to ajax loaded elements
     });
 
 
