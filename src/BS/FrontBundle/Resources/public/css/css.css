@@ -1,4 +1,26 @@
-@import url('fonts/stylesheet.css');
+@font-face {
+    font-family: 'Amadeus';
+    src: url('fonts/Amadeus.eot');
+    src: url('fonts/Amadeus.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Amadeus.svg#open_sansregular') format('svg'),
+         url('fonts/Amadeus.woff') format('woff'),
+         url('fonts/Amadeus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'UnderDog';
+    src: url('fonts/Larisascript.eot');
+    src: url('fonts/Larisascript.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Larisascript.svg#Larisascript') format('svg'),
+         url('fonts/Larisascript.woff') format('woff'),
+         url('fonts/Larisascript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /* ====================================================
    GENERAL STYLES
