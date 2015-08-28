@@ -36,7 +36,7 @@ class BlogController extends Controller
         $pagination = $paginator->paginate(
             $entities,
             $this->get('request')->query->get('page', 1),
-            10
+            1000
         );
         $deleteForms = array();
         for ($i = 0; $i < count($entities); $i++) {
@@ -208,6 +208,8 @@ class BlogController extends Controller
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Blog entity.');
             }
+
+            $this->get('cache')->delete('init_blogs');
 
             $em->remove($entity);
             $em->flush();

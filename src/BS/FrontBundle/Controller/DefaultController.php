@@ -10,6 +10,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+    	$this->get('cache')->delete('init_events');
+    	$this->get('cache')->delete('init_blogs');
+    	$this->get('cache')->delete('init_actions');
         $em = $this->getDoctrine()->getManager();
 
         $blogs = unserialize(json_decode($this->get('cache')->fetch('init_blogs')));
@@ -42,7 +45,7 @@ class DefaultController extends Controller
                 ->orderBy('action.id', 'ASC')
                 ->getQuery()->getResult();
 
-            $this->get('cache')->save('init_events', serialize(json_encode($actions)));
+            $this->get('cache')->save('init_actions', serialize(json_encode($actions)));
         }
 
 
@@ -60,6 +63,12 @@ class DefaultController extends Controller
         ));
     }
 
+/*
+    public function actionsAction()
+    {
+
+    }
+*/
 
     private function getFeedBackForm()
     {

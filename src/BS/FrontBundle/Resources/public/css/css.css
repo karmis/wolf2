@@ -1255,10 +1255,10 @@ h6 {
     display: none;
     background:#fff;
     color:#a10000;
-    font-size: 0.7em;
-    font-family: 'Amadeus', sans-serif;
+    font-size: 19px;
+    font-family: 'UnderDog', sans-serif;
     border-radius: 0;
-    padding:8px 10px;
+    padding:2px 5px;
 }
 #main-content .form-style .alert.success {
     color:#119400;
@@ -1285,7 +1285,7 @@ h6 {
         #main-content .form-style input.text-field,
         #main-content .form-style textarea {
             height:35px;
-            font-size:0.85em;
+            font-size:19px;
         }
         #main-content .form-style textarea {
             height:120px;
@@ -1295,7 +1295,7 @@ h6 {
         #main-content .form-style input.text-field,
         #main-content .form-style textarea {
             height:54px;
-            font-size:0.97em;
+            font-size:21px;
         }
         #main-content .form-style textarea {
             height:195px;

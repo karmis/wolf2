@@ -54,8 +54,8 @@ $(function () {
 
     $(".lazy").recliner({
         attrib: "data-src", // selector for attribute containing the media src
-        throttle: 1000,      // millisecond interval at which to process events
-        threshold: 3000,     // scroll distance from element before its loaded
+        throttle: 800,      // millisecond interval at which to process events
+        threshold: 2000,     // scroll distance from element before its loaded
         live: true          // auto bind lazy loading to ajax loaded elements
     });
 
@@ -76,4 +76,10 @@ $(function () {
 
         });
     });
+    
+    
+});
+$(window).load(function() {
+
+	$('#main-content').show(2000);
 });

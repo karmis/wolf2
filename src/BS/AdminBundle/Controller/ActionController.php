@@ -36,7 +36,7 @@ class ActionController extends Controller
         $pagination = $paginator->paginate(
             $entities,
             $this->get('request')->query->get('page', 1),
-            10
+            1000
         );
         $deleteForms = array();
         for ($i = 0; $i < count($entities); $i++) {
@@ -209,6 +209,8 @@ class ActionController extends Controller
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Action entity.');
             }
+
+            $this->get('cache')->delete('init_actions');
 
             $em->remove($entity);
             $em->flush();

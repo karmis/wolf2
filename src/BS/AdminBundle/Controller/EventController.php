@@ -36,7 +36,7 @@ class EventController extends Controller
         $pagination = $paginator->paginate(
             $entities,
             $this->get('request')->query->get('page', 1),
-            10
+            1000
         );
         $deleteForms = array();
         for ($i = 0; $i < count($entities); $i++) {
@@ -209,6 +209,8 @@ class EventController extends Controller
                 throw $this->createNotFoundException('Unable to find Event entity.');
             }
 
+            $this->get('cache')->delete('init_events');
+            
             $em->remove($entity);
             $em->flush();
         }
