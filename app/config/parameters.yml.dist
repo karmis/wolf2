@@ -1,20 +1,20 @@
-# This file is a "template" of what your parameters.yml file should look like
+# This file is auto-generated during the composer install
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     symfony
-    database_user:     root
-    database_password: ~
-    # You should uncomment this if you want use pdo_sqlite
-    # database_path: "%kernel.root_dir%/data.db3"
-
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
-
-    locale:            en
-
-    # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: wolf
+    database_user: root
+    database_password: Vjybrf33
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: ru
+    secret: ojfhisdhfg68t623h23pudh3028ji2d3
+    upload_dirs.event_photo.uri_prefix: '/uploads/events/photo'
+    upload_dirs.event_photo.upload_destination: '%kernel.root_dir%/../web/uploads/events/photo/'
+    upload_dirs.action_photo.uri_prefix: '/uploads/actions/photo'
+    upload_dirs.action_photo.upload_destination: '%kernel.root_dir%/../web/uploads/actions/photo/'
+    upload_dirs.blog_photo.uri_prefix: '/uploads/blogs/photo'
+    upload_dirs.blog_photo.upload_destination: '%kernel.root_dir%/../web/uploads/blogs/photo/'

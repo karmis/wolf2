@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5da56af1be3e55cf5c745618264ef107",
+    "hash": "6aafbd2a0e7048ec0e13b64e81c7a3dd",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -293,7 +293,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/f4d0797779a7936205fd984bda42a8bf94e56f0e",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2bd2232abc335b5dea68ffb656977d70207c8a45",
                 "reference": "f4d0797779a7936205fd984bda42a8bf94e56f0e",
                 "shasum": ""
             },
@@ -525,7 +525,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/b0b2feffb47906a03b570777c07044c529d1d124",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
                 "reference": "b0b2feffb47906a03b570777c07044c529d1d124",
                 "shasum": ""
             },
@@ -1495,17 +1495,17 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "1.3.0",
+            "version": "dev-master",
             "target-dir": "Liip/ImagineBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "24c977ccf1a15854dc5fb3efc5de86011f8f0ef3"
+                "reference": "91ed657efca36693c6d5ab02c5cc2f7cd9bd3ee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/24c977ccf1a15854dc5fb3efc5de86011f8f0ef3",
-                "reference": "24c977ccf1a15854dc5fb3efc5de86011f8f0ef3",
+                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/91ed657efca36693c6d5ab02c5cc2f7cd9bd3ee9",
+                "reference": "91ed657efca36693c6d5ab02c5cc2f7cd9bd3ee9",
                 "shasum": ""
             },
             "require": {
@@ -1530,13 +1530,13 @@
                 "symfony/form": "~2.3 || ~3.0",
                 "symfony/phpunit-bridge": "~2.3 || ~3.0",
                 "symfony/yaml": "~2.3 || ~3.0",
-                "twig/twig": "~1.0"
+                "twig/twig": "~1.12"
             },
             "suggest": {
                 "amazonwebservices/aws-sdk-for-php": "Add it if you'd like to use aws v1 resolver",
                 "aws/aws-sdk-php": "Add it if you'd like to use aws v2 or v3 resolver",
                 "monolog/monolog": "If you'd want to write logs",
-                "twig/twig": "If you'd want to use some handy twig filters"
+                "twig/twig": "If you'd want to use some handy twig filters, version 1.12 or greater required"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1566,7 +1566,7 @@
                 "image",
                 "imagine"
             ],
-            "time": "2015-06-04 11:44:07"
+            "time": "2015-08-27 11:27:33"
         },
         {
             "name": "monolog/monolog",
@@ -1578,7 +1578,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d58755629d665abe7955e87ecb0a7a17912670ad",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d4af96813fccd80f3fc8e6bf95beab31d950d4b3",
                 "reference": "d58755629d665abe7955e87ecb0a7a17912670ad",
                 "shasum": ""
             },
@@ -2374,7 +2374,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/5cc242ef3f4423dc8eb5eb19e04c23ea103ac70a",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/449e3c8a9ffad7c2479c7864557275a32b037499",
                 "reference": "5cc242ef3f4423dc8eb5eb19e04c23ea103ac70a",
                 "shasum": ""
             },
@@ -2426,7 +2426,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/92fa52b87489e4d517c5023d389c243d153ba179",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5815c8344b4d645323d92dab3abb5b8a7d8dd605",
                 "reference": "92fa52b87489e4d517c5023d389c243d153ba179",
                 "shasum": ""
             },

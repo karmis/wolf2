@@ -1,7 +1,6 @@
 bs_front_feedback:
     resource: "@BSFrontBundle/Resources/config/routing/feedback.yml"
     prefix:   /feedback
-
 main:
     path:     /
     defaults: { _controller: BSFrontBundle:Default:index }
@@ -17,3 +16,6 @@ lazy_load_block_intro:
 lazy_load_block_action:
     path:     /lazy/load/intro
     defaults: { _controller: BSFrontBundle:Default:action }
+
+
+

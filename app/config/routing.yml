@@ -9,6 +9,5 @@ bs_front:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
-_liip_imagine:
+_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"

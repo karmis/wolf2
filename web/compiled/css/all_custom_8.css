@@ -1,0 +1,530 @@
+/* It is recommended to place all your extra/additional CSS rules here */
+#common-modal .modal-body p > span {
+    color: #fff !important;
+    font-family: 'UnderDog', sans-serif !important;
+    font-size: 22px !important;
+}
+
+.modal .modal-dialog {
+    width: 90% !important;
+    margin: 40px auto;
+}
+
+h1 {
+font-size: 2.25em;
+line-height: 0.9;
+margin: 0.01em 0;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33);
+}
+
+img.lazy {
+    display: block;
+}
+
+/********* BXSLIDER ***********/
+
+.bx-wrapper {
+    position: relative;
+    margin: 0 0 60px;
+    padding: 0;
+    *zoom: 1;
+}
+
+.grid-item-4 .bx-wrapper, .grid-item-4 .bx-viewport {
+    width: 250px !important;
+    max-width: 250px; 
+    height: 245px !important;
+}
+
+.grid-item-3 .bx-wrapper, .grid-item-3 .bx-viewport {
+    width: 210px !important;
+    max-width: 210px; 
+    height: 205px !important;
+}
+
+.grid-item.grid-item-2 {
+	height: 285px;
+	max-height: 285px;
+	min-height: 285px;
+	margin-bottom: 10px;
+}
+
+.grid-item.grid-item-3 {
+	height: 350px;
+	max-height: 350px;
+	min-height: 350px;
+	margin-bottom: 10px;
+}
+
+.grid-item.grid-item-4 {
+	height: 400px;
+	max-height: 400px;
+	min-height: 400px;
+	margin-bottom: 10px;
+}
+
+.grid-item .item-content h5 {
+    font-family: 'UnderDog', sans-serif;
+    cursor: pointer;
+}
+
+.grid-item.grid-item-2 .item-content h5{
+    line-height: 19px;
+    font-family: 'UnderDog', sans-serif;
+    font-size: 22px !important;
+    word-wrap: break-word;
+}
+
+.grid-item.grid-item-3 .item-content h5{
+	line-height: 31px;
+	font-family: 'UnderDog', sans-serif;
+	font-size: 30px !important;
+	word-wrap: break-word;
+	padding-top: 5px;
+	word-wrap: break-word;
+}
+
+.grid-item.grid-item-4 .item-content h5{
+	line-height: 34px;
+	font-family: 'UnderDog', sans-serif;
+	font-size: 35px !important;
+	word-wrap: break-word;
+	padding-top: 5px;
+	word-wrap: break-word;
+}
+
+
+.grid-item.grid-item-2 .descriptionForGrid {
+    font-size: 22px !important;
+    line-height: 23px;
+    font-family: 'UnderDog', sans-serif !important;
+
+    word-wrap: break-word;
+    max-height: 90px;
+    overflow: hidden;
+    height: 90px;
+    min-height: 90px;
+}
+
+.grid-item .btn-item-grid{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+
+.grid-item-2 .btn-item-grid {
+	margin-left: -68px;
+}
+
+.grid-item-3 .btn-item-grid {
+	margin-left: -70px;
+}
+
+
+.grid-item-4 .btn-item-grid {
+	margin-left: -71px;
+}
+
+
+
+.grid-item-2 .bx-wrapper, .grid-item-2 .bx-viewport {
+    width: 170px !important;
+    max-width: 170px; 
+    height: 165px !important;
+}
+
+
+.bx-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+}
+
+.bx-wrapper .bx-viewport {
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border: solid #fff 1px;
+    left: -5px;
+    background: inherit;
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
+
+.bx-wrapper .bx-loading {
+    min-height: 50px;
+    background: url(../../../bundles/bsfront/images/icons/loader.gif) center center no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+.bx-wrapper .bx-next {
+    right: 3px;
+    background: url(../../../bundles/bsfront/images/icons/controls.png) no-repeat -63px -33px;
+}
+
+.bx-wrapper .bx-next:hover {
+    background: url(../../../bundles/bsfront/images/icons/controls.png) no-repeat -183px -33px;
+}
+
+.bx-wrapper .bx-prev {
+    left: -7px;
+    background: url(../../../bundles/bsfront/images/icons/controls.png) no-repeat -3px -33px;
+}
+
+.bx-wrapper .bx-prev:hover {
+    background: url(../../../bundles/bsfront/images/icons/controls.png) no-repeat -123px -33px;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    outline: 0;
+    width: 55px;
+    height: 55px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+
+.bx-controls-direction a {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.bx-wrapper:hover .bx-controls-direction a {
+    opacity: 1;
+}
+
+/*.bx-controls-direction {*/
+/*opacity: 1;*/
+/*transition: opacity .25s ease-in-out;*/
+/*-moz-transition: opacity .25s ease-in-out;*/
+/*-webkit-transition: opacity .25s ease-in-out;*/
+/*}*/
+/*.bx-wrapper:hover .bx-controls-direction a{*/
+/*opacity: 1;*/
+/*}*/
+
+/*.bx-controls-direction a{*/
+/*opacity: 0;*/
+/*transition: opacity .25s ease-in-out;*/
+/*-moz-transition: opacity .25s ease-in-out;*/
+/*-webkit-transition: opacity .25s ease-in-out;*/
+/*}*/
+/*.bxslider:hover .bx-controls-direction a{*/
+/*opacity: 1;*/
+/*}*/
+
+/*JSSOR*/
+.jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    background: url('../../../bundles/bsfront/images/icons/controls.png') no-repeat;
+    overflow: hidden;
+}
+
+.jssora03l {
+    background-position: -3px -33px
+}
+
+.jssora03r {
+    background-position: -63px -33px
+}
+
+.jssora03l:hover {
+    background-position: -123px -33px
+}
+
+.jssora03r:hover {
+    background-position: -183px -33px
+}
+
+.jssora03ldn {
+    background-position: -243px -33px
+}
+
+.jssora03rdn {
+    background-position: -303px -33px
+}
+
+/* jssor slider thumbnail navigator skin 02 css */
+/*
+.jssort02 .p            (normal)
+.jssort02 .p:hover      (normal mouseover)
+.jssort02 .pav          (active)
+.jssort02 .pav:hover    (active mouseover)
+.jssort02 .pdn          (mousedown)
+*/
+.jssort02 .w {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.jssort02 .c {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 95px;
+    height: 62px;
+    border: #000 2px solid;
+}
+
+.jssort02 .p:hover .c, .jssort02 .pav:hover .c, .jssort02 .pav .c {
+    background: url('../../../bundles/bsfront/images/icons/plus.png') center center;
+    border-width: 0px;
+    top: 2px;
+    left: 2px;
+    width: 95px;
+    height: 62px;
+}
+
+.jssort02 .p:hover .c, .jssort02 .pav:hover .c {
+    top: 0px;
+    left: 0px;
+    width: 97px;
+    height: 64px;
+    border: #fff 1px solid;
+}
+
+.modal-populate .panel>.panel-body div {
+    color: #fff !important;
+    font-size: 1.29vw !important;
+}
+
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.showThumbByDefault #lightGallery-Gallery.open .lightGallery-slide {
+    padding-bottom: 120px;
+}
+.showThumbByDefault #lightGallery-Gallery .thumb_cont .thumb_info{
+    display:none;
+}
+/*/ actions */
+.showThumbByDefault #lightGallery-action {
+    position: static;
+}
+.showThumbByDefault #lightGallery-action a {
+    margin-top: -14px !important;
+    position: absolute;
+    top: 50%;
+    z-index: 9999999;
+    background-color: transparent;
+    font-size: 28px;
+}
+.showThumbByDefault #lightGallery-action a#lightGallery-prev {
+        left: 17px;
+    }
+    .showThumbByDefault #lightGallery-action a#lightGallery-next {
+        right: 17px;
+    }
+    .localVideo #lightGallery-action {
+    position: static;
+}
+
+.lightGallery {
+    overflow: hidden!important;
+    float: left;
+    margin-top: 2px;
+    cursor: pointer;
+    margin-left: -7px;
+}
+
+.lightGallery img {
+    height: 150px;
+    max-height: 150px;
+}
+
+#lightGallery-outer, .splash-promo {
+   background: url(../../../bundles/bsfront/images/bg/background-image-overlay.png) repeat;
+}
+
+
+.splash-promo {
+   background: url(../../../bundles/bsfront/images/black.png) repeat;
+box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
+-moz-box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
+-webkit-box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.88);
+}
+
+.customHtml {
+    height: 85px;
+}
+
+
+.modal-videos, .modal-photos {
+    padding-bottom: 15px;
+}
+
+p.promo {
+margin:0px;
+    font-size: 16px;
+}
+
+p.promo-one {
+margin:10px !important;
+text-align: center;
+font-size: 60px;
+}
+
+p.promo-two {
+margin: 8px !important;
+text-align: center;
+font-size: 38px;
+line-height: 32px;
+}
+
+p.promo-three {
+margin-top: 24px !important;
+font-size: 38px;
+text-align: center;
+line-height: 32px;
+}
+
+p.promo-four {
+margin-top: 22px !important;
+text-align: center;
+font-size: 54px;
+line-height: 51px;
+}
+
+p.promo-five {
+margin-top: 15px !important;
+text-align: center;
+font-size: 28px;
+}
+
+p.promo-six {
+margin-top: 22px !important;
+text-align: right;
+font-size: 45px;
+}
+
+.descriptionForGrid {
+font-size: 20px !important;
+line-height: 25.2px;
+font-family: 'UnderDog', sans-serif !important;
+}
+
+.customHtml h4 {
+font-size: 25px !important;
+line-height: 25.2px;
+font-family: 'UnderDog', sans-serif !important;
+font-weight: normal;
+}
+
+.customHtml {
+    background: none repeat scroll 0 0 black;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-family: 'UnderDog', sans-serif;
+    height: 70px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+.customHtml p {
+    font-size: 14px;
+}
+.customHtml > h4 {
+    font-family: 'UnderDog', sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.grid-item {
+    position: relative;
+}
+
+@media (min-width: 992px)
+#main-content .grid-item-2 .btn-sm {
+font-size: 0.95em;
+position: absolute;
+bottom: 18px;
+left: 50%;
+margin-left: -70px;
+}
+
+
+
+/*.grid-item.grid-item-3 .item-content h5{
+    line-height: 29px;
+    font-family: 'UnderDog', sans-serif;
+    font-size: 36px !important;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    width: 150px;
+}*/
+
+
+.html5gallery-container-0 {
+display: block;
+position: absolute;
+left: 0px;
+top: 0px;
+width: 600px;
+height: 409px;
+ background: none !important; 
+background-color: transparent !important;
+}
+
+.html5gallery-car-0 {
+position: absolute;
+display: block;
+overflow: hidden;
+left: 12px;
+top: 337px;
+width: 480px;
+height: 60px;
+border-top: 1px solid #666666;
+border-bottom: 1px solid #111111;
+background-color: transparent !important; 
+ background: none !important; 
+background: none !important;
+filter: none !important;
+-ms-filter: none !important;
+}
+
+.modal-block-text {
+    text-align: left;
+}
