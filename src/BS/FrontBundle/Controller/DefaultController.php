@@ -10,13 +10,11 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-    	$this->get('cache')->delete('init_events');
-    	$this->get('cache')->delete('init_blogs');
-    	$this->get('cache')->delete('init_actions');
         $em = $this->getDoctrine()->getManager();
 
         $blogs = unserialize(json_decode($this->get('cache')->fetch('init_blogs')));
         if(!$blogs){
+
             $blogs = $em->getRepository('BSAdminBundle:Blog')->createQueryBuilder('blog')
                 ->where('blog.published = :is')
                 ->setParameter('is', true)
@@ -38,13 +36,13 @@ class DefaultController extends Controller
         }
 
         $actions = unserialize(json_decode($this->get('cache')->fetch('init_actions')));
+
         if(!$actions){
             $actions = $em->getRepository('BSAdminBundle:Action')->createQueryBuilder('action')
                 ->where('action.published = :is')
                 ->setParameter('is', true)
                 ->orderBy('action.id', 'ASC')
                 ->getQuery()->getResult();
-
             $this->get('cache')->save('init_actions', serialize(json_encode($actions)));
         }
 
@@ -95,8 +93,10 @@ class DefaultController extends Controller
             throw new \Exception("not_xhr", 1);
         }
         $em = $this->getDoctrine()->getManager();
+        $template = 'BSFrontBundle:Common:modal-populate.html.twig';
         if($entityType == "BLOG"){
             $repository = $em->getRepository('BSAdminBundle:Blog');
+            $template = 'BSFrontBundle:Common:modal-blog.html.twig';
         } elseif($entityType == "EVENT"){
             $repository = $em->getRepository('BSAdminBundle:Event');
         } elseif ($entityType == "ACTION") {
@@ -130,7 +130,7 @@ class DefaultController extends Controller
             throw $this->createNotFoundException('entity_not_found');
         }
 
-        return $this->render('BSFrontBundle:Common:modal-populate.html.twig', array(
+        return $this->render($template, array(
             'entity' => $entity
         ));
     }

@@ -2,16 +2,16 @@
 {% block content %}
 
     {% include 'BSFrontBundle::layout_section.html.twig' with {
-    secId: 'index',
-    secType: 'text',
+    secId: 'promo',
+    secType: 'promo',
     secCaption: "Студия артистического фехтования <br />  «Волчий глаз»",
     secBg: pRes~"/images/bg/bg2.jpg"
     } %}
 
     {% include 'BSFrontBundle::layout_section.html.twig' with {
     grids: entities['action'],
-    secId: 'action',
-    secType: 'grid-md-4',
+    secId: 'actions',
+    secType: 'actions',
     secCaption: 'Посмотреть шоу',
     secBg: pRes~"/images/bg/bg3.jpg"
     } %}
@@ -19,7 +19,7 @@
     {% include 'BSFrontBundle::layout_section.html.twig' with {
     grids: entities['events'],
     secId: 'events',
-    secType: 'grid-md-2',
+    secType: 'events',
     secCaption: 'События и история студии',
     secBg: pRes~"/images/bg/bg4.jpg"
     } %}
@@ -27,7 +27,7 @@
     {% include 'BSFrontBundle::layout_section.html.twig' with {
     grids: entities['blogs'],
     secId: 'blogs',
-    secType: 'grid-md-3',
+    secType: 'blogs',
     secCaption: 'Блог',
     secBg: pRes~"/images/bg/bg1.jpg"
     } %}
@@ -39,11 +39,4 @@
     secBg: pRes~"/images/bg/bg5.jpg"
     } %} %}
 
-
-    {#{% include 'BSFrontBundle::Action/index.html.twig' %}#}
-    {#{% include 'BSFrontBundle::_Text/text.html.twig' %}#}
-    {#{% include 'BSFrontBundle::_Carousel/carousel.html.twig' %}#}
-    {#{% include 'BSFrontBundle::_Grid/grid.html.twig' %}#}
-    {#{% include 'BSFrontBundle::_Featured/featured.html.twig' %}#}
-    {#{% include 'BSFrontBundle::_Contact/contact.html.twig' %}#}
 {% endblock content %}

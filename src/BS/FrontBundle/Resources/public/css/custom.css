@@ -48,6 +48,12 @@ img.lazy {
 	min-height: 285px;
 	margin-bottom: 10px;
 }
+.grid-item.grid-item-3.blog {
+height: 410px;
+max-height: 410px;
+min-height: 410px;
+margin-bottom: 10px;
+}
 
 .grid-item.grid-item-3 {
 	height: 350px;
@@ -527,4 +533,32 @@ filter: none !important;
 
 .modal-block-text {
     text-align: left;
+}
+
+.thumbnail.item-content {
+background: transparent;
+border: 0px;
+}
+.thumbnail.item-content {
+color: #fff;
+text-align: center;
+}
+.thumbnail.item-content .caption{
+padding: 0px;
+line-height: 0.8;
+margin-top: 5px;
+margin-bottom: 0px;
+font-size: 35px;
+color: #fff;
+
+}
+
+.thumbnail.item-content p.descr{
+	word-break: break-word;
+}
+
+.thumbnail.item-content p.button-wrapper{
+position: absolute;
+left: 50%;
+margin-top: 40px;
 }

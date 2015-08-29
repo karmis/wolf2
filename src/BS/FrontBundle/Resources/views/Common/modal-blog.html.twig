@@ -1,0 +1,59 @@
+<div class="clearfix"></div>
+<div class="modal-populate">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+            {{ entity.caption }}
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <ul class="lightGalleryBlockInModal">
+                    {% if entity.gallery is defined and entity.gallery|length > 0 %}
+                        {% for key, photo in entity.gallery %}
+                            {% if photo is defined and photo is not null and photo.photo is not null  %}
+                                <li
+                                    data-sub-html="<div class='customHtml'><h4>{{ photo.caption }}</h4><p>{{ photo.description }}</p></div>"
+                                    data-src="{{ vich_uploader_asset(photo, 'photoFile')|imagine_filter('full_size_photo_in_window') }}"
+                                    class="lightGallery"
+                                    >
+                                    <img src="{{ vich_uploader_asset(photo, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" />
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if entity.videoGallery is defined and entity.videoGallery|length > 0 %}
+                        {% for key, video in entity.videoGallery %}
+                            {% if video is defined and video is not null and video.photo is not null  %}
+                                <li
+                                    data-sub-html="<div class='customHtml'><h4>{{ video.caption }}</h4><p>{{ video.description|striptags|truncate(150) }}</p></div>"
+                                    data-src="{{ video.ref }}"
+                                    class="lightGallery"
+                                    >
+                                    <img src="{{ vich_uploader_asset(video, 'photoFile')|imagine_filter('prev_on_page_item_slider') }}" />
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class='clearfix'></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body modal-block-text">
+                    {{entity.content|raw}}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>

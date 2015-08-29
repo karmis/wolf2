@@ -13,16 +13,16 @@
 
                 {% if secType == 'text' %}
                     {% include 'BSFrontBundle::Common/text.html.twig' %}
-                {% elseif secType == 'grid-md-2' %}
+                {% elseif secType == 'events' %}
                     {% include 'BSFrontBundle::Common/grid-md-2.html.twig' %}
-                {% elseif secType == 'grid-md-3' %}
-                    {% include 'BSFrontBundle::Common/grid-md-3.html.twig' %}
-                {% elseif secType == 'grid-md-4' %}
+                {% elseif secType == 'blogs' %}
+                    {% include 'BSFrontBundle::Common/blog-grid-md-3.html.twig' %}
+                {% elseif secType == 'actions' %}
                     {% include 'BSFrontBundle::Common/grid-md-4.html.twig' %}
+                {% elseif secType == 'promo' %}
+                    {% include 'BSFrontBundle::Common/promo.html.twig' %}
                 {% elseif secType == 'form' %}
                     {% include 'BSFrontBundle::Common/form.html.twig' %}
-                {% elseif secType == 'action' %}
-                    {% include 'BSFrontBundle::Action/index.html.twig' %}
                 {% else %}
                     {% include 'BSFrontBundle::Common/text.html.twig' %}
                 {% endif %}
